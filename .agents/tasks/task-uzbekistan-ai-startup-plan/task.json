@@ -1,0 +1,7 @@
+{
+  "task_id": "task-uzbekistan-ai-startup-plan",
+  "task_description": "Create a comprehensive AI startup business plan for Uzbekistan, identifying the single most promising AI-powered startup opportunity and producing actionable roadmap documents (BUSINESS_PLAN.md and EXECUTIVE_SUMMARY.md)",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null
+}

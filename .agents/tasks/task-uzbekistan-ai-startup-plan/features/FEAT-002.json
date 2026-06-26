@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-002",
+  "type": "docs",
+  "description": "Create the concise EXECUTIVE_SUMMARY.md as a one-page investor-ready document that a founder could show to an investor today. This summarizes the winning idea from the business plan into a compelling, professional pitch document.",
+  "status": "pending",
+  "steps": [
+    "Create /projects/sandbox/STARTUP2/EXECUTIVE_SUMMARY.md",
+    "Include sections: Problem Statement (2-3 sentences on the pain point), Solution (what the AI product does), Market Opportunity (TAM/SAM/SOM with Uzbekistan-specific numbers), Business Model (how it makes money), Competitive Advantage (moat), Traction Plan (first 6 months milestones), Team Requirements (key hires needed), Financial Projections (Year 1-3 revenue targets), The Ask (what investment is needed and for what)",
+    "Keep it concise - one page when rendered (roughly 60-80 lines of Markdown)",
+    "Make it investor-ready: professional tone, specific numbers, clear value proposition",
+    "Reference the Uzbekistan context (government support, IT Park benefits, market size)",
+    "Include a clear call-to-action at the end"
+  ],
+  "acceptance_criteria": [
+    "EXECUTIVE_SUMMARY.md exists at /projects/sandbox/STARTUP2/EXECUTIVE_SUMMARY.md",
+    "Document is concise (under 100 lines) but comprehensive",
+    "Contains specific financial projections and market sizing",
+    "Professional investor-ready tone throughout",
+    "References Uzbekistan-specific advantages (IT Park tax benefits, government alignment, young population)",
+    "Includes a clear funding ask with use of proceeds"
+  ],
+  "verification": [
+    "Confirm file exists: ls /projects/sandbox/STARTUP2/EXECUTIVE_SUMMARY.md",
+    "Confirm file is concise but substantial: wc -l /projects/sandbox/STARTUP2/EXECUTIVE_SUMMARY.md (should be 50-120 lines)"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

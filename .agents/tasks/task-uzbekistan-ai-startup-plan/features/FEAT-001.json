@@ -1,0 +1,31 @@
+{
+  "id": "FEAT-001",
+  "type": "docs",
+  "description": "Create the comprehensive BUSINESS_PLAN.md covering all four phases: Market Intelligence, Idea Generation & Scoring, Deep Research on Winning Idea, and Step-by-Step Execution Plan. The document must be grounded in real data about Uzbekistan's economy, IT ecosystem, and AI landscape.",
+  "status": "in_progress",
+  "steps": [
+    "Create /projects/sandbox/STARTUP2/BUSINESS_PLAN.md with the full business plan",
+    "PHASE 1 - MARKET INTELLIGENCE section covering: GDP composition ($181.5B nominal, 7.7% growth, services 48.6%, industry 34.1%, agriculture 17.3%), fastest-growing sectors (IT services growing 146% YoY in jobs, services-led growth), government initiatives (Digital Uzbekistan 2030, IT Park with 2,800 members and tax-free until 2040, $5B DataVolt data center, regulatory sandbox 2025), AI gaps analysis (healthcare with highest diet-death rate globally, agriculture with 4.2M hectares needing precision farming, education with 6.78M students and falling standards, SME digitalization for 38M population), tech talent (38,600 IT Park employees, IT Park University by EPAM, 222 universities), developer salaries ($800-2,000/month for senior devs - lower than regional peers), investors/accelerators (IT Park Ventures $10M, Plug and Play, Alchemist, President Tech Award $1M, World Bank $5.6B portfolio), regulatory (tax exemptions until 2040, IT visa 3-year, regulatory sandbox 2025), competitors (Uzum $2.3B unicorn in fintech/e-commerce, Unitlab AI, Geomotive, Datatruck as IT Park investees)",
+    "PHASE 2 - IDEA GENERATION & SCORING section: Generate 10 AI startup ideas scored 1-10 across 6 criteria (problem severity/market size, technical feasibility, revenue model clarity, competitive moat, government alignment, speed to first customer). Ideas should span: AI-powered healthcare diagnostics, agricultural yield optimization, AI tutoring for K-12/university, SME accounting/tax automation, logistics route optimization, AI customer service for banks, document processing for government, real estate valuation, HR/recruitment matching, supply chain demand forecasting. Select the top scorer with detailed justification.",
+    "PHASE 3 - DEEP RESEARCH section for the winning idea: exact target customer segment, willingness to pay analysis, specific AI technologies/APIs/models to use (name specific tools like GPT-4, Claude, Whisper, open-source models), MVP cost estimate (people, infrastructure, time), 3 closest global competitors with lessons, risks (regulatory, adoption, technical) and mitigation strategies",
+    "PHASE 4 - STEP-BY-STEP EXECUTION PLAN organized by: Month 1-2 (Validate: customer discovery, interviews, landing page, waitlist), Month 3-4 (Build: MVP features, tech stack, founding team), Month 5-6 (Launch: pilot with 3-5 paying customers, feedback, pricing), Month 7-12 (Grow: sales, hiring, KPIs, fundraising), Year 2-3 (Scale: Central Asia expansion, enterprise, Series A). For every phase include: concrete tasks, responsible roles, success metrics, budget estimate, and tools to use.",
+    "Ensure all data points are specific and actionable for a first-time founder in Uzbekistan with $10,000-$50,000 initial capital",
+    "Use proper Markdown formatting with headers (H1, H2, H3), tables for scoring matrices, bullet points for action items, and bold for key metrics"
+  ],
+  "acceptance_criteria": [
+    "BUSINESS_PLAN.md exists at /projects/sandbox/STARTUP2/BUSINESS_PLAN.md",
+    "Document contains all four phases clearly labeled",
+    "Phase 2 includes a scoring table with 10 ideas rated across 6 dimensions",
+    "Phase 4 includes specific budget estimates, timelines, and tool recommendations",
+    "All recommendations are actionable for someone with $10K-$50K starting capital in Uzbekistan",
+    "Document references real Uzbekistan-specific data (IT Park, Digital Uzbekistan 2030, Uzum, etc.)",
+    "Document is well-formatted Markdown with proper headers, tables, and structure"
+  ],
+  "verification": [
+    "Confirm file exists: ls /projects/sandbox/STARTUP2/BUSINESS_PLAN.md",
+    "Confirm file has substantial content: wc -l /projects/sandbox/STARTUP2/BUSINESS_PLAN.md (should be 500+ lines)",
+    "Confirm all four phases are present: grep -c 'PHASE' /projects/sandbox/STARTUP2/BUSINESS_PLAN.md"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
