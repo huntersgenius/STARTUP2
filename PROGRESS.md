@@ -33,3 +33,40 @@ Updated at the end of every sprint. Format: shipped / stubbed / next.
 - The `web` and `mobile` CI jobs reference projects that arrive in Sprints 4 and 6.
 
 **Next**: Sprint 2 — knowledge ingestion, terminology map, hybrid retrieval, formulary.
+
+## Sprint 2 — Knowledge base, terminology, RAG, formulary ✅
+
+**Shipped**
+- `knowledge/ingest.py`: markdown/PDF → header-aware chunks → embeddings → store, with
+  source, section, page, language and version on every chunk. Re-ingesting a source replaces
+  it wholesale, so a protocol update leaves no stale chunks retrievable.
+- Committed sample corpus of 10 protocols covering all 10 target conditions from
+  `BUSINESS_PLAN.md` (WHO IMCI, hypertension, anaemia, low back pain, iodine, CVD/diet;
+  UzMoH pneumonia, TB suspicion, type 2 diabetes, gastritis/H. pylori). Tests run offline.
+- `knowledge/terminology.csv`: 129 concepts and **481 recognised surfaces** — the informal
+  words patients and feldshers actually type, not textbook Uzbek. Uzbek Latin, Uzbek Cyrillic
+  and Russian all resolve to the same concept and ICD-10 code.
+- `app/ai/rag/retriever.py`: three-arm hybrid retrieval (concept + BM25 + vector) with
+  weighted reciprocal rank fusion, age-band/sex/ICD-10 filters, and a citation on every hit.
+  Reranking is stubbed behind a named interface rather than half-built.
+- `knowledge/formulary.csv` + `FormularyService`: 49 items, availability tiers, pediatric and
+  pregnancy contraindications, and therapeutic-group substitutes. An unavailable drug is
+  flagged with an alternative for review, never silently swapped.
+
+**Numbers**: **20/20** seeded queries (10 uz, 10 ru) retrieve the correct protocol.
+144 tests green, 85% coverage, mypy clean.
+
+**What this sprint actually taught us** — cross-lingual retrieval over a trilingual corpus
+started at 5/20 and did not improve by tuning weights. Three vocabulary problems were doing
+the damage, all now fixed in the terminology map and documented in `docs/adr/0003`:
+Uzbek agglutination ("pnevmoniya**ni**"), British/American spelling ("anaemia" vs "anemia"),
+and numeric findings ("qon bosimi 160/95" means hypertension, and no word map can see that).
+
+**Stubbed**
+- `Reranker` is the identity function until Sprint 5 measurements justify its cost.
+- PDF ingestion works but needs `pypdf`, which is deliberately not a required dependency —
+  the committed corpus is markdown so CI never needs it.
+- The offline `HashingEmbeddings` is lexical, not semantic. Offline retrieval leans on the
+  concept and BM25 arms; the eval report must label which embedder produced a run.
+
+**Next**: Sprint 3 — the AI engine, de-identification red-team suite, red-flag rules.

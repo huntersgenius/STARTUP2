@@ -44,7 +44,11 @@ class FormularyItem(Base, UUIDMixin, TimestampMixin):
     """A medicine that is actually obtainable in Uzbek primary care."""
 
     __tablename__ = "formulary_items"
-    __table_args__ = (UniqueConstraint("generic_name", "form", name="uq_generic_form"),)
+    # Strength is part of the identity: metformin 500 mg and metformin 1000 mg
+    # are separate stock items with separate availability.
+    __table_args__ = (
+        UniqueConstraint("generic_name", "form", "strength", name="uq_generic_form_strength"),
+    )
 
     generic_name: Mapped[str] = mapped_column(String(160), nullable=False, index=True)
     name_uz: Mapped[str | None] = mapped_column(String(160), nullable=True)

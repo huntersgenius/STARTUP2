@@ -1,0 +1,50 @@
+generic_name,name_uz,name_ru,form,strength,atc_code,availability_tier,controlled,pediatric_ok,pregnancy_category,typical_cost_uzs,notes
+amoxicillin,amoksitsillin,амоксициллин,capsule,500 mg,J01CA04,1,false,true,B,3500,First-line for community-acquired pneumonia in adults
+amoxicillin,amoksitsillin,амоксициллин,suspension,250 mg/5 ml,J01CA04,1,false,true,B,12000,Pediatric formulation; dose by weight
+amoxicillin-clavulanate,amoksitsillin-klavulanat,амоксициллин-клавуланат,tablet,875/125 mg,J01CR02,2,false,true,B,18000,Second-line; use when beta-lactamase suspected
+azithromycin,azitromitsin,азитромицин,tablet,500 mg,J01FA10,2,false,true,B,22000,Atypical pneumonia; 3-day course
+ceftriaxone,seftriakson,цефтриаксон,injection,1 g,J01DD04,2,false,true,B,15000,Severe infection; refer if IV access needed
+ciprofloxacin,siprofloksatsin,ципрофлоксацин,tablet,500 mg,J01MA02,2,false,false,C,9000,Not for children or pregnancy; tendon risk
+metronidazole,metronidazol,метронидазол,tablet,250 mg,J01XD01,1,false,true,B,4000,Anaerobic and protozoal infection
+co-trimoxazole,ko-trimoksazol,ко-тримоксазол,tablet,480 mg,J01EE01,1,false,true,C,3000,Avoid in third trimester
+doxycycline,doksitsiklin,доксициклин,capsule,100 mg,J01AA02,2,false,false,D,7000,Contraindicated under 8 years and in pregnancy
+paracetamol,paratsetamol,парацетамол,tablet,500 mg,N02BE01,1,false,true,A,1500,First-line antipyretic and analgesic
+paracetamol,paratsetamol,парацетамол,syrup,120 mg/5 ml,N02BE01,1,false,true,A,9000,Pediatric; 15 mg/kg per dose
+ibuprofen,ibuprofen,ибупрофен,tablet,400 mg,M01AE01,1,false,true,C,2500,Avoid after 30 weeks of pregnancy; caution in gastritis
+ibuprofen,ibuprofen,ибупрофен,suspension,100 mg/5 ml,M01AE01,1,false,true,C,11000,Pediatric; 10 mg/kg per dose; not under 3 months
+diclofenac,diklofenak,диклофенак,tablet,50 mg,M01AB05,1,false,false,C,3000,Musculoskeletal pain; not under 14 years
+omeprazole,omeprazol,омепразол,capsule,20 mg,A02BC01,1,false,true,C,6000,Gastritis and part of H. pylori eradication
+famotidine,famotidin,фамотидин,tablet,20 mg,A02BA03,2,false,true,B,5000,Alternative acid suppression
+clarithromycin,klaritromitsin,кларитромицин,tablet,500 mg,J01FA09,2,false,true,C,26000,H. pylori triple therapy component
+bismuth subsalicylate,vismut subsalitsilat,висмута субсалицилат,tablet,120 mg,A02BX05,3,false,false,C,14000,Quadruple therapy; limited availability
+oral rehydration salts,og'iz orqali regidratatsiya tuzi,оральные регидратационные соли,sachet,WHO low-osmolarity,A07CA,1,false,true,A,2000,First-line for all diarrheal dehydration
+zinc sulfate,rux sulfat,цинка сульфат,tablet,20 mg,A12CB01,1,false,true,A,3000,WHO IMCI: 10-14 days with ORS in childhood diarrhea
+enalapril,enalapril,эналаприл,tablet,10 mg,C09AA02,1,false,false,D,4000,Contraindicated in pregnancy
+lisinopril,lizinopril,лизиноприл,tablet,10 mg,C09AA03,2,false,false,D,7000,Contraindicated in pregnancy
+amlodipine,amlodipin,амлодипин,tablet,5 mg,C08CA01,1,false,false,C,5000,First-line for hypertension; ankle edema common
+hydrochlorothiazide,gidroxlortiazid,гидрохлортиазид,tablet,25 mg,C03AA03,1,false,false,B,3000,Often combined with an ACE inhibitor
+bisoprolol,bisoprolol,бисопролол,tablet,5 mg,C07AB07,2,false,false,C,8000,Avoid in asthma
+losartan,lozartan,лозартан,tablet,50 mg,C09CA01,2,false,false,D,11000,Alternative when ACE inhibitor causes cough
+atorvastatin,atorvastatin,аторвастатин,tablet,20 mg,C10AA05,2,false,false,X,15000,Contraindicated in pregnancy
+aspirin,aspirin,аспирин,tablet,75 mg,B01AC06,1,false,false,D,2000,Secondary prevention; not in children (Reye syndrome)
+metformin,metformin,метформин,tablet,500 mg,A10BA02,1,false,false,B,6000,First-line for type 2 diabetes
+metformin,metformin,метформин,tablet,1000 mg,A10BA02,2,false,false,B,10000,Titrate to tolerance
+gliclazide,gliklazid,гликлазид,tablet,80 mg,A10BB09,2,false,false,C,12000,Hypoglycemia risk in the elderly
+insulin human,inson insulini,инсулин человеческий,injection,100 IU/ml,A10AB01,3,false,true,B,85000,Cold chain required; oblast level
+ferrous sulfate,temir sulfat,железа сульфат,tablet,200 mg,B03AA07,1,false,true,A,3000,Iron deficiency anemia; take with vitamin C
+folic acid,folat kislotasi,фолиевая кислота,tablet,5 mg,B03BB01,1,false,true,A,2000,Pregnancy and megaloblastic anemia
+vitamin b12,vitamin b12,витамин B12,injection,1000 mcg,B03BA01,2,false,true,A,6000,Pernicious and dietary B12 deficiency
+potassium iodide,kaliy yodid,калия йодид,tablet,100 mcg,H03CA,1,false,true,A,2500,Iodine deficiency; endemic in several regions
+levothyroxine,levotiroksin,левотироксин,tablet,50 mcg,H03AA01,2,false,true,A,9000,Hypothyroidism; titrate on TSH
+salbutamol,salbutamol,сальбутамол,inhaler,100 mcg/dose,R03AC02,1,false,true,C,25000,Asthma and wheeze; spacer for children
+beclometasone,beklometazon,беклометазон,inhaler,250 mcg/dose,R03BA01,2,false,true,C,45000,Asthma controller
+prednisolone,prednizolon,преднизолон,tablet,5 mg,H02AB06,1,false,true,C,3500,Short courses for asthma exacerbation
+loratadine,loratadin,лоратадин,tablet,10 mg,R06AX13,1,false,true,B,4000,Allergic rhinitis
+cetirizine,setirizin,цетиризин,tablet,10 mg,R06AE07,1,false,true,B,4500,Allergic rhinitis and urticaria
+isoniazid,izoniazid,изониазид,tablet,300 mg,J04AC01,3,false,true,C,4000,TB programme only; never start outside DOTS
+rifampicin,rifampitsin,рифампицин,capsule,300 mg,J04AB02,3,false,true,C,6000,TB programme only; never start outside DOTS
+albendazole,albendazol,альбендазол,tablet,400 mg,P02CA03,1,false,true,C,3000,Helminthiasis; avoid in first trimester
+mebendazole,mebendazol,мебендазол,tablet,100 mg,P02CA01,1,false,true,C,2500,Helminthiasis
+ors zinc kit,ORS va rux to'plami,набор ОРС и цинк,kit,WHO IMCI,V07,1,false,true,A,5000,IMCI standard childhood diarrhea kit
+activated charcoal,faollashtirilgan ko'mir,активированный уголь,tablet,250 mg,A07BA01,1,false,true,A,1000,Symptomatic; not a substitute for referral in poisoning
+magnesium sulfate,magniy sulfat,магния сульфат,injection,25%,B05XA05,2,false,false,A,7000,Eclampsia; give and refer immediately

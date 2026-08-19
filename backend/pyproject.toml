@@ -26,6 +26,8 @@ exclude = "(alembic/|tests/)"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# knowledge/ is a sibling package at the repo root.
+pythonpath = [".", ".."]
 addopts = "-q --strict-markers -p no:cacheprovider"
 asyncio_default_fixture_loop_scope = "function"
 markers = [

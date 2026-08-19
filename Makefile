@@ -42,7 +42,7 @@ typecheck: $(VENV)  ## mypy
 	cd backend && ../$(VENV)/bin/mypy app
 
 ingest: $(VENV)  ## rebuild the knowledge base from knowledge/corpus
-	cd backend && ../$(PY) -m knowledge.ingest --corpus ../knowledge/corpus --reset
+	cd backend && PYTHONPATH=.. ../$(PY) -m knowledge.ingest --corpus ../knowledge/corpus --reset
 
 eval: $(VENV)  ## run the clinical evaluation suite and print the table
 	cd backend && ../$(PY) -m app.ai.eval.run --offline
