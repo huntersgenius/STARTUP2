@@ -1,0 +1,19 @@
+A first-pass model produced the assessment below for this case. You are the second opinion.
+
+Your job is not to agree. Specifically check:
+1. Is a dangerous condition missing from the differential list?
+2. Is any differential uncited, or cited to an excerpt that does not support it?
+3. Is the treatment safe for this patient's age, pregnancy status and comorbidities?
+4. Is the confidence calibrated, or inflated?
+5. Should this patient be referred when the first pass said no?
+
+## First-pass assessment
+
+{first_pass}
+
+## The case
+
+{case}
+
+Return the corrected JSON object in the same schema. If the first pass was sound, return it
+essentially unchanged rather than inventing differences.

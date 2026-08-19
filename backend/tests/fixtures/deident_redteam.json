@@ -1,0 +1,1152 @@
+{
+  "description": "De-identification red-team corpus. Every 'identifiers' value must be absent from the scrubbed output.",
+  "generated": "2026-08-19",
+  "cases": [
+    {
+      "id": "uz-001",
+      "language": "uz",
+      "text": "Bemor Jasur Qodirov, Qibray tumani, Guliston MFY, tel +998-93-777-22-11. Shikoyat: jig'ildon qaynashi, oshqozon og'rig'i.",
+      "identifiers": [
+        "Jasur",
+        "Qodirov",
+        "Qibray tumani, Guliston MFY",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-002",
+      "language": "uz",
+      "text": "Abdullayeva Feruzani ko'rdim. Manzil: Bo'ka tumani, Yangiobod qishlog'i. Telefon: +998901234567. 3 kundan beri yo'talyapti, harorati 38.5.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "+998901234567"
+      ]
+    },
+    {
+      "id": "uz-003",
+      "language": "uz",
+      "text": "F.I.SH.: Tursunova Kamola. Pasport AB 7654321. nafas qisishi va ko'krak og'rig'i. Bog'lanish: (90) 234 56 78.",
+      "identifiers": [
+        "Kamola",
+        "Tursunova",
+        "Chinoz tumani, Navro'z MFY",
+        "(90) 234 56 78",
+        "AB 7654321"
+      ]
+    },
+    {
+      "id": "uz-004",
+      "language": "uz",
+      "text": "Bugun Gulnora Tosheva keldi (Andijon shahri, Navoiy ko'chasi 102). PINFL 31234567890123. qandi baland, chanqoq va tez-tez siyish.",
+      "identifiers": [
+        "Gulnora",
+        "Tosheva",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "8 90 111 22 33",
+        "31234567890123"
+      ]
+    },
+    {
+      "id": "uz-005",
+      "language": "uz",
+      "text": "Bemor: Bekzod Rahimov, tug'ilgan sana 12.03.1985, 998 91 555 44 33. uch haftadan ortiq yo'tal, kechasi terlaydi.",
+      "identifiers": [
+        "Bekzod",
+        "Rahimov",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "998 91 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-006",
+      "language": "uz",
+      "text": "Bekzod Rahimov — Yunusobod tumani, Bog'ishamol ko'chasi 45, +998 90 123 45 67. Anamnez: nafas qisishi va ko'krak og'rig'i.",
+      "identifiers": [
+        "Bekzod",
+        "Rahimov",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "+998 90 123 45 67"
+      ]
+    },
+    {
+      "id": "uz-007",
+      "language": "uz",
+      "text": "Kasal Malika Sattorovaning holati: qandi baland, chanqoq va tez-tez siyish. Pasport: КА1122334, manzil Urgut tumani, Mustaqillik ko'chasi 8.",
+      "identifiers": [
+        "Malika",
+        "Sattorova",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "998 91 555 44 33",
+        "КА1122334"
+      ]
+    },
+    {
+      "id": "uz-008",
+      "language": "uz",
+      "text": "Qabul: Gulnora Tosheva. Tel: 998 91 555 44 33. Elektron pochta: gulnora.tosheva@mail.uz. qorin og'rig'i va ko'ngil aynishi bor.",
+      "identifiers": [
+        "Gulnora",
+        "Tosheva",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "998 91 555 44 33",
+        "gulnora.tosheva@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-009",
+      "language": "uz",
+      "text": "Bemor Jasur Qodirov, Zangiota tumani, Do'stlik ko'chasi 14, tel 998 91 555 44 33. Shikoyat: bolada ich ketishi, 2 kun bo'ldi.",
+      "identifiers": [
+        "Jasur",
+        "Qodirov",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "998 91 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-010",
+      "language": "uz",
+      "text": "Mirzayev Ulug'bekni ko'rdim. Manzil: Urgut tumani, Mustaqillik ko'chasi 8. Telefon: +998-93-777-22-11. holsizlik, tez charchash, gemoglobin past.",
+      "identifiers": [
+        "Ulug'bek",
+        "Mirzayev",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-011",
+      "language": "uz",
+      "text": "F.I.SH.: Rahimov Bekzod. Pasport AC9876543. holsizlik, tez charchash, gemoglobin past. Bog'lanish: +998 90 123 45 67.",
+      "identifiers": [
+        "Bekzod",
+        "Rahimov",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "+998 90 123 45 67",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "uz-012",
+      "language": "uz",
+      "text": "Bugun Rustam Xolmatov keldi (Andijon shahri, Navoiy ko'chasi 102). PINFL 42345678901234. holsizlik, tez charchash, gemoglobin past.",
+      "identifiers": [
+        "Rustam",
+        "Xolmatov",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "8 90 111 22 33",
+        "42345678901234"
+      ]
+    },
+    {
+      "id": "uz-013",
+      "language": "uz",
+      "text": "Bemor: Gulnora Tosheva, tug'ilgan sana 12.03.1985, +998-93-777-22-11. jig'ildon qaynashi, oshqozon og'rig'i.",
+      "identifiers": [
+        "Gulnora",
+        "Tosheva",
+        "Qibray tumani, Guliston MFY",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-014",
+      "language": "uz",
+      "text": "Rustam Xolmatov — Urgut tumani, Mustaqillik ko'chasi 8, 90 555 44 33. Anamnez: holsizlik, tez charchash, gemoglobin past.",
+      "identifiers": [
+        "Rustam",
+        "Xolmatov",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-015",
+      "language": "uz",
+      "text": "Kasal Feruza Abdullayevaning holati: bosh og'rig'i, bosim 160/95. Pasport: AA1234567, manzil Bo'ka tumani, Yangiobod qishlog'i.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "+998 90 123 45 67",
+        "AA1234567"
+      ]
+    },
+    {
+      "id": "uz-016",
+      "language": "uz",
+      "text": "Qabul: Malika Sattorova. Tel: 8 90 111 22 33. Elektron pochta: malika.sattorova@mail.uz. bolada ich ketishi, 2 kun bo'ldi.",
+      "identifiers": [
+        "Malika",
+        "Sattorova",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "8 90 111 22 33",
+        "malika.sattorova@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-017",
+      "language": "uz",
+      "text": "Bemor Feruza Abdullayeva, Qibray tumani, Guliston MFY, tel 998 91 555 44 33. Shikoyat: qorin og'rig'i va ko'ngil aynishi bor.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Qibray tumani, Guliston MFY",
+        "998 91 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-018",
+      "language": "uz",
+      "text": "Qodirov Jasurni ko'rdim. Manzil: Chinoz tumani, Navro'z MFY. Telefon: (90) 234 56 78. 3 kundan beri yo'talyapti, harorati 38.5.",
+      "identifiers": [
+        "Jasur",
+        "Qodirov",
+        "Chinoz tumani, Navro'z MFY",
+        "(90) 234 56 78"
+      ]
+    },
+    {
+      "id": "uz-019",
+      "language": "uz",
+      "text": "F.I.SH.: Mirzayev Ulug'bek. Pasport AC9876543. qorin og'rig'i va ko'ngil aynishi bor. Bog'lanish: +998 90 123 45 67.",
+      "identifiers": [
+        "Ulug'bek",
+        "Mirzayev",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "+998 90 123 45 67",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "uz-020",
+      "language": "uz",
+      "text": "Bugun Dilshod Karimov keldi (Chinoz tumani, Navro'z MFY). PINFL 50987654321098. nafas qisishi va ko'krak og'rig'i.",
+      "identifiers": [
+        "Dilshod",
+        "Karimov",
+        "Chinoz tumani, Navro'z MFY",
+        "+998-93-777-22-11",
+        "50987654321098"
+      ]
+    },
+    {
+      "id": "uz-021",
+      "language": "uz",
+      "text": "Bemor: Malika Sattorova, tug'ilgan sana 12.03.1985, +998 90 123 45 67. holsizlik, tez charchash, gemoglobin past.",
+      "identifiers": [
+        "Malika",
+        "Sattorova",
+        "Chinoz tumani, Navro'z MFY",
+        "+998 90 123 45 67"
+      ]
+    },
+    {
+      "id": "uz-022",
+      "language": "uz",
+      "text": "Nodira Ergasheva — Bo'ka tumani, Yangiobod qishlog'i, (90) 234 56 78. Anamnez: uch haftadan ortiq yo'tal, kechasi terlaydi.",
+      "identifiers": [
+        "Nodira",
+        "Ergasheva",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "(90) 234 56 78"
+      ]
+    },
+    {
+      "id": "uz-023",
+      "language": "uz",
+      "text": "Kasal Sardor Aliyevning holati: nafas qisishi va ko'krak og'rig'i. Pasport: AC9876543, manzil Andijon shahri, Navoiy ko'chasi 102.",
+      "identifiers": [
+        "Sardor",
+        "Aliyev",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "8 90 111 22 33",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "uz-024",
+      "language": "uz",
+      "text": "Qabul: Shahnoza Yo'ldosheva. Tel: 8 90 111 22 33. Elektron pochta: shahnoza.yoldosheva@mail.uz. uch haftadan ortiq yo'tal, kechasi terlaydi.",
+      "identifiers": [
+        "Shahnoza",
+        "Yo'ldosheva",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "8 90 111 22 33",
+        "shahnoza.yoldosheva@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-025",
+      "language": "uz",
+      "text": "Bemor Feruza Abdullayeva, Urgut tumani, Mustaqillik ko'chasi 8, tel 90 555 44 33. Shikoyat: jig'ildon qaynashi, oshqozon og'rig'i.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-026",
+      "language": "uz",
+      "text": "Tursunova Kamolani ko'rdim. Manzil: Andijon shahri, Navoiy ko'chasi 102. Telefon: +998 90 123 45 67. qandi baland, chanqoq va tez-tez siyish.",
+      "identifiers": [
+        "Kamola",
+        "Tursunova",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "+998 90 123 45 67"
+      ]
+    },
+    {
+      "id": "uz-027",
+      "language": "uz",
+      "text": "F.I.SH.: Rahimov Bekzod. Pasport КА1122334. uch haftadan ortiq yo'tal, kechasi terlaydi. Bog'lanish: +998-93-777-22-11.",
+      "identifiers": [
+        "Bekzod",
+        "Rahimov",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "+998-93-777-22-11",
+        "КА1122334"
+      ]
+    },
+    {
+      "id": "uz-028",
+      "language": "uz",
+      "text": "Bugun Gulnora Tosheva keldi (Chinoz tumani, Navro'z MFY). PINFL 50987654321098. uch haftadan ortiq yo'tal, kechasi terlaydi.",
+      "identifiers": [
+        "Gulnora",
+        "Tosheva",
+        "Chinoz tumani, Navro'z MFY",
+        "(90) 234 56 78",
+        "50987654321098"
+      ]
+    },
+    {
+      "id": "uz-029",
+      "language": "uz",
+      "text": "Bemor: Dilshod Karimov, tug'ilgan sana 12.03.1985, +998 90 123 45 67. 3 kundan beri yo'talyapti, harorati 38.5.",
+      "identifiers": [
+        "Dilshod",
+        "Karimov",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "+998 90 123 45 67"
+      ]
+    },
+    {
+      "id": "uz-030",
+      "language": "uz",
+      "text": "Feruza Abdullayeva — Zangiota tumani, Do'stlik ko'chasi 14, 90 555 44 33. Anamnez: bosh og'rig'i, bosim 160/95.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-031",
+      "language": "uz",
+      "text": "Kasal Sardor Aliyevning holati: qandi baland, chanqoq va tez-tez siyish. Pasport: AC9876543, manzil Bo'ka tumani, Yangiobod qishlog'i.",
+      "identifiers": [
+        "Sardor",
+        "Aliyev",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "+998901234567",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "uz-032",
+      "language": "uz",
+      "text": "Qabul: Zulfiya Ismoilova. Tel: (90) 234 56 78. Elektron pochta: zulfiya.ismoilova@mail.uz. bosh og'rig'i, bosim 160/95.",
+      "identifiers": [
+        "Zulfiya",
+        "Ismoilova",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "(90) 234 56 78",
+        "zulfiya.ismoilova@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-033",
+      "language": "uz",
+      "text": "Bemor Feruza Abdullayeva, Chinoz tumani, Navro'z MFY, tel +998901234567. Shikoyat: holsizlik, tez charchash, gemoglobin past.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Chinoz tumani, Navro'z MFY",
+        "+998901234567"
+      ]
+    },
+    {
+      "id": "uz-034",
+      "language": "uz",
+      "text": "Abdullayeva Feruzani ko'rdim. Manzil: Yunusobod tumani, Bog'ishamol ko'chasi 45. Telefon: (90) 234 56 78. 3 kundan beri yo'talyapti, harorati 38.5.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "(90) 234 56 78"
+      ]
+    },
+    {
+      "id": "uz-035",
+      "language": "uz",
+      "text": "F.I.SH.: Yo'ldosheva Shahnoza. Pasport AC9876543. qandi baland, chanqoq va tez-tez siyish. Bog'lanish: +998 90 123 45 67.",
+      "identifiers": [
+        "Shahnoza",
+        "Yo'ldosheva",
+        "Chinoz tumani, Navro'z MFY",
+        "+998 90 123 45 67",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "uz-036",
+      "language": "uz",
+      "text": "Bugun Sardor Aliyev keldi (Bo'ka tumani, Yangiobod qishlog'i). PINFL 31234567890123. bel og'rig'i, yurganda kuchayadi.",
+      "identifiers": [
+        "Sardor",
+        "Aliyev",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "+998-93-777-22-11",
+        "31234567890123"
+      ]
+    },
+    {
+      "id": "uz-037",
+      "language": "uz",
+      "text": "Bemor: Jasur Qodirov, tug'ilgan sana 12.03.1985, +998901234567. holsizlik, tez charchash, gemoglobin past.",
+      "identifiers": [
+        "Jasur",
+        "Qodirov",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "+998901234567"
+      ]
+    },
+    {
+      "id": "uz-038",
+      "language": "uz",
+      "text": "Feruza Abdullayeva — Zangiota tumani, Do'stlik ko'chasi 14, 998 91 555 44 33. Anamnez: jig'ildon qaynashi, oshqozon og'rig'i.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "998 91 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-039",
+      "language": "uz",
+      "text": "Kasal Ulug'bek Mirzayevning holati: qandi baland, chanqoq va tez-tez siyish. Pasport: КА1122334, manzil Andijon shahri, Navoiy ko'chasi 102.",
+      "identifiers": [
+        "Ulug'bek",
+        "Mirzayev",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "+998901234567",
+        "КА1122334"
+      ]
+    },
+    {
+      "id": "uz-040",
+      "language": "uz",
+      "text": "Qabul: Bekzod Rahimov. Tel: 90 555 44 33. Elektron pochta: bekzod.rahimov@mail.uz. 3 kundan beri yo'talyapti, harorati 38.5.",
+      "identifiers": [
+        "Bekzod",
+        "Rahimov",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "90 555 44 33",
+        "bekzod.rahimov@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-041",
+      "language": "uz",
+      "text": "Bemor Otabek Nazarov, Bo'ka tumani, Yangiobod qishlog'i, tel 90 555 44 33. Shikoyat: qandi baland, chanqoq va tez-tez siyish.",
+      "identifiers": [
+        "Otabek",
+        "Nazarov",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-042",
+      "language": "uz",
+      "text": "Nazarov Otabekni ko'rdim. Manzil: Andijon shahri, Navoiy ko'chasi 102. Telefon: +998-93-777-22-11. bel og'rig'i, yurganda kuchayadi.",
+      "identifiers": [
+        "Otabek",
+        "Nazarov",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-043",
+      "language": "uz",
+      "text": "F.I.SH.: Ergasheva Nodira. Pasport AC9876543. 3 kundan beri yo'talyapti, harorati 38.5. Bog'lanish: +998901234567.",
+      "identifiers": [
+        "Nodira",
+        "Ergasheva",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "+998901234567",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "uz-044",
+      "language": "uz",
+      "text": "Bugun Bekzod Rahimov keldi (Zangiota tumani, Do'stlik ko'chasi 14). PINFL 42345678901234. 3 kundan beri yo'talyapti, harorati 38.5.",
+      "identifiers": [
+        "Bekzod",
+        "Rahimov",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "(90) 234 56 78",
+        "42345678901234"
+      ]
+    },
+    {
+      "id": "uz-045",
+      "language": "uz",
+      "text": "Bemor: Nodira Ergasheva, tug'ilgan sana 12.03.1985, +998 90 123 45 67. qorin og'rig'i va ko'ngil aynishi bor.",
+      "identifiers": [
+        "Nodira",
+        "Ergasheva",
+        "Yunusobod tumani, Bog'ishamol ko'chasi 45",
+        "+998 90 123 45 67"
+      ]
+    },
+    {
+      "id": "uz-046",
+      "language": "uz",
+      "text": "Otabek Nazarov — Bo'ka tumani, Yangiobod qishlog'i, 90 555 44 33. Anamnez: qorin og'rig'i va ko'ngil aynishi bor.",
+      "identifiers": [
+        "Otabek",
+        "Nazarov",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-047",
+      "language": "uz",
+      "text": "Kasal Ulug'bek Mirzayevning holati: 3 kundan beri yo'talyapti, harorati 38.5. Pasport: AB 7654321, manzil Bo'ka tumani, Yangiobod qishlog'i.",
+      "identifiers": [
+        "Ulug'bek",
+        "Mirzayev",
+        "Bo'ka tumani, Yangiobod qishlog'i",
+        "+998 90 123 45 67",
+        "AB 7654321"
+      ]
+    },
+    {
+      "id": "uz-048",
+      "language": "uz",
+      "text": "Qabul: Aziza Yusupova. Tel: 998 91 555 44 33. Elektron pochta: aziza.yusupova@mail.uz. bolada ich ketishi, 2 kun bo'ldi.",
+      "identifiers": [
+        "Aziza",
+        "Yusupova",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "998 91 555 44 33",
+        "aziza.yusupova@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-049",
+      "language": "uz",
+      "text": "Bemor Rustam Xolmatov, Urgut tumani, Mustaqillik ko'chasi 8, tel +998-93-777-22-11. Shikoyat: bosh og'rig'i, bosim 160/95.",
+      "identifiers": [
+        "Rustam",
+        "Xolmatov",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-050",
+      "language": "uz",
+      "text": "Abdullayeva Feruzani ko'rdim. Manzil: Qibray tumani, Guliston MFY. Telefon: 8 90 111 22 33. qorin og'rig'i va ko'ngil aynishi bor.",
+      "identifiers": [
+        "Feruza",
+        "Abdullayeva",
+        "Qibray tumani, Guliston MFY",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "uz-051",
+      "language": "uz",
+      "text": "F.I.SH.: Yo'ldosheva Shahnoza. Pasport КА1122334. uch haftadan ortiq yo'tal, kechasi terlaydi. Bog'lanish: +998-93-777-22-11.",
+      "identifiers": [
+        "Shahnoza",
+        "Yo'ldosheva",
+        "Chinoz tumani, Navro'z MFY",
+        "+998-93-777-22-11",
+        "КА1122334"
+      ]
+    },
+    {
+      "id": "uz-052",
+      "language": "uz",
+      "text": "Bugun Aziza Yusupova keldi (Urgut tumani, Mustaqillik ko'chasi 8). PINFL 50987654321098. bosh og'rig'i, bosim 160/95.",
+      "identifiers": [
+        "Aziza",
+        "Yusupova",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "+998-93-777-22-11",
+        "50987654321098"
+      ]
+    },
+    {
+      "id": "uz-053",
+      "language": "uz",
+      "text": "Bemor: Nodira Ergasheva, tug'ilgan sana 12.03.1985, +998-93-777-22-11. nafas qisishi va ko'krak og'rig'i.",
+      "identifiers": [
+        "Nodira",
+        "Ergasheva",
+        "Zangiota tumani, Do'stlik ko'chasi 14",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-054",
+      "language": "uz",
+      "text": "Sardor Aliyev — Chinoz tumani, Navro'z MFY, 90 555 44 33. Anamnez: uch haftadan ortiq yo'tal, kechasi terlaydi.",
+      "identifiers": [
+        "Sardor",
+        "Aliyev",
+        "Chinoz tumani, Navro'z MFY",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "uz-055",
+      "language": "uz",
+      "text": "Kasal Rustam Xolmatovning holati: bel og'rig'i, yurganda kuchayadi. Pasport: КА1122334, manzil Andijon shahri, Navoiy ko'chasi 102.",
+      "identifiers": [
+        "Rustam",
+        "Xolmatov",
+        "Andijon shahri, Navoiy ko'chasi 102",
+        "90 555 44 33",
+        "КА1122334"
+      ]
+    },
+    {
+      "id": "uz-056",
+      "language": "uz",
+      "text": "Qabul: Gulnora Tosheva. Tel: +998 90 123 45 67. Elektron pochta: gulnora.tosheva@mail.uz. nafas qisishi va ko'krak og'rig'i.",
+      "identifiers": [
+        "Gulnora",
+        "Tosheva",
+        "Urgut tumani, Mustaqillik ko'chasi 8",
+        "+998 90 123 45 67",
+        "gulnora.tosheva@mail.uz"
+      ]
+    },
+    {
+      "id": "uz-057",
+      "language": "uz",
+      "text": "Bemor Ulug'bek Mirzayev, Chinoz tumani, Navro'z MFY, tel +998-93-777-22-11. Shikoyat: bosh og'rig'i, bosim 160/95.",
+      "identifiers": [
+        "Ulug'bek",
+        "Mirzayev",
+        "Chinoz tumani, Navro'z MFY",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "uz-058",
+      "language": "uz",
+      "text": "Ismoilova Zulfiyani ko'rdim. Manzil: Qibray tumani, Guliston MFY. Telefon: 90 555 44 33. qorin og'rig'i va ko'ngil aynishi bor.",
+      "identifiers": [
+        "Zulfiya",
+        "Ismoilova",
+        "Qibray tumani, Guliston MFY",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-001",
+      "language": "ru",
+      "text": "Пациентка Виктор Цой, мкр. Чиланзар д. 22 кв. 7, тел +998901234567. Жалобы: изжога, боль в желудке.",
+      "identifiers": [
+        "Виктор",
+        "Цой",
+        "мкр. Чиланзар д. 22 кв. 7",
+        "+998901234567"
+      ]
+    },
+    {
+      "id": "ru-002",
+      "language": "ru",
+      "text": "Ф.И.О.: Николаева Ольга. Паспорт AA1234567. изжога, боль в желудке. Контакт: 90 555 44 33.",
+      "identifiers": [
+        "Ольга",
+        "Николаева",
+        "ул. Навои д. 15",
+        "90 555 44 33",
+        "AA1234567"
+      ]
+    },
+    {
+      "id": "ru-003",
+      "language": "ru",
+      "text": "Больной Марина Ли, проживает проспект Амира Темура д. 3, ПИНФЛ 42345678901234. головная боль, давление 160/95.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "проспект Амира Темура д. 3",
+        "+998-93-777-22-11",
+        "42345678901234"
+      ]
+    },
+    {
+      "id": "ru-004",
+      "language": "ru",
+      "text": "Сегодня обратился Ирина Ким (ул. Мустакиллик д. 41), тел 90 555 44 33. головная боль, давление 160/95.",
+      "identifiers": [
+        "Ирина",
+        "Ким",
+        "ул. Мустакиллик д. 41",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-005",
+      "language": "ru",
+      "text": "Пациент: Марина Ли, дата рождения 12.03.1985, +998-93-777-22-11. боль в животе и тошнота.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "массив Юнусабад д. 9 кв. 33",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "ru-006",
+      "language": "ru",
+      "text": "Гульнора Ташева — ул. Навои д. 15, (90) 234 56 78. Анамнез: у ребёнка диарея, второй день.",
+      "identifiers": [
+        "Гульнора",
+        "Ташева",
+        "ул. Навои д. 15",
+        "(90) 234 56 78"
+      ]
+    },
+    {
+      "id": "ru-007",
+      "language": "ru",
+      "text": "Приём: Марина Ли. Тел: 8 90 111 22 33. Почта: марина@mail.ru. высокий сахар, жажда и частое мочеиспускание.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "ул. Навои д. 15",
+        "8 90 111 22 33",
+        "марина@mail.ru"
+      ]
+    },
+    {
+      "id": "ru-008",
+      "language": "ru",
+      "text": "Пациентка Азиза Юсупова, ул. Мустакиллик д. 41, тел 8 90 111 22 33. Жалобы: кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Азиза",
+        "Юсупова",
+        "ул. Мустакиллик д. 41",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "ru-009",
+      "language": "ru",
+      "text": "Ф.И.О.: Ким Елена. Паспорт AB 7654321. головная боль, давление 160/95. Контакт: 8 90 111 22 33.",
+      "identifiers": [
+        "Елена",
+        "Ким",
+        "ул. Мустакиллик д. 41",
+        "8 90 111 22 33",
+        "AB 7654321"
+      ]
+    },
+    {
+      "id": "ru-010",
+      "language": "ru",
+      "text": "Больной Марина Ли, проживает мкр. Чиланзар д. 22 кв. 7, ПИНФЛ 31234567890123. одышка и боль в груди.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "мкр. Чиланзар д. 22 кв. 7",
+        "(90) 234 56 78",
+        "31234567890123"
+      ]
+    },
+    {
+      "id": "ru-011",
+      "language": "ru",
+      "text": "Сегодня обратился Марина Ли (ул. Мустакиллик д. 41), тел +998-93-777-22-11. кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "ул. Мустакиллик д. 41",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "ru-012",
+      "language": "ru",
+      "text": "Пациент: Сергей Петров, дата рождения 12.03.1985, 8 90 111 22 33. кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Сергей",
+        "Петров",
+        "ул. Навои д. 15",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "ru-013",
+      "language": "ru",
+      "text": "Тимур Абдуллаев — ул. Мустакиллик д. 41, +998-93-777-22-11. Анамнез: боль в пояснице, усиливается при ходьбе.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "ул. Мустакиллик д. 41",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "ru-014",
+      "language": "ru",
+      "text": "Приём: Сергей Петров. Тел: 998 91 555 44 33. Почта: сергей@mail.ru. одышка и боль в груди.",
+      "identifiers": [
+        "Сергей",
+        "Петров",
+        "ул. Мустакиллик д. 41",
+        "998 91 555 44 33",
+        "сергей@mail.ru"
+      ]
+    },
+    {
+      "id": "ru-015",
+      "language": "ru",
+      "text": "Пациентка Сергей Петров, массив Юнусабад д. 9 кв. 33, тел +998-93-777-22-11. Жалобы: боль в животе и тошнота.",
+      "identifiers": [
+        "Сергей",
+        "Петров",
+        "массив Юнусабад д. 9 кв. 33",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "ru-016",
+      "language": "ru",
+      "text": "Ф.И.О.: Ким Ирина. Паспорт AB 7654321. у ребёнка диарея, второй день. Контакт: +998-93-777-22-11.",
+      "identifiers": [
+        "Ирина",
+        "Ким",
+        "ул. Навои д. 15",
+        "+998-93-777-22-11",
+        "AB 7654321"
+      ]
+    },
+    {
+      "id": "ru-017",
+      "language": "ru",
+      "text": "Больной Гульнора Ташева, проживает массив Юнусабад д. 9 кв. 33, ПИНФЛ 42345678901234. боль в животе и тошнота.",
+      "identifiers": [
+        "Гульнора",
+        "Ташева",
+        "массив Юнусабад д. 9 кв. 33",
+        "8 90 111 22 33",
+        "42345678901234"
+      ]
+    },
+    {
+      "id": "ru-018",
+      "language": "ru",
+      "text": "Сегодня обратился Ольга Николаева (ул. Навои д. 15), тел +998-93-777-22-11. у ребёнка диарея, второй день.",
+      "identifiers": [
+        "Ольга",
+        "Николаева",
+        "ул. Навои д. 15",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "ru-019",
+      "language": "ru",
+      "text": "Пациент: Елена Ким, дата рождения 12.03.1985, 8 90 111 22 33. слабость, быстрая утомляемость, низкий гемоглобин.",
+      "identifiers": [
+        "Елена",
+        "Ким",
+        "проспект Амира Темура д. 3",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "ru-020",
+      "language": "ru",
+      "text": "Ирина Ким — массив Юнусабад д. 9 кв. 33, 998 91 555 44 33. Анамнез: высокий сахар, жажда и частое мочеиспускание.",
+      "identifiers": [
+        "Ирина",
+        "Ким",
+        "массив Юнусабад д. 9 кв. 33",
+        "998 91 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-021",
+      "language": "ru",
+      "text": "Приём: Марина Ли. Тел: (90) 234 56 78. Почта: марина@mail.ru. изжога, боль в желудке.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "проспект Амира Темура д. 3",
+        "(90) 234 56 78",
+        "марина@mail.ru"
+      ]
+    },
+    {
+      "id": "ru-022",
+      "language": "ru",
+      "text": "Пациентка Тимур Абдуллаев, проспект Амира Темура д. 3, тел 90 555 44 33. Жалобы: изжога, боль в желудке.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "проспект Амира Темура д. 3",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-023",
+      "language": "ru",
+      "text": "Ф.И.О.: Петров Сергей. Паспорт AC9876543. кашель три дня, температура 38.5. Контакт: +998-93-777-22-11.",
+      "identifiers": [
+        "Сергей",
+        "Петров",
+        "ул. Мустакиллик д. 41",
+        "+998-93-777-22-11",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "ru-024",
+      "language": "ru",
+      "text": "Больной Елена Ким, проживает ул. Навои д. 15, ПИНФЛ 31234567890123. боль в пояснице, усиливается при ходьбе.",
+      "identifiers": [
+        "Елена",
+        "Ким",
+        "ул. Навои д. 15",
+        "998 91 555 44 33",
+        "31234567890123"
+      ]
+    },
+    {
+      "id": "ru-025",
+      "language": "ru",
+      "text": "Сегодня обратился Дмитрий Соколов (проспект Амира Темура д. 3), тел 998 91 555 44 33. кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Дмитрий",
+        "Соколов",
+        "проспект Амира Темура д. 3",
+        "998 91 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-026",
+      "language": "ru",
+      "text": "Пациент: Тимур Абдуллаев, дата рождения 12.03.1985, (90) 234 56 78. изжога, боль в желудке.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "ул. Навои д. 15",
+        "(90) 234 56 78"
+      ]
+    },
+    {
+      "id": "ru-027",
+      "language": "ru",
+      "text": "Тимур Абдуллаев — ул. Навои д. 15, +998901234567. Анамнез: головная боль, давление 160/95.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "ул. Навои д. 15",
+        "+998901234567"
+      ]
+    },
+    {
+      "id": "ru-028",
+      "language": "ru",
+      "text": "Приём: Дмитрий Соколов. Тел: 998 91 555 44 33. Почта: дмитрий@mail.ru. кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Дмитрий",
+        "Соколов",
+        "массив Юнусабад д. 9 кв. 33",
+        "998 91 555 44 33",
+        "дмитрий@mail.ru"
+      ]
+    },
+    {
+      "id": "ru-029",
+      "language": "ru",
+      "text": "Пациентка Ирина Ким, ул. Мустакиллик д. 41, тел 8 90 111 22 33. Жалобы: боль в животе и тошнота.",
+      "identifiers": [
+        "Ирина",
+        "Ким",
+        "ул. Мустакиллик д. 41",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "ru-030",
+      "language": "ru",
+      "text": "Ф.И.О.: Ли Марина. Паспорт AC9876543. головная боль, давление 160/95. Контакт: +998901234567.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "проспект Амира Темура д. 3",
+        "+998901234567",
+        "AC9876543"
+      ]
+    },
+    {
+      "id": "ru-031",
+      "language": "ru",
+      "text": "Больной Тимур Абдуллаев, проживает массив Юнусабад д. 9 кв. 33, ПИНФЛ 42345678901234. кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "массив Юнусабад д. 9 кв. 33",
+        "8 90 111 22 33",
+        "42345678901234"
+      ]
+    },
+    {
+      "id": "ru-032",
+      "language": "ru",
+      "text": "Сегодня обратился Гульнора Ташева (мкр. Чиланзар д. 22 кв. 7), тел 90 555 44 33. слабость, быстрая утомляемость, низкий гемоглобин.",
+      "identifiers": [
+        "Гульнора",
+        "Ташева",
+        "мкр. Чиланзар д. 22 кв. 7",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-033",
+      "language": "ru",
+      "text": "Пациент: Ирина Ким, дата рождения 12.03.1985, 8 90 111 22 33. боль в пояснице, усиливается при ходьбе.",
+      "identifiers": [
+        "Ирина",
+        "Ким",
+        "ул. Мустакиллик д. 41",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "ru-034",
+      "language": "ru",
+      "text": "Тимур Абдуллаев — проспект Амира Темура д. 3, +998-93-777-22-11. Анамнез: одышка и боль в груди.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "проспект Амира Темура д. 3",
+        "+998-93-777-22-11"
+      ]
+    },
+    {
+      "id": "ru-035",
+      "language": "ru",
+      "text": "Приём: Сергей Петров. Тел: 998 91 555 44 33. Почта: сергей@mail.ru. головная боль, давление 160/95.",
+      "identifiers": [
+        "Сергей",
+        "Петров",
+        "ул. Мустакиллик д. 41",
+        "998 91 555 44 33",
+        "сергей@mail.ru"
+      ]
+    },
+    {
+      "id": "ru-036",
+      "language": "ru",
+      "text": "Пациентка Азиза Юсупова, мкр. Чиланзар д. 22 кв. 7, тел 8 90 111 22 33. Жалобы: высокий сахар, жажда и частое мочеиспускание.",
+      "identifiers": [
+        "Азиза",
+        "Юсупова",
+        "мкр. Чиланзар д. 22 кв. 7",
+        "8 90 111 22 33"
+      ]
+    },
+    {
+      "id": "ru-037",
+      "language": "ru",
+      "text": "Ф.И.О.: Абдуллаев Тимур. Паспорт AA1234567. головная боль, давление 160/95. Контакт: +998901234567.",
+      "identifiers": [
+        "Тимур",
+        "Абдуллаев",
+        "массив Юнусабад д. 9 кв. 33",
+        "+998901234567",
+        "AA1234567"
+      ]
+    },
+    {
+      "id": "ru-038",
+      "language": "ru",
+      "text": "Больной Гульнора Ташева, проживает проспект Амира Темура д. 3, ПИНФЛ 31234567890123. кашель три дня, температура 38.5.",
+      "identifiers": [
+        "Гульнора",
+        "Ташева",
+        "проспект Амира Темура д. 3",
+        "8 90 111 22 33",
+        "31234567890123"
+      ]
+    },
+    {
+      "id": "ru-039",
+      "language": "ru",
+      "text": "Сегодня обратился Марина Ли (ул. Мустакиллик д. 41), тел +998901234567. кашель более трёх недель, ночная потливость.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "ул. Мустакиллик д. 41",
+        "+998901234567"
+      ]
+    },
+    {
+      "id": "ru-040",
+      "language": "ru",
+      "text": "Пациент: Азиза Юсупова, дата рождения 12.03.1985, +998 90 123 45 67. у ребёнка диарея, второй день.",
+      "identifiers": [
+        "Азиза",
+        "Юсупова",
+        "проспект Амира Темура д. 3",
+        "+998 90 123 45 67"
+      ]
+    },
+    {
+      "id": "ru-041",
+      "language": "ru",
+      "text": "Марина Ли — ул. Навои д. 15, 90 555 44 33. Анамнез: головная боль, давление 160/95.",
+      "identifiers": [
+        "Марина",
+        "Ли",
+        "ул. Навои д. 15",
+        "90 555 44 33"
+      ]
+    },
+    {
+      "id": "ru-042",
+      "language": "ru",
+      "text": "Приём: Азиза Юсупова. Тел: 8 90 111 22 33. Почта: азиза@mail.ru. кашель более трёх недель, ночная потливость.",
+      "identifiers": [
+        "Азиза",
+        "Юсупова",
+        "ул. Навои д. 15",
+        "8 90 111 22 33",
+        "азиза@mail.ru"
+      ]
+    }
+  ]
+}

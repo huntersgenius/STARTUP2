@@ -70,3 +70,50 @@ and numeric findings ("qon bosimi 160/95" means hypertension, and no word map ca
   concept and BM25 arms; the eval report must label which embedder produced a run.
 
 **Next**: Sprint 3 — the AI engine, de-identification red-team suite, red-flag rules.
+
+## Sprint 3 — The AI engine ✅
+
+**Shipped**
+- `app/ai/engine.py`: the eight-stage pipeline exactly as specified —
+  normalize → de-identify → retrieve → route → reason → ground → constrain → present.
+- `app/ai/deident.py` + a **100-case red-team fixture set** of realistic Uzbek and Russian
+  clinical text. Two layers, and the distinction is the point:
+  **layer 1** redacts the patient's own identifiers (from the decrypted PII blob) by exact
+  match with Uzbek suffix tolerance — this is the guarantee, and it is 100% on all 100 cases;
+  **layer 2** is a pattern and gazetteer net for people whose values we do not hold, which the
+  suite *measures* (currently 100%, floor held at 95%) rather than assuming.
+- `app/ai/red_flags.py`: 17 deterministic rules — ACS, sepsis (qSOFA-style), stroke FAST,
+  meningism, IMCI danger signs, paediatric dehydration, pregnancy bleeding, pre-eclampsia,
+  GI bleeding, haemoptysis, the TB triad, glucose and hypertensive emergencies, severe anaemia.
+  A test asserts `red_flags.py` imports nothing model-related, so the safety layer cannot
+  come to depend on a provider being reachable.
+- `app/ai/prompts/v1/`: prompts as versioned files. `prompt_version` is `v1@<content-hash>`,
+  so an edited template cannot masquerade as the version it replaced.
+- `app/ai/schema.py`: strict structured output, 2 retries on invalid JSON, then graceful
+  degradation to a rules-only response.
+- `app/ai/router.py`: cost/latency budget per request, circuit breaker per provider, and
+  routing that sends simple and offline cases to the local model.
+- `app/ai/cache.py`: Redis semantic cache keyed on the symptom vector **plus clinical
+  context** — a child can never be served an adult's cached answer, and degraded responses
+  are never cached.
+- `POST /consultations/{id}/analyze` and `POST /suggestions/{id}/decision`, both fully audited.
+
+**Numbers**: 383 tests green, 87% coverage, mypy clean on 54 files.
+
+**Bug found and fixed while testing**: `Patient.set_pii` bound the ciphertext to `self.id`,
+which is `None` until INSERT — so PII encrypted on a freshly constructed object could never be
+decrypted. `set_pii` now assigns the id first. This would have silently corrupted every patient
+created through a path that did not pre-assign an id.
+
+**Design note**: ICD-10 candidates are no longer passed as a retrieval *filter*. They are
+derived from symptoms (R05 cough) while protocols are labelled with conditions (J18.9
+pneumonia); requiring an intersection returned nothing at all. They still reach the model as
+prompt context, where they help.
+
+**Stubbed**
+- The second-opinion (Claude) pass is wired through the router but is not yet invoked
+  automatically after a low-confidence first pass — that lands with the eval harness in
+  Sprint 5, where its value can actually be measured.
+- Cassettes are recorded per prompt hash; no live-API recordings are committed yet.
+
+**Next**: Sprint 4 — the Flutter offline-first clinic app.

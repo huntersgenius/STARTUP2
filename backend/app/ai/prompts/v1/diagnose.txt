@@ -1,0 +1,42 @@
+## Patient
+
+Age band: {age_band}{age_detail}
+Sex: {sex}
+Pregnant: {pregnant}
+Known chronic conditions: {chronic_flags}
+
+## Vitals
+
+{vitals}
+
+## Presentation ({language})
+
+{chief_complaint}
+
+## Structured findings
+
+Recognised clinical concepts: {concepts}
+Candidate ICD-10 codes from the terminology map: {icd10_candidates}
+Symptom duration: {duration}
+
+## Deterministic red flags already fired
+
+{red_flags}
+
+These were produced by rule, not by you. Do not contradict them, do not remove them, and take
+them into account when ranking. If they are present, referral.needed must be true.
+
+## Retrieved protocol excerpts
+
+{protocol_excerpts}
+
+## Locally available medicines (national formulary, clinic tier {clinic_tier})
+
+{formulary}
+
+## Task
+
+Produce the JSON object described by the schema. Rank at most three differentials, most likely
+first. Every differential must cite at least one excerpt id from the list above. Recommend only
+tests that this clinic can plausibly obtain or that justify the referral. Write clinician-facing
+text in {language}.

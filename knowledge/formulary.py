@@ -111,6 +111,13 @@ class FormularyService:
                 return item
         return None
 
+    def available_at_tier(self, clinic_tier: int) -> list[FormularyItem]:
+        """What this clinic can actually dispense — the list the model sees."""
+        return sorted(
+            (i for i in self._all() if i.availability_tier <= clinic_tier and not i.controlled),
+            key=lambda i: i.generic_name,
+        )
+
     def substitute_for(self, item: FormularyItem, *, max_tier: int) -> FormularyItem | None:
         group = _GROUP_OF_DRUG.get(_normalize(item.generic_name))
         if not group:

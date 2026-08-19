@@ -50,6 +50,12 @@ class Patient(Base, UUIDMixin, TimestampMixin):
 
     # --- PII access is deliberately explicit -----------------------------
     def set_pii(self, data: dict[str, Any]) -> None:
+        # The ciphertext is bound to the row id, so the id must exist before
+        # encryption. Column defaults are applied at INSERT, which is too late
+        # if a caller sets PII on a freshly constructed object — the blob would
+        # then be bound to "None" and fail to decrypt after the flush.
+        if self.id is None:
+            self.id = uuid.uuid4()
         self.pii_blob = encrypt_blob(data, aad=str(self.id).encode())
 
     def get_pii(self) -> dict[str, Any]:
