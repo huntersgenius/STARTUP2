@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-08-19T20:30:49.240715+00:00",
+  "label": "baseline (rules-baseline-v1)",
+  "provider": "baseline",
+  "model": "rules-baseline-v1",
+  "prompt_version": "v1@e478f9f615be",
+  "languages": [
+    "uz",
+    "ru"
+  ],
+  "vignettes": {
+    "total": 249,
+    "advisor_reviewed": 0,
+    "synthetic": 249,
+    "provenance_note": "Every vignette in this file is SYNTHETIC. None has been reviewed by a licensed clinician. Metrics computed against this set measure engineering behaviour, not clinical accuracy, and must not be presented as the latter. Advisor review is open question #1 in docs/PLAN.md."
+  },
+  "metrics": {
+    "cases": 498,
+    "errors": 0,
+    "top1_accuracy": 0.9437751004016064,
+    "top3_accuracy": 0.9759036144578314,
+    "top3_lenient_accuracy": 0.9759036144578314,
+    "red_flag_recall": 1.0,
+    "red_flags_expected": 158,
+    "red_flags_caught": 158,
+    "missed_red_flags": [],
+    "false_red_flags": 0,
+    "false_referral_rate": 0.10752688172043011,
+    "expected_calibration_error": 0.27940361445783135,
+    "mean_confidence": 0.6804357429718876,
+    "p50_latency_ms": 22.0,
+    "p95_latency_ms": 25.0,
+    "mean_cost_usd": 0.0,
+    "total_cost_usd": 0.0,
+    "degraded_share": 0.0,
+    "insufficient_share": 0.024096385542168676,
+    "uz_top3": 0.9759036144578314,
+    "ru_top3": 0.9759036144578314,
+    "language_gap": 0.0,
+    "per_category": {
+      "anemia": {
+        "cases": 48.0,
+        "top3": 1.0
+      },
+      "cardiovascular_risk": {
+        "cases": 32.0,
+        "top3": 1.0
+      },
+      "emergency": {
+        "cases": 20.0,
+        "top3": 1.0
+      },
+      "gastritis_hpylori": {
+        "cases": 48.0,
+        "top3": 1.0
+      },
+      "hypertension": {
+        "cases": 60.0,
+        "top3": 1.0
+      },
+      "iodine_deficiency": {
+        "cases": 30.0,
+        "top3": 1.0
+      },
+      "musculoskeletal_pain": {
+        "cases": 40.0,
+        "top3": 1.0
+      },
+      "pediatric_diarrhea": {
+        "cases": 48.0,
+        "top3": 1.0
+      },
+      "respiratory_infection": {
+        "cases": 72.0,
+        "top3": 0.8333333333333334
+      },
+      "tb_suspicion": {
+        "cases": 48.0,
+        "top3": 1.0
+      },
+      "type2_diabetes": {
+        "cases": 52.0,
+        "top3": 1.0
+      }
+    }
+  },
+  "note": "Committed reference run of the offline rules baseline. A pull request that moves these numbers should say why in its description."
+}

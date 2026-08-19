@@ -43,6 +43,35 @@ class RedFlag:
         return {"uz": self.message_uz, "ru": self.message_ru}.get(language, self.message_en)
 
 
+#: A specialised concept satisfies a rule written against its general one.
+#:
+#: The terminology map prefers the longest match, so "bolada ich ketishi"
+#: yields `pediatric_diarrhea` and never `diarrhea` — which silently broke the
+#: childhood-dehydration rule in Uzbek while it worked in Russian, where the
+#: text says plain "диарея". The evaluation suite caught it; this table is the
+#: fix, and it also makes rules robust to future vocabulary refinements.
+CONCEPT_IMPLIES: dict[str, tuple[str, ...]] = {
+    "pediatric_diarrhea": ("diarrhea",),
+    "bloody_diarrhea": ("diarrhea",),
+    "productive_cough": ("cough",),
+    "dry_cough": ("cough",),
+    "exertional_dyspnea": ("dyspnea",),
+    "crushing_chest_pain": ("chest_pain",),
+    "thunderclap_headache": ("headache",),
+    "febrile_seizure": ("seizure",),
+    "low_grade_fever": ("fever",),
+    "myocardial_infarction": ("chest_pain",),
+}
+
+
+def expand_concepts(concepts: set[str]) -> set[str]:
+    """Add the general concepts implied by any specialised ones present."""
+    expanded = set(concepts)
+    for concept in concepts:
+        expanded.update(CONCEPT_IMPLIES.get(concept, ()))
+    return expanded
+
+
 @dataclass
 class CaseFacts:
     """Everything a rule may look at. Deliberately flat and explicit."""
@@ -62,6 +91,9 @@ class CaseFacts:
     glucose_mmol: float | None = None
     duration_days: float | None = None
     free_text: str = ""
+
+    def __post_init__(self) -> None:
+        self.concepts = expand_concepts(self.concepts)
 
     def has(self, *concepts: str) -> bool:
         return any(c in self.concepts for c in concepts)

@@ -1,0 +1,6302 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-08-19",
+  "provenance_note": "Every vignette in this file is SYNTHETIC. None has been reviewed by a licensed clinician. Metrics computed against this set measure engineering behaviour, not clinical accuracy, and must not be presented as the latter. Advisor review is open question #1 in docs/PLAN.md.",
+  "categories": [
+    "anemia",
+    "cardiovascular_risk",
+    "emergency",
+    "gastritis_hpylori",
+    "hypertension",
+    "iodine_deficiency",
+    "musculoskeletal_pain",
+    "pediatric_diarrhea",
+    "respiratory_infection",
+    "tb_suspicion",
+    "type2_diabetes"
+  ],
+  "vignettes": [
+    {
+      "id": "resp-001",
+      "category": "respiratory_infection",
+      "text_uz": "5 kundan beri yo'tal, isitma 37.9, tomoq og'rig'i. Burundan suv oqadi.",
+      "text_ru": "Кашель 5 дня, температура 37.9, боль в горле. Насморк.",
+      "age_years": 74.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 79,
+        "respiratory_rate": 21,
+        "spo2": 98
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit (shamollash)",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 5.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-002",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri balg'amli yo'tal, isitma 37.8, ko'krak qafasida og'riq. Nafas olganda kuchayadi.",
+      "text_ru": "Кашель с мокротой 3 дня, температура 37.8, боль в грудной клетке при дыхании.",
+      "age_years": 18.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 77,
+        "respiratory_rate": 18,
+        "spo2": 97
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Jamoat sharoitida orttirilgan pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-003",
+      "category": "respiratory_infection",
+      "text_uz": "Bir haftadan beri quruq yo'tal, harorat 39.0, holsizlik va mushak og'rig'i.",
+      "text_ru": "Сухой кашель неделю, температура 39.0, слабость и боль в мышцах.",
+      "age_years": 18.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 39.0,
+        "pulse_bpm": 107,
+        "respiratory_rate": 19,
+        "spo2": 97
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-004",
+      "category": "respiratory_infection",
+      "text_uz": "2 kun oldin boshlangan yo'tal, xirillash, nafas qisishi. Astma anamnezda.",
+      "text_ru": "Кашель начался 2 дня назад, хрипы, одышка. В анамнезе астма.",
+      "age_years": 28.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 70,
+        "respiratory_rate": 17,
+        "spo2": 99
+      },
+      "ground_truth_icd10": "J45.9",
+      "ground_truth_label": "Bronxial astma qo'zg'alishi",
+      "acceptable_alternatives": [
+        "J44.1",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-005",
+      "category": "respiratory_infection",
+      "text_uz": "Ikki haftadan beri yo'tal, balg'am ko'p, isitma yo'q. Chekadi.",
+      "text_ru": "Кашель две недели, много мокроты, температуры нет. Курит.",
+      "age_years": 34.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.2,
+        "pulse_bpm": 86,
+        "respiratory_rate": 18,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J42",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-006",
+      "category": "respiratory_infection",
+      "text_uz": "7 kundan beri yo'tal, isitma 37.0, tomoq og'rig'i. Burundan suv oqadi.",
+      "text_ru": "Кашель 7 дня, температура 37.0, боль в горле. Насморк.",
+      "age_years": 31.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.0,
+        "pulse_bpm": 102,
+        "respiratory_rate": 21,
+        "spo2": 96
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit (shamollash)",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-007",
+      "category": "respiratory_infection",
+      "text_uz": "7 kundan beri balg'amli yo'tal, isitma 38.3, ko'krak qafasida og'riq. Nafas olganda kuchayadi.",
+      "text_ru": "Кашель с мокротой 7 дня, температура 38.3, боль в грудной клетке при дыхании.",
+      "age_years": 22.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.3,
+        "pulse_bpm": 84,
+        "respiratory_rate": 24,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Jamoat sharoitida orttirilgan pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-008",
+      "category": "respiratory_infection",
+      "text_uz": "Bir haftadan beri quruq yo'tal, harorat 39.1, holsizlik va mushak og'rig'i.",
+      "text_ru": "Сухой кашель неделю, температура 39.1, слабость и боль в мышцах.",
+      "age_years": 37.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 39.1,
+        "pulse_bpm": 98,
+        "respiratory_rate": 21,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-009",
+      "category": "respiratory_infection",
+      "text_uz": "7 kun oldin boshlangan yo'tal, xirillash, nafas qisishi. Astma anamnezda.",
+      "text_ru": "Кашель начался 7 дня назад, хрипы, одышка. В анамнезе астма.",
+      "age_years": 26.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.0,
+        "pulse_bpm": 96,
+        "respiratory_rate": 23,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J45.9",
+      "ground_truth_label": "Bronxial astma qo'zg'alishi",
+      "acceptable_alternatives": [
+        "J44.1",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-010",
+      "category": "respiratory_infection",
+      "text_uz": "Ikki haftadan beri yo'tal, balg'am ko'p, isitma yo'q. Chekadi.",
+      "text_ru": "Кашель две недели, много мокроты, температуры нет. Курит.",
+      "age_years": 21.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.8,
+        "pulse_bpm": 73,
+        "respiratory_rate": 23,
+        "spo2": 94
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J42",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-011",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri yo'tal, isitma 38.9, tomoq og'rig'i. Burundan suv oqadi.",
+      "text_ru": "Кашель 3 дня, температура 38.9, боль в горле. Насморк.",
+      "age_years": 39.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.9,
+        "pulse_bpm": 73,
+        "respiratory_rate": 17,
+        "spo2": 98
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit (shamollash)",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-012",
+      "category": "respiratory_infection",
+      "text_uz": "5 kundan beri balg'amli yo'tal, isitma 36.8, ko'krak qafasida og'riq. Nafas olganda kuchayadi.",
+      "text_ru": "Кашель с мокротой 5 дня, температура 36.8, боль в грудной клетке при дыхании.",
+      "age_years": 54.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.8,
+        "pulse_bpm": 74,
+        "respiratory_rate": 21,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Jamoat sharoitida orttirilgan pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 5.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-013",
+      "category": "respiratory_infection",
+      "text_uz": "Bir haftadan beri quruq yo'tal, harorat 38.6, holsizlik va mushak og'rig'i.",
+      "text_ru": "Сухой кашель неделю, температура 38.6, слабость и боль в мышцах.",
+      "age_years": 77.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.6,
+        "pulse_bpm": 75,
+        "respiratory_rate": 17,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-014",
+      "category": "respiratory_infection",
+      "text_uz": "7 kun oldin boshlangan yo'tal, xirillash, nafas qisishi. Astma anamnezda.",
+      "text_ru": "Кашель начался 7 дня назад, хрипы, одышка. В анамнезе астма.",
+      "age_years": 32.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.0,
+        "pulse_bpm": 87,
+        "respiratory_rate": 24,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J45.9",
+      "ground_truth_label": "Bronxial astma qo'zg'alishi",
+      "acceptable_alternatives": [
+        "J44.1",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-015",
+      "category": "respiratory_infection",
+      "text_uz": "Ikki haftadan beri yo'tal, balg'am ko'p, isitma yo'q. Chekadi.",
+      "text_ru": "Кашель две недели, много мокроты, температуры нет. Курит.",
+      "age_years": 38.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.6,
+        "pulse_bpm": 92,
+        "respiratory_rate": 19,
+        "spo2": 97
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J42",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-016",
+      "category": "respiratory_infection",
+      "text_uz": "4 kundan beri yo'tal, isitma 37.9, tomoq og'rig'i. Burundan suv oqadi.",
+      "text_ru": "Кашель 4 дня, температура 37.9, боль в горле. Насморк.",
+      "age_years": 57.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 71,
+        "respiratory_rate": 24,
+        "spo2": 98
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit (shamollash)",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-017",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri balg'amli yo'tal, isitma 38.5, ko'krak qafasida og'riq. Nafas olganda kuchayadi.",
+      "text_ru": "Кашель с мокротой 3 дня, температура 38.5, боль в грудной клетке при дыхании.",
+      "age_years": 73.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.5,
+        "pulse_bpm": 70,
+        "respiratory_rate": 23,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Jamoat sharoitida orttirilgan pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-018",
+      "category": "respiratory_infection",
+      "text_uz": "Bir haftadan beri quruq yo'tal, harorat 38.2, holsizlik va mushak og'rig'i.",
+      "text_ru": "Сухой кашель неделю, температура 38.2, слабость и боль в мышцах.",
+      "age_years": 47.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.2,
+        "pulse_bpm": 105,
+        "respiratory_rate": 20,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-019",
+      "category": "respiratory_infection",
+      "text_uz": "4 kun oldin boshlangan yo'tal, xirillash, nafas qisishi. Astma anamnezda.",
+      "text_ru": "Кашель начался 4 дня назад, хрипы, одышка. В анамнезе астма.",
+      "age_years": 21.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 71,
+        "respiratory_rate": 18,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J45.9",
+      "ground_truth_label": "Bronxial astma qo'zg'alishi",
+      "acceptable_alternatives": [
+        "J44.1",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-020",
+      "category": "respiratory_infection",
+      "text_uz": "Ikki haftadan beri yo'tal, balg'am ko'p, isitma yo'q. Chekadi.",
+      "text_ru": "Кашель две недели, много мокроты, температуры нет. Курит.",
+      "age_years": 70.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 106,
+        "respiratory_rate": 19,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J42",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-021",
+      "category": "respiratory_infection",
+      "text_uz": "4 kundan beri yo'tal, isitma 38.4, tomoq og'rig'i. Burundan suv oqadi.",
+      "text_ru": "Кашель 4 дня, температура 38.4, боль в горле. Насморк.",
+      "age_years": 37.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.4,
+        "pulse_bpm": 107,
+        "respiratory_rate": 22,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit (shamollash)",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-022",
+      "category": "respiratory_infection",
+      "text_uz": "7 kundan beri balg'amli yo'tal, isitma 37.3, ko'krak qafasida og'riq. Nafas olganda kuchayadi.",
+      "text_ru": "Кашель с мокротой 7 дня, температура 37.3, боль в грудной клетке при дыхании.",
+      "age_years": 23.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 90,
+        "respiratory_rate": 16,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Jamoat sharoitida orttirilgan pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-023",
+      "category": "respiratory_infection",
+      "text_uz": "Bir haftadan beri quruq yo'tal, harorat 37.1, holsizlik va mushak og'rig'i.",
+      "text_ru": "Сухой кашель неделю, температура 37.1, слабость и боль в мышцах.",
+      "age_years": 17.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.1,
+        "pulse_bpm": 71,
+        "respiratory_rate": 16,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-024",
+      "category": "respiratory_infection",
+      "text_uz": "7 kun oldin boshlangan yo'tal, xirillash, nafas qisishi. Astma anamnezda.",
+      "text_ru": "Кашель начался 7 дня назад, хрипы, одышка. В анамнезе астма.",
+      "age_years": 44.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 85,
+        "respiratory_rate": 19,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J45.9",
+      "ground_truth_label": "Bronxial astma qo'zg'alishi",
+      "acceptable_alternatives": [
+        "J44.1",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-025",
+      "category": "respiratory_infection",
+      "text_uz": "Ikki haftadan beri yo'tal, balg'am ko'p, isitma yo'q. Chekadi.",
+      "text_ru": "Кашель две недели, много мокроты, температуры нет. Курит.",
+      "age_years": 57.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.6,
+        "pulse_bpm": 79,
+        "respiratory_rate": 23,
+        "spo2": 95
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J42",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-026",
+      "category": "respiratory_infection",
+      "text_uz": "4 kundan beri yo'tal, isitma 38.1, tomoq og'rig'i. Burundan suv oqadi.",
+      "text_ru": "Кашель 4 дня, температура 38.1, боль в горле. Насморк.",
+      "age_years": 49.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 83,
+        "respiratory_rate": 20,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit (shamollash)",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-027",
+      "category": "respiratory_infection",
+      "text_uz": "4 kundan beri balg'amli yo'tal, isitma 38.9, ko'krak qafasida og'riq. Nafas olganda kuchayadi.",
+      "text_ru": "Кашель с мокротой 4 дня, температура 38.9, боль в грудной клетке при дыхании.",
+      "age_years": 52.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.9,
+        "pulse_bpm": 104,
+        "respiratory_rate": 22,
+        "spo2": 98
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Jamoat sharoitida orttirilgan pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 4.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-028",
+      "category": "respiratory_infection",
+      "text_uz": "Bir haftadan beri quruq yo'tal, harorat 37.3, holsizlik va mushak og'rig'i.",
+      "text_ru": "Сухой кашель неделю, температура 37.3, слабость и боль в мышцах.",
+      "age_years": 61.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 77,
+        "respiratory_rate": 16,
+        "spo2": 94
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-029",
+      "category": "respiratory_infection",
+      "text_uz": "2 kun oldin boshlangan yo'tal, xirillash, nafas qisishi. Astma anamnezda.",
+      "text_ru": "Кашель начался 2 дня назад, хрипы, одышка. В анамнезе астма.",
+      "age_years": 18.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 39.2,
+        "pulse_bpm": 88,
+        "respiratory_rate": 16,
+        "spo2": 96
+      },
+      "ground_truth_icd10": "J45.9",
+      "ground_truth_label": "Bronxial astma qo'zg'alishi",
+      "acceptable_alternatives": [
+        "J44.1",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-030",
+      "category": "respiratory_infection",
+      "text_uz": "Ikki haftadan beri yo'tal, balg'am ko'p, isitma yo'q. Chekadi.",
+      "text_ru": "Кашель две недели, много мокроты, температуры нет. Курит.",
+      "age_years": 39.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.4,
+        "pulse_bpm": 107,
+        "respiratory_rate": 18,
+        "spo2": 99
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J42",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "stroke_fast"
+      ],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-sev-001",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri kuchli yo'tal, isitma 38.8, nafas qisishi. Bemor holsiz.",
+      "text_ru": "Сильный кашель 3 дня, температура 38.8, одышка. Пациент слаб.",
+      "age_years": 64.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.8,
+        "pulse_bpm": 111,
+        "respiratory_rate": 28,
+        "spo2": 86,
+        "systolic_bp": 93
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Og'ir pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [
+        "hypoxia",
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-sev-002",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri kuchli yo'tal, isitma 39.7, nafas qisishi. Bemor holsiz.",
+      "text_ru": "Сильный кашель 3 дня, температура 39.7, одышка. Пациент слаб.",
+      "age_years": 78.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 39.7,
+        "pulse_bpm": 123,
+        "respiratory_rate": 30,
+        "spo2": 91,
+        "systolic_bp": 100
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Og'ir pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [
+        "hypoxia",
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-sev-003",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri kuchli yo'tal, isitma 39.3, nafas qisishi. Bemor holsiz.",
+      "text_ru": "Сильный кашель 3 дня, температура 39.3, одышка. Пациент слаб.",
+      "age_years": 61.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.3,
+        "pulse_bpm": 128,
+        "respiratory_rate": 35,
+        "spo2": 86,
+        "systolic_bp": 97
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Og'ir pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [
+        "hypoxia",
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-sev-004",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri kuchli yo'tal, isitma 39.7, nafas qisishi. Bemor holsiz.",
+      "text_ru": "Сильный кашель 3 дня, температура 39.7, одышка. Пациент слаб.",
+      "age_years": 73.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.7,
+        "pulse_bpm": 124,
+        "respiratory_rate": 30,
+        "spo2": 86,
+        "systolic_bp": 90
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Og'ir pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [
+        "hypoxia",
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-sev-005",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri kuchli yo'tal, isitma 40.0, nafas qisishi. Bemor holsiz.",
+      "text_ru": "Сильный кашель 3 дня, температура 40.0, одышка. Пациент слаб.",
+      "age_years": 65.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 40.0,
+        "pulse_bpm": 120,
+        "respiratory_rate": 29,
+        "spo2": 91,
+        "systolic_bp": 95
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Og'ir pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [
+        "hypoxia",
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "resp-sev-006",
+      "category": "respiratory_infection",
+      "text_uz": "3 kundan beri kuchli yo'tal, isitma 38.9, nafas qisishi. Bemor holsiz.",
+      "text_ru": "Сильный кашель 3 дня, температура 38.9, одышка. Пациент слаб.",
+      "age_years": 78.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.9,
+        "pulse_bpm": 129,
+        "respiratory_rate": 35,
+        "spo2": 91,
+        "systolic_bp": 92
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Og'ir pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [
+        "hypoxia",
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-001",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 172/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 172/98. Ранее не измерялось.",
+      "age_years": 52.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 172,
+        "diastolic_bp": 98,
+        "pulse_bpm": 88
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-002",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 162/95. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 162/95. Ранее не измерялось.",
+      "age_years": 74.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 162,
+        "diastolic_bp": 95,
+        "pulse_bpm": 69
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-003",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 162/102. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 162/102. Ранее не измерялось.",
+      "age_years": 70.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 162,
+        "diastolic_bp": 102,
+        "pulse_bpm": 72
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-004",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 158/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 158/98. Ранее не измерялось.",
+      "age_years": 57.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 158,
+        "diastolic_bp": 98,
+        "pulse_bpm": 78
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-005",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/102. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/102. Ранее не измерялось.",
+      "age_years": 46.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 102,
+        "pulse_bpm": 83
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-006",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 162/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 162/98. Ранее не измерялось.",
+      "age_years": 68.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 162,
+        "diastolic_bp": 98,
+        "pulse_bpm": 83
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-007",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/95. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/95. Ранее не измерялось.",
+      "age_years": 55.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 95,
+        "pulse_bpm": 85
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-008",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 152/92. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 152/92. Ранее не измерялось.",
+      "age_years": 69.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 152,
+        "diastolic_bp": 92,
+        "pulse_bpm": 83
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-009",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 152/92. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 152/92. Ранее не измерялось.",
+      "age_years": 54.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 152,
+        "diastolic_bp": 92,
+        "pulse_bpm": 87
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-010",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/88. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/88. Ранее не измерялось.",
+      "age_years": 44.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 88,
+        "pulse_bpm": 84
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-011",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 148/95. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 148/95. Ранее не измерялось.",
+      "age_years": 66.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 148,
+        "diastolic_bp": 95,
+        "pulse_bpm": 76
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-012",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 162/92. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 162/92. Ранее не измерялось.",
+      "age_years": 59.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 162,
+        "diastolic_bp": 92,
+        "pulse_bpm": 79
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-013",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 172/88. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 172/88. Ранее не измерялось.",
+      "age_years": 65.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 172,
+        "diastolic_bp": 88,
+        "pulse_bpm": 72
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-014",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 158/92. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 158/92. Ранее не измерялось.",
+      "age_years": 74.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 158,
+        "diastolic_bp": 92,
+        "pulse_bpm": 90
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-015",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 162/88. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 162/88. Ранее не измерялось.",
+      "age_years": 71.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 162,
+        "diastolic_bp": 88,
+        "pulse_bpm": 78
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-016",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 172/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 172/98. Ранее не измерялось.",
+      "age_years": 60.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 172,
+        "diastolic_bp": 98,
+        "pulse_bpm": 74
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-017",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/95. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/95. Ранее не измерялось.",
+      "age_years": 44.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 95,
+        "pulse_bpm": 76
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-018",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/98. Ранее не измерялось.",
+      "age_years": 66.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 98,
+        "pulse_bpm": 84
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-019",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/98. Ранее не измерялось.",
+      "age_years": 63.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 98,
+        "pulse_bpm": 83
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-020",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 152/88. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 152/88. Ранее не измерялось.",
+      "age_years": 63.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 152,
+        "diastolic_bp": 88,
+        "pulse_bpm": 77
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-021",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 168/102. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 168/102. Ранее не измерялось.",
+      "age_years": 61.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 168,
+        "diastolic_bp": 102,
+        "pulse_bpm": 80
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-022",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 172/88. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 172/88. Ранее не измерялось.",
+      "age_years": 60.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 172,
+        "diastolic_bp": 88,
+        "pulse_bpm": 74
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-023",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 148/88. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 148/88. Ранее не измерялось.",
+      "age_years": 73.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 148,
+        "diastolic_bp": 88,
+        "pulse_bpm": 87
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-024",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 142/98. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 142/98. Ранее не измерялось.",
+      "age_years": 45.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 98,
+        "pulse_bpm": 85
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-025",
+      "category": "hypertension",
+      "text_uz": "Bosh og'rig'i va bosh aylanishi. Qon bosimi 148/92. Ilgari bosim o'lchanmagan.",
+      "text_ru": "Головная боль и головокружение. Давление 148/92. Ранее не измерялось.",
+      "age_years": 54.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 148,
+        "diastolic_bp": 92,
+        "pulse_bpm": 89
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Birlamchi arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-emg-001",
+      "category": "hypertension",
+      "text_uz": "Kuchli bosh og'rig'i, ko'z xiralashgan. Bosim 198/118.",
+      "text_ru": "Сильнейшая головная боль, нечёткое зрение. Давление 198/118.",
+      "age_years": 68.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 198,
+        "diastolic_bp": 118,
+        "pulse_bpm": 89
+      },
+      "ground_truth_icd10": "I16.1",
+      "ground_truth_label": "Gipertonik kriz",
+      "acceptable_alternatives": [
+        "I10",
+        "I16.0"
+      ],
+      "must_not_miss": [
+        "hypertensive_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-emg-002",
+      "category": "hypertension",
+      "text_uz": "Kuchli bosh og'rig'i, ko'z xiralashgan. Bosim 198/118.",
+      "text_ru": "Сильнейшая головная боль, нечёткое зрение. Давление 198/118.",
+      "age_years": 62.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 198,
+        "diastolic_bp": 118,
+        "pulse_bpm": 100
+      },
+      "ground_truth_icd10": "I16.1",
+      "ground_truth_label": "Gipertonik kriz",
+      "acceptable_alternatives": [
+        "I10",
+        "I16.0"
+      ],
+      "must_not_miss": [
+        "hypertensive_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-emg-003",
+      "category": "hypertension",
+      "text_uz": "Kuchli bosh og'rig'i, ko'z xiralashgan. Bosim 205/118.",
+      "text_ru": "Сильнейшая головная боль, нечёткое зрение. Давление 205/118.",
+      "age_years": 75.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 205,
+        "diastolic_bp": 118,
+        "pulse_bpm": 100
+      },
+      "ground_truth_icd10": "I16.1",
+      "ground_truth_label": "Gipertonik kriz",
+      "acceptable_alternatives": [
+        "I10",
+        "I16.0"
+      ],
+      "must_not_miss": [
+        "hypertensive_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-emg-004",
+      "category": "hypertension",
+      "text_uz": "Kuchli bosh og'rig'i, ko'z xiralashgan. Bosim 198/118.",
+      "text_ru": "Сильнейшая головная боль, нечёткое зрение. Давление 198/118.",
+      "age_years": 67.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 198,
+        "diastolic_bp": 118,
+        "pulse_bpm": 92
+      },
+      "ground_truth_icd10": "I16.1",
+      "ground_truth_label": "Gipertonik kriz",
+      "acceptable_alternatives": [
+        "I10",
+        "I16.0"
+      ],
+      "must_not_miss": [
+        "hypertensive_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "htn-emg-005",
+      "category": "hypertension",
+      "text_uz": "Kuchli bosh og'rig'i, ko'z xiralashgan. Bosim 198/118.",
+      "text_ru": "Сильнейшая головная боль, нечёткое зрение. Давление 198/118.",
+      "age_years": 65.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 198,
+        "diastolic_bp": 118,
+        "pulse_bpm": 93
+      },
+      "ground_truth_icd10": "I16.1",
+      "ground_truth_label": "Gipertonik kriz",
+      "acceptable_alternatives": [
+        "I10",
+        "I16.0"
+      ],
+      "must_not_miss": [
+        "hypertensive_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-001",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 7.5 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 7.5 ммоль/л.",
+      "age_years": 40.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 7.5,
+        "systolic_bp": 129,
+        "diastolic_bp": 81,
+        "weight_kg": 102.9
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-002",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 10.8 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 10.8 ммоль/л.",
+      "age_years": 41.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 10.8,
+        "systolic_bp": 145,
+        "diastolic_bp": 85,
+        "weight_kg": 70.6
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-003",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 7.5 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 7.5 ммоль/л.",
+      "age_years": 40.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 7.5,
+        "systolic_bp": 146,
+        "diastolic_bp": 88,
+        "weight_kg": 82.9
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-004",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 9.0 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 9.0 ммоль/л.",
+      "age_years": 57.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 9.0,
+        "systolic_bp": 139,
+        "diastolic_bp": 86,
+        "weight_kg": 103.3
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-005",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 7.9 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 7.9 ммоль/л.",
+      "age_years": 65.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 7.9,
+        "systolic_bp": 137,
+        "diastolic_bp": 89,
+        "weight_kg": 95.7
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-006",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 8.7 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 8.7 ммоль/л.",
+      "age_years": 60.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 8.7,
+        "systolic_bp": 130,
+        "diastolic_bp": 87,
+        "weight_kg": 71.8
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-007",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 8.7 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 8.7 ммоль/л.",
+      "age_years": 53.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 8.7,
+        "systolic_bp": 141,
+        "diastolic_bp": 77,
+        "weight_kg": 62.4
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-008",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 9.1 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 9.1 ммоль/л.",
+      "age_years": 52.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 9.1,
+        "systolic_bp": 148,
+        "diastolic_bp": 88,
+        "weight_kg": 98.0
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-009",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 12.1 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 12.1 ммоль/л.",
+      "age_years": 53.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 12.1,
+        "systolic_bp": 146,
+        "diastolic_bp": 87,
+        "weight_kg": 84.2
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-010",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 7.7 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 7.7 ммоль/л.",
+      "age_years": 48.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 7.7,
+        "systolic_bp": 128,
+        "diastolic_bp": 78,
+        "weight_kg": 71.5
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-011",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 8.7 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 8.7 ммоль/л.",
+      "age_years": 67.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 8.7,
+        "systolic_bp": 135,
+        "diastolic_bp": 90,
+        "weight_kg": 91.4
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-012",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 8.6 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 8.6 ммоль/л.",
+      "age_years": 45.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 8.6,
+        "systolic_bp": 121,
+        "diastolic_bp": 85,
+        "weight_kg": 99.7
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-013",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 13.7 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 13.7 ммоль/л.",
+      "age_years": 47.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 13.7,
+        "systolic_bp": 131,
+        "diastolic_bp": 88,
+        "weight_kg": 71.1
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-014",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 8.5 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 8.5 ммоль/л.",
+      "age_years": 55.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 8.5,
+        "systolic_bp": 123,
+        "diastolic_bp": 91,
+        "weight_kg": 74.2
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-015",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 9.9 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 9.9 ммоль/л.",
+      "age_years": 52.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 9.9,
+        "systolic_bp": 145,
+        "diastolic_bp": 81,
+        "weight_kg": 69.9
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-016",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 13.4 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 13.4 ммоль/л.",
+      "age_years": 65.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 13.4,
+        "systolic_bp": 142,
+        "diastolic_bp": 81,
+        "weight_kg": 103.9
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-017",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 10.4 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 10.4 ммоль/л.",
+      "age_years": 55.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 10.4,
+        "systolic_bp": 136,
+        "diastolic_bp": 91,
+        "weight_kg": 96.7
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-018",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 14.0 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 14.0 ммоль/л.",
+      "age_years": 46.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 14.0,
+        "systolic_bp": 144,
+        "diastolic_bp": 80,
+        "weight_kg": 76.6
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-019",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 9.5 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 9.5 ммоль/л.",
+      "age_years": 49.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 9.5,
+        "systolic_bp": 124,
+        "diastolic_bp": 90,
+        "weight_kg": 85.8
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-020",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 11.1 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 11.1 ммоль/л.",
+      "age_years": 72.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 11.1,
+        "systolic_bp": 148,
+        "diastolic_bp": 82,
+        "weight_kg": 92.4
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-021",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 10.6 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 10.6 ммоль/л.",
+      "age_years": 72.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 10.6,
+        "systolic_bp": 131,
+        "diastolic_bp": 86,
+        "weight_kg": 85.1
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-022",
+      "category": "type2_diabetes",
+      "text_uz": "Chanqoq, tez-tez siyish, holsizlik. Vazn kamaydi. Qand 9.9 mmol/l.",
+      "text_ru": "Жажда, частое мочеиспускание, слабость. Похудел. Сахар 9.9 ммоль/л.",
+      "age_years": 64.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 9.9,
+        "systolic_bp": 129,
+        "diastolic_bp": 92,
+        "weight_kg": 90.1
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03",
+        "E11.65"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-dka-001",
+      "category": "type2_diabetes",
+      "text_uz": "Chuqur nafas, qorin og'rig'i, chalkashlik. Qand 25.5 mmol/l.",
+      "text_ru": "Глубокое дыхание, боль в животе, спутанность. Сахар 25.5 ммоль/л.",
+      "age_years": 37.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 25.5,
+        "pulse_bpm": 111,
+        "respiratory_rate": 30,
+        "systolic_bp": 93
+      },
+      "ground_truth_icd10": "E11.10",
+      "ground_truth_label": "Diabetik ketoatsidoz",
+      "acceptable_alternatives": [
+        "E11.9"
+      ],
+      "must_not_miss": [
+        "hyperglycemic_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-dka-002",
+      "category": "type2_diabetes",
+      "text_uz": "Chuqur nafas, qorin og'rig'i, chalkashlik. Qand 29.0 mmol/l.",
+      "text_ru": "Глубокое дыхание, боль в животе, спутанность. Сахар 29.0 ммоль/л.",
+      "age_years": 28.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 29.0,
+        "pulse_bpm": 108,
+        "respiratory_rate": 31,
+        "systolic_bp": 105
+      },
+      "ground_truth_icd10": "E11.10",
+      "ground_truth_label": "Diabetik ketoatsidoz",
+      "acceptable_alternatives": [
+        "E11.9"
+      ],
+      "must_not_miss": [
+        "hyperglycemic_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-dka-003",
+      "category": "type2_diabetes",
+      "text_uz": "Chuqur nafas, qorin og'rig'i, chalkashlik. Qand 27.7 mmol/l.",
+      "text_ru": "Глубокое дыхание, боль в животе, спутанность. Сахар 27.7 ммоль/л.",
+      "age_years": 51.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 27.7,
+        "pulse_bpm": 112,
+        "respiratory_rate": 32,
+        "systolic_bp": 98
+      },
+      "ground_truth_icd10": "E11.10",
+      "ground_truth_label": "Diabetik ketoatsidoz",
+      "acceptable_alternatives": [
+        "E11.9"
+      ],
+      "must_not_miss": [
+        "hyperglycemic_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "dm-dka-004",
+      "category": "type2_diabetes",
+      "text_uz": "Chuqur nafas, qorin og'rig'i, chalkashlik. Qand 25.1 mmol/l.",
+      "text_ru": "Глубокое дыхание, боль в животе, спутанность. Сахар 25.1 ммоль/л.",
+      "age_years": 40.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 25.1,
+        "pulse_bpm": 122,
+        "respiratory_rate": 29,
+        "systolic_bp": 104
+      },
+      "ground_truth_icd10": "E11.10",
+      "ground_truth_label": "Diabetik ketoatsidoz",
+      "acceptable_alternatives": [
+        "E11.9"
+      ],
+      "must_not_miss": [
+        "hyperglycemic_emergency"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-001",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 17.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 88,
+        "systolic_bp": 105,
+        "diastolic_bp": 67
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-002",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 41.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 89,
+        "systolic_bp": 112,
+        "diastolic_bp": 67
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-003",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 22.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 97,
+        "systolic_bp": 109,
+        "diastolic_bp": 60
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-004",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 43.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 103,
+        "systolic_bp": 102,
+        "diastolic_bp": 72
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-005",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 42.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 103,
+        "systolic_bp": 100,
+        "diastolic_bp": 61
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-006",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 29.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 102,
+        "systolic_bp": 109,
+        "diastolic_bp": 76
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-007",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 38.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 87,
+        "systolic_bp": 101,
+        "diastolic_bp": 72
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-008",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 31.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 89,
+        "systolic_bp": 105,
+        "diastolic_bp": 63
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-009",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 31.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 92,
+        "systolic_bp": 116,
+        "diastolic_bp": 68
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-010",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 34.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 105,
+        "systolic_bp": 98,
+        "diastolic_bp": 64
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-011",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 26.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 90,
+        "systolic_bp": 106,
+        "diastolic_bp": 63
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-012",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 53.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 95,
+        "systolic_bp": 108,
+        "diastolic_bp": 61
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-013",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 26.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 92,
+        "systolic_bp": 113,
+        "diastolic_bp": 65
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-014",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 39.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 90,
+        "systolic_bp": 104,
+        "diastolic_bp": 73
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-015",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 47.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 104,
+        "systolic_bp": 104,
+        "diastolic_bp": 62
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-016",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 32.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 92,
+        "systolic_bp": 102,
+        "diastolic_bp": 72
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-017",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 53.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 95,
+        "systolic_bp": 114,
+        "diastolic_bp": 68
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-018",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 49.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 105,
+        "systolic_bp": 114,
+        "diastolic_bp": 60
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-019",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 28.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 94,
+        "systolic_bp": 116,
+        "diastolic_bp": 64
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-020",
+      "category": "anemia",
+      "text_uz": "Holsizlik, tez charchash, yurganda nafas qisishi. Rangi oqargan. Tirnoqlari sinadi.",
+      "text_ru": "Слабость, быстрая утомляемость, одышка при ходьбе. Бледность. Ломкие ногти.",
+      "age_years": 44.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 90,
+        "systolic_bp": 107,
+        "diastolic_bp": 72
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9",
+        "D50.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-sev-001",
+      "category": "anemia",
+      "text_uz": "Kuchli holsizlik, tinch holatda nafas qisishi, ko'krak og'rig'i. Juda rangpar.",
+      "text_ru": "Выраженная слабость, одышка в покое, боль в груди. Очень бледный.",
+      "age_years": 54.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 126,
+        "systolic_bp": 95,
+        "diastolic_bp": 58
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Og'ir kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [
+        "severe_anemia"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-sev-002",
+      "category": "anemia",
+      "text_uz": "Kuchli holsizlik, tinch holatda nafas qisishi, ko'krak og'rig'i. Juda rangpar.",
+      "text_ru": "Выраженная слабость, одышка в покое, боль в груди. Очень бледный.",
+      "age_years": 78.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 120,
+        "systolic_bp": 98,
+        "diastolic_bp": 61
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Og'ir kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [
+        "severe_anemia"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-sev-003",
+      "category": "anemia",
+      "text_uz": "Kuchli holsizlik, tinch holatda nafas qisishi, ko'krak og'rig'i. Juda rangpar.",
+      "text_ru": "Выраженная слабость, одышка в покое, боль в груди. Очень бледный.",
+      "age_years": 75.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 123,
+        "systolic_bp": 97,
+        "diastolic_bp": 67
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Og'ir kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [
+        "severe_anemia"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "anem-sev-004",
+      "category": "anemia",
+      "text_uz": "Kuchli holsizlik, tinch holatda nafas qisishi, ko'krak og'rig'i. Juda rangpar.",
+      "text_ru": "Выраженная слабость, одышка в покое, боль в груди. Очень бледный.",
+      "age_years": 70.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 118,
+        "systolic_bp": 106,
+        "diastolic_bp": 67
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Og'ir kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [
+        "severe_anemia"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-001",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 53.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 77,
+        "systolic_bp": 122
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-002",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 23.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 85,
+        "systolic_bp": 134
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-003",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 37.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 66,
+        "systolic_bp": 112
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-004",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 45.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 66,
+        "systolic_bp": 120
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-005",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 35.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 77,
+        "systolic_bp": 115
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-006",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 38.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 87,
+        "systolic_bp": 114
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-007",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 49.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 72,
+        "systolic_bp": 126
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-008",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 36.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 75,
+        "systolic_bp": 118
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-009",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 48.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 67,
+        "systolic_bp": 130
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-010",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 49.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 78,
+        "systolic_bp": 128
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-011",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 42.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 75,
+        "systolic_bp": 113
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-012",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 53.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 82,
+        "systolic_bp": 125
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-013",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 43.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 67,
+        "systolic_bp": 123
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-014",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 38.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 67,
+        "systolic_bp": 124
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-015",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 37.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 69,
+        "systolic_bp": 130
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-016",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 32.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 79,
+        "systolic_bp": 118
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-017",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 47.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 73,
+        "systolic_bp": 119
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-018",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 22.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 80,
+        "systolic_bp": 116
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-019",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 49.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 74,
+        "systolic_bp": 120
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-020",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ovqatdan keyin epigastral og'riq, jig'ildon qaynashi, ko'ngil aynishi. Bir oydan beri.",
+      "text_ru": "Боль в эпигастрии после еды, изжога, тошнота. Около месяца.",
+      "age_years": 26.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 78,
+        "systolic_bp": 135
+      },
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "B96.81",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-bleed-001",
+      "category": "gastritis_hpylori",
+      "text_uz": "Epigastral og'riq va qora najas. Kecha qon qusdi.",
+      "text_ru": "Боль в эпигастрии и чёрный стул. Вчера была рвота с кровью.",
+      "age_years": 60.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 106,
+        "systolic_bp": 96
+      },
+      "ground_truth_icd10": "K92.2",
+      "ground_truth_label": "Oshqozon-ichak qon ketishi",
+      "acceptable_alternatives": [
+        "K27.9",
+        "K92.0",
+        "K92.1"
+      ],
+      "must_not_miss": [
+        "gi_bleeding"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-bleed-002",
+      "category": "gastritis_hpylori",
+      "text_uz": "Epigastral og'riq va qora najas. Kecha qon qusdi.",
+      "text_ru": "Боль в эпигастрии и чёрный стул. Вчера была рвота с кровью.",
+      "age_years": 46.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 109,
+        "systolic_bp": 91
+      },
+      "ground_truth_icd10": "K92.2",
+      "ground_truth_label": "Oshqozon-ichak qon ketishi",
+      "acceptable_alternatives": [
+        "K27.9",
+        "K92.0",
+        "K92.1"
+      ],
+      "must_not_miss": [
+        "gi_bleeding"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-bleed-003",
+      "category": "gastritis_hpylori",
+      "text_uz": "Epigastral og'riq va qora najas. Kecha qon qusdi.",
+      "text_ru": "Боль в эпигастрии и чёрный стул. Вчера была рвота с кровью.",
+      "age_years": 66.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 112,
+        "systolic_bp": 91
+      },
+      "ground_truth_icd10": "K92.2",
+      "ground_truth_label": "Oshqozon-ichak qon ketishi",
+      "acceptable_alternatives": [
+        "K27.9",
+        "K92.0",
+        "K92.1"
+      ],
+      "must_not_miss": [
+        "gi_bleeding"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "gast-bleed-004",
+      "category": "gastritis_hpylori",
+      "text_uz": "Epigastral og'riq va qora najas. Kecha qon qusdi.",
+      "text_ru": "Боль в эпигастрии и чёрный стул. Вчера была рвота с кровью.",
+      "age_years": 50.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 104,
+        "systolic_bp": 104
+      },
+      "ground_truth_icd10": "K92.2",
+      "ground_truth_label": "Oshqozon-ichak qon ketishi",
+      "acceptable_alternatives": [
+        "K27.9",
+        "K92.0",
+        "K92.1"
+      ],
+      "must_not_miss": [
+        "gi_bleeding"
+      ],
+      "must_not_fire": [],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-001",
+      "category": "tb_suspicion",
+      "text_uz": "25 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 25 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 24.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.4,
+        "pulse_bpm": 87,
+        "weight_kg": 65.6
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 25.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-002",
+      "category": "tb_suspicion",
+      "text_uz": "50 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 50 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 45.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.6,
+        "pulse_bpm": 81,
+        "weight_kg": 51.2
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 50.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-003",
+      "category": "tb_suspicion",
+      "text_uz": "25 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 25 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 26.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.4,
+        "pulse_bpm": 99,
+        "weight_kg": 65.7
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 25.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-004",
+      "category": "tb_suspicion",
+      "text_uz": "30 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 30 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 21.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.6,
+        "pulse_bpm": 96,
+        "weight_kg": 61.1
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-005",
+      "category": "tb_suspicion",
+      "text_uz": "60 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 60 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 20.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 87,
+        "weight_kg": 52.0
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 60.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-006",
+      "category": "tb_suspicion",
+      "text_uz": "60 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 60 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 55.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 94,
+        "weight_kg": 54.0
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 60.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-007",
+      "category": "tb_suspicion",
+      "text_uz": "30 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 30 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 34.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 82,
+        "weight_kg": 52.3
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-008",
+      "category": "tb_suspicion",
+      "text_uz": "25 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 25 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 58.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 95,
+        "weight_kg": 61.1
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 25.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-009",
+      "category": "tb_suspicion",
+      "text_uz": "60 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 60 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 47.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.7,
+        "pulse_bpm": 94,
+        "weight_kg": 64.9
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 60.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-010",
+      "category": "tb_suspicion",
+      "text_uz": "30 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 30 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 22.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.2,
+        "pulse_bpm": 89,
+        "weight_kg": 55.7
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-011",
+      "category": "tb_suspicion",
+      "text_uz": "60 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 60 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 28.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.5,
+        "pulse_bpm": 80,
+        "weight_kg": 63.2
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 60.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-012",
+      "category": "tb_suspicion",
+      "text_uz": "60 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 60 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 58.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 99,
+        "weight_kg": 52.7
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 60.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-013",
+      "category": "tb_suspicion",
+      "text_uz": "40 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 40 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 45.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.0,
+        "pulse_bpm": 93,
+        "weight_kg": 64.8
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 40.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-014",
+      "category": "tb_suspicion",
+      "text_uz": "50 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 50 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 57.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 97,
+        "weight_kg": 52.8
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 50.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-015",
+      "category": "tb_suspicion",
+      "text_uz": "50 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 50 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 26.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.7,
+        "pulse_bpm": 88,
+        "weight_kg": 54.9
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 50.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-016",
+      "category": "tb_suspicion",
+      "text_uz": "40 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 40 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 32.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 84,
+        "weight_kg": 58.7
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 40.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-017",
+      "category": "tb_suspicion",
+      "text_uz": "60 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 60 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 46.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.9,
+        "pulse_bpm": 91,
+        "weight_kg": 50.7
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 60.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-018",
+      "category": "tb_suspicion",
+      "text_uz": "40 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 40 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 41.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.4,
+        "pulse_bpm": 82,
+        "weight_kg": 59.5
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 40.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-019",
+      "category": "tb_suspicion",
+      "text_uz": "30 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 30 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 40.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 92,
+        "weight_kg": 60.3
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 30.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-020",
+      "category": "tb_suspicion",
+      "text_uz": "40 kundan ortiq yo'tal, kechasi terlaydi, vazn kamaydi. Subfebril harorat.",
+      "text_ru": "Кашель более 40 дней, ночная потливость, потеря веса. Субфебрильная температура.",
+      "age_years": 22.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 98,
+        "weight_kg": 58.8
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 40.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-hem-001",
+      "category": "tb_suspicion",
+      "text_uz": "Uzoq davom etgan yo'tal, balg'amda qon. Vazn kamaydi.",
+      "text_ru": "Длительный кашель, кровь в мокроте. Потеря веса.",
+      "age_years": 53.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.2,
+        "pulse_bpm": 103
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi (gemoptiz bilan)",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R04.2"
+      ],
+      "must_not_miss": [
+        "hemoptysis",
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 35.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-hem-002",
+      "category": "tb_suspicion",
+      "text_uz": "Uzoq davom etgan yo'tal, balg'amda qon. Vazn kamaydi.",
+      "text_ru": "Длительный кашель, кровь в мокроте. Потеря веса.",
+      "age_years": 47.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.2,
+        "pulse_bpm": 96
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi (gemoptiz bilan)",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R04.2"
+      ],
+      "must_not_miss": [
+        "hemoptysis",
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 35.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-hem-003",
+      "category": "tb_suspicion",
+      "text_uz": "Uzoq davom etgan yo'tal, balg'amda qon. Vazn kamaydi.",
+      "text_ru": "Длительный кашель, кровь в мокроте. Потеря веса.",
+      "age_years": 58.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.2,
+        "pulse_bpm": 88
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi (gemoptiz bilan)",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R04.2"
+      ],
+      "must_not_miss": [
+        "hemoptysis",
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 35.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "tb-hem-004",
+      "category": "tb_suspicion",
+      "text_uz": "Uzoq davom etgan yo'tal, balg'amda qon. Vazn kamaydi.",
+      "text_ru": "Длительный кашель, кровь в мокроте. Потеря веса.",
+      "age_years": 51.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.1,
+        "pulse_bpm": 87
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi (gemoptiz bilan)",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R04.2"
+      ],
+      "must_not_miss": [
+        "hemoptysis",
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "duration_days": 35.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-001",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 29.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 61,
+        "weight_kg": 66.3
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-002",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 30.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 67,
+        "weight_kg": 58.9
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-003",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 30.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 64,
+        "weight_kg": 71.2
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-004",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 36.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 56,
+        "weight_kg": 60.4
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-005",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 39.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 66,
+        "weight_kg": 59.2
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-006",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 20.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 65,
+        "weight_kg": 67.1
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-007",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 27.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 63,
+        "weight_kg": 84.6
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-008",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 40.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 65,
+        "weight_kg": 69.1
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-009",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 30.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 65,
+        "weight_kg": 59.7
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-010",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 43.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 55,
+        "weight_kg": 78.3
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-011",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 19.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 58,
+        "weight_kg": 83.1
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-012",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 32.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 58,
+        "weight_kg": 61.0
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-013",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 35.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 58,
+        "weight_kg": 76.1
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-014",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 28.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 60,
+        "weight_kg": 65.6
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "iod-015",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'yinda shish, holsizlik, sovuqni yomon ko'taradi, ich qotadi. Terisi quruq.",
+      "text_ru": "Припухлость на шее, слабость, зябкость, запоры. Сухая кожа.",
+      "age_years": 24.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 59,
+        "weight_kg": 63.4
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq (yod tanqisligi)",
+      "acceptable_alternatives": [
+        "E01.8",
+        "E03.9",
+        "E00.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-001",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 4 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.9,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 130,
+        "weight_kg": 10.4
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-002",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 4.2,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.7,
+        "pulse_bpm": 109,
+        "weight_kg": 9.1
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-003",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 4.3,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.1,
+        "pulse_bpm": 121,
+        "weight_kg": 15.5
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-004",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 4 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 4.3,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 124,
+        "weight_kg": 11.2
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-005",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 4 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 2.7,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 112,
+        "weight_kg": 9.2
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-006",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 3 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.3,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.2,
+        "pulse_bpm": 103,
+        "weight_kg": 16.9
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-007",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 3 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 2.3,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.7,
+        "pulse_bpm": 108,
+        "weight_kg": 10.8
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-008",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 3 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 3.6,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.3,
+        "pulse_bpm": 123,
+        "weight_kg": 7.5
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-009",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 3.6,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 117,
+        "weight_kg": 12.4
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-010",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 3 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 3.4,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.2,
+        "pulse_bpm": 103,
+        "weight_kg": 15.4
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-011",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 4 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.5,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 108,
+        "weight_kg": 13.8
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-012",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.7,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.2,
+        "pulse_bpm": 100,
+        "weight_kg": 7.5
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-013",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.2,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.5,
+        "pulse_bpm": 100,
+        "weight_kg": 14.7
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-014",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 3 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 2.5,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.3,
+        "pulse_bpm": 112,
+        "weight_kg": 8.7
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-015",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 3 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 3 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 3.3,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.8,
+        "pulse_bpm": 105,
+        "weight_kg": 13.1
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-016",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 3 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.4,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.6,
+        "pulse_bpm": 115,
+        "weight_kg": 9.3
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-017",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 4 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 2 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 1.2,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.4,
+        "pulse_bpm": 106,
+        "weight_kg": 12.5
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-018",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada 2 kundan beri suyuq najas, kuniga 5-6 marta. Qusish yo'q. Suv ichyapti.",
+      "text_ru": "У ребёнка жидкий стул 4 дня, 5-6 раз в сутки. Рвоты нет. Пьёт воду.",
+      "age_years": 2.2,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.0,
+        "pulse_bpm": 124,
+        "weight_kg": 11.1
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4",
+        "K52.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-sev-001",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada ich ketishi va qusish. Ko'zlari ichiga botgan, suv ichmayapti, bo'shashgan.",
+      "text_ru": "У ребёнка диарея и рвота. Запавшие глаза, не пьёт, вялый.",
+      "age_years": 2.6,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.6,
+        "pulse_bpm": 167,
+        "weight_kg": 11.0
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Og'ir suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-sev-002",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada ich ketishi va qusish. Ko'zlari ichiga botgan, suv ichmayapti, bo'shashgan.",
+      "text_ru": "У ребёнка диарея и рвота. Запавшие глаза, не пьёт, вялый.",
+      "age_years": 3.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.7,
+        "pulse_bpm": 167,
+        "weight_kg": 7.5
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Og'ir suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-sev-003",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada ich ketishi va qusish. Ko'zlari ichiga botgan, suv ichmayapti, bo'shashgan.",
+      "text_ru": "У ребёнка диарея и рвота. Запавшие глаза, не пьёт, вялый.",
+      "age_years": 3.1,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.4,
+        "pulse_bpm": 152,
+        "weight_kg": 9.6
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Og'ir suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-sev-004",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada ich ketishi va qusish. Ko'zlari ichiga botgan, suv ichmayapti, bo'shashgan.",
+      "text_ru": "У ребёнка диарея и рвота. Запавшие глаза, не пьёт, вялый.",
+      "age_years": 3.3,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.7,
+        "pulse_bpm": 146,
+        "weight_kg": 9.6
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Og'ir suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-sev-005",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada ich ketishi va qusish. Ko'zlari ichiga botgan, suv ichmayapti, bo'shashgan.",
+      "text_ru": "У ребёнка диарея и рвота. Запавшие глаза, не пьёт, вялый.",
+      "age_years": 2.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.7,
+        "pulse_bpm": 159,
+        "weight_kg": 7.4
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Og'ir suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "peddia-sev-006",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolada ich ketishi va qusish. Ko'zlari ichiga botgan, suv ichmayapti, bo'shashgan.",
+      "text_ru": "У ребёнка диарея и рвота. Запавшие глаза, не пьёт, вялый.",
+      "age_years": 1.4,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.1,
+        "pulse_bpm": 159,
+        "weight_kg": 13.3
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Og'ir suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "duration_days": 2.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-001",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 38.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.4,
+        "pulse_bpm": 84
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-002",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 55.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.6,
+        "pulse_bpm": 65
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-003",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 30.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.6,
+        "pulse_bpm": 77
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-004",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 62.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.6,
+        "pulse_bpm": 69
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-005",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 33.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.6,
+        "pulse_bpm": 74
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-006",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 29.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.9,
+        "pulse_bpm": 79
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-007",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 45.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.9,
+        "pulse_bpm": 65
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-008",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 56.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.7,
+        "pulse_bpm": 64
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-009",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 45.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.4,
+        "pulse_bpm": 74
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-010",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 58.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.8,
+        "pulse_bpm": 82
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-011",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 36.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.6,
+        "pulse_bpm": 79
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-012",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 38.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.5,
+        "pulse_bpm": 67
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-013",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 58.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.6,
+        "pulse_bpm": 81
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-014",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 59.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.7,
+        "pulse_bpm": 82
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-015",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 28.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.8,
+        "pulse_bpm": 82
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-016",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 51.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.8,
+        "pulse_bpm": 66
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-017",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 55.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.5,
+        "pulse_bpm": 66
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 3.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-018",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 55.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.5,
+        "pulse_bpm": 83
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-019",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 46.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 36.5,
+        "pulse_bpm": 85
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 14.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "msk-020",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bel og'rig'i, og'ir ko'targandan keyin boshlangan. Yurganda kuchayadi, dam olganda kamayadi.",
+      "text_ru": "Боль в пояснице после подъёма тяжести. Усиливается при ходьбе, уменьшается в покое.",
+      "age_years": 39.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.9,
+        "pulse_bpm": 79
+      },
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50",
+        "M79.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "meningism"
+      ],
+      "duration_days": 7.0,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-001",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 64.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 140,
+        "diastolic_bp": 85,
+        "weight_kg": 96.8,
+        "glucose_mmol": 6.2
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-002",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 63.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 133,
+        "diastolic_bp": 86,
+        "weight_kg": 100.3,
+        "glucose_mmol": 6.2
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-003",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 67.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 136,
+        "diastolic_bp": 85,
+        "weight_kg": 90.3,
+        "glucose_mmol": 6.1
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-004",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 66.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 139,
+        "diastolic_bp": 86,
+        "weight_kg": 88.0,
+        "glucose_mmol": 6.1
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-005",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 62.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 136,
+        "diastolic_bp": 85,
+        "weight_kg": 101.6,
+        "glucose_mmol": 6.4
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-006",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 56.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 137,
+        "diastolic_bp": 82,
+        "weight_kg": 97.7,
+        "glucose_mmol": 5.9
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-007",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 57.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 139,
+        "diastolic_bp": 80,
+        "weight_kg": 103.1,
+        "glucose_mmol": 6.7
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-008",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 53.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 139,
+        "diastolic_bp": 92,
+        "weight_kg": 92.5,
+        "glucose_mmol": 5.8
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-009",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 58.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 147,
+        "diastolic_bp": 88,
+        "weight_kg": 94.7,
+        "glucose_mmol": 5.2
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-010",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 53.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 136,
+        "diastolic_bp": 92,
+        "weight_kg": 85.5,
+        "glucose_mmol": 6.3
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-011",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 57.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 147,
+        "diastolic_bp": 80,
+        "weight_kg": 99.1,
+        "glucose_mmol": 5.5
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-012",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 68.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 146,
+        "diastolic_bp": 85,
+        "weight_kg": 102.8,
+        "glucose_mmol": 6.5
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-013",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 46.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 135,
+        "diastolic_bp": 89,
+        "weight_kg": 93.0,
+        "glucose_mmol": 6.5
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-014",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 52.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 135,
+        "diastolic_bp": 93,
+        "weight_kg": 110.1,
+        "glucose_mmol": 6.5
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-015",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 64.0,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 131,
+        "diastolic_bp": 93,
+        "weight_kg": 91.5,
+        "glucose_mmol": 5.9
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "cvd-016",
+      "category": "cardiovascular_risk",
+      "text_uz": "Profilaktik ko'rik. Ortiqcha vazn, sho'r ovqat, harakat kam. Oilada yurak kasalligi bor. Chekadi.",
+      "text_ru": "Профилактический осмотр. Избыточный вес, солёная пища, малоподвижность. Семейный анамнез. Курит.",
+      "age_years": 53.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 139,
+        "diastolic_bp": 83,
+        "weight_kg": 110.4,
+        "glucose_mmol": 5.8
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E78.5",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected",
+        "hypertensive_emergency"
+      ],
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-001",
+      "category": "emergency",
+      "text_uz": "To'satdan ko'krak qafasida siquvchi og'riq, chap qo'lga uzatiladi. Sovuq ter, nafas qisishi.",
+      "text_ru": "Внезапная сжимающая боль за грудиной с иррадиацией в левую руку. Холодный пот, одышка.",
+      "age_years": 44.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 104,
+        "systolic_bp": 138,
+        "spo2": 94
+      },
+      "ground_truth_icd10": "I21.9",
+      "ground_truth_label": "O'tkir koronar sindrom",
+      "acceptable_alternatives": [
+        "I20.0"
+      ],
+      "must_not_miss": [
+        "acs_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-002",
+      "category": "emergency",
+      "text_uz": "Yuzi qiyshaygan, o'ng qo'li ishlamayapti, gapira olmayapti. 40 daqiqa oldin boshlandi.",
+      "text_ru": "Перекос лица, не работает правая рука, не может говорить. Началось 40 минут назад.",
+      "age_years": 49.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 178,
+        "diastolic_bp": 98,
+        "pulse_bpm": 88
+      },
+      "ground_truth_icd10": "I64",
+      "ground_truth_label": "O'tkir insult",
+      "acceptable_alternatives": [
+        "I63.9"
+      ],
+      "must_not_miss": [
+        "stroke_fast"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-003",
+      "category": "emergency",
+      "text_uz": "Yuqori harorat, bo'yin qotgan, yorug'lik ko'zni og'ritadi, kuchli bosh og'rig'i.",
+      "text_ru": "Высокая температура, ригидность затылка, светобоязнь, сильная головная боль.",
+      "age_years": 42.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.4,
+        "pulse_bpm": 112
+      },
+      "ground_truth_icd10": "G03.9",
+      "ground_truth_label": "Meningit shubhasi",
+      "acceptable_alternatives": [
+        "A87.9",
+        "G00.9"
+      ],
+      "must_not_miss": [
+        "meningism"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-004",
+      "category": "emergency",
+      "text_uz": "Homilador ayolda qorin og'rig'i va bachadondan qon ketmoqda.",
+      "text_ru": "У беременной боль в животе и маточное кровотечение.",
+      "age_years": 65.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 108,
+        "systolic_bp": 100
+      },
+      "ground_truth_icd10": "O20.9",
+      "ground_truth_label": "Homiladorlikda qon ketishi",
+      "acceptable_alternatives": [
+        "O46.9"
+      ],
+      "must_not_miss": [
+        "pregnancy_bleeding"
+      ],
+      "must_not_fire": [],
+      "pregnant": true,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-005",
+      "category": "emergency",
+      "text_uz": "Qandli diabet bilan bemor hushidan ketay deydi, terlagan, titraydi. Qand 2.1 mmol/l.",
+      "text_ru": "Пациент с диабетом почти теряет сознание, потливость, дрожь. Сахар 2.1 ммоль/л.",
+      "age_years": 66.0,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 2.1,
+        "pulse_bpm": 110
+      },
+      "ground_truth_icd10": "E16.2",
+      "ground_truth_label": "Gipoglikemiya",
+      "acceptable_alternatives": [
+        "E11.649"
+      ],
+      "must_not_miss": [
+        "hypoglycemia"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-006",
+      "category": "emergency",
+      "text_uz": "To'satdan ko'krak qafasida siquvchi og'riq, chap qo'lga uzatiladi. Sovuq ter, nafas qisishi.",
+      "text_ru": "Внезапная сжимающая боль за грудиной с иррадиацией в левую руку. Холодный пот, одышка.",
+      "age_years": 49.0,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 104,
+        "systolic_bp": 138,
+        "spo2": 94
+      },
+      "ground_truth_icd10": "I21.9",
+      "ground_truth_label": "O'tkir koronar sindrom",
+      "acceptable_alternatives": [
+        "I20.0"
+      ],
+      "must_not_miss": [
+        "acs_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-007",
+      "category": "emergency",
+      "text_uz": "Yuzi qiyshaygan, o'ng qo'li ishlamayapti, gapira olmayapti. 40 daqiqa oldin boshlandi.",
+      "text_ru": "Перекос лица, не работает правая рука, не может говорить. Началось 40 минут назад.",
+      "age_years": 57.0,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 178,
+        "diastolic_bp": 98,
+        "pulse_bpm": 88
+      },
+      "ground_truth_icd10": "I64",
+      "ground_truth_label": "O'tkir insult",
+      "acceptable_alternatives": [
+        "I63.9"
+      ],
+      "must_not_miss": [
+        "stroke_fast"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-008",
+      "category": "emergency",
+      "text_uz": "Yuqori harorat, bo'yin qotgan, yorug'lik ko'zni og'ritadi, kuchli bosh og'rig'i.",
+      "text_ru": "Высокая температура, ригидность затылка, светобоязнь, сильная головная боль.",
+      "age_years": 70.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 39.4,
+        "pulse_bpm": 112
+      },
+      "ground_truth_icd10": "G03.9",
+      "ground_truth_label": "Meningit shubhasi",
+      "acceptable_alternatives": [
+        "A87.9",
+        "G00.9"
+      ],
+      "must_not_miss": [
+        "meningism"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-009",
+      "category": "emergency",
+      "text_uz": "Homilador ayolda qorin og'rig'i va bachadondan qon ketmoqda.",
+      "text_ru": "У беременной боль в животе и маточное кровотечение.",
+      "age_years": 36.0,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 108,
+        "systolic_bp": 100
+      },
+      "ground_truth_icd10": "O20.9",
+      "ground_truth_label": "Homiladorlikda qon ketishi",
+      "acceptable_alternatives": [
+        "O46.9"
+      ],
+      "must_not_miss": [
+        "pregnancy_bleeding"
+      ],
+      "must_not_fire": [],
+      "pregnant": true,
+      "reviewed_by": "synthetic"
+    },
+    {
+      "id": "emg-010",
+      "category": "emergency",
+      "text_uz": "Qandli diabet bilan bemor hushidan ketay deydi, terlagan, titraydi. Qand 2.1 mmol/l.",
+      "text_ru": "Пациент с диабетом почти теряет сознание, потливость, дрожь. Сахар 2.1 ммоль/л.",
+      "age_years": 72.0,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 2.1,
+        "pulse_bpm": 110
+      },
+      "ground_truth_icd10": "E16.2",
+      "ground_truth_label": "Gipoglikemiya",
+      "acceptable_alternatives": [
+        "E11.649"
+      ],
+      "must_not_miss": [
+        "hypoglycemia"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "reviewed_by": "synthetic"
+    }
+  ]
+}

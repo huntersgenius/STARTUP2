@@ -74,8 +74,12 @@ jobs:
         env:
           ENVIRONMENT: test
           DATABASE_URL: sqlite+pysqlite:///:memory:
-        # Fails the build below 70% top-3 accuracy or under 100% red-flag recall.
-        run: python -m app.ai.eval.run --offline --fail-under-top3 0.70 --fail-under-redflag 1.0
+          PYTHONPATH: ..
+        # Fails the build below 70% top-3 accuracy or under 100% red-flag
+        # recall. The recall floor is absolute: it is the safety metric.
+        run: >
+          python -m app.ai.eval.run --offline --html
+          --fail-under-top3 0.70 --fail-under-redflag 1.0
       - uses: actions/upload-artifact@v4
         if: always()
         with:

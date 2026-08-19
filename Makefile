@@ -45,10 +45,16 @@ ingest: $(VENV)  ## rebuild the knowledge base from knowledge/corpus
 	cd backend && PYTHONPATH=.. ../$(PY) -m knowledge.ingest --corpus ../knowledge/corpus --reset
 
 eval: $(VENV)  ## run the clinical evaluation suite and print the table
-	cd backend && ../$(PY) -m app.ai.eval.run --offline
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.run --offline --html
 
-eval-report: $(VENV)  ## run the evaluation suite and write eval/report.html
-	cd backend && ../$(PY) -m app.ai.eval.run --offline --html
+eval-gate: $(VENV)  ## run the evaluation suite with the CI release gates applied
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.run --offline --fail-under-top3 0.70 --fail-under-redflag 1.0
+
+eval-ab: $(VENV)  ## compare two prompt versions on the same vignette set
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.ab $(ARGS)
 
 clean:
 	find . -name __pycache__ -type d -prune -exec rm -rf {} + 2>/dev/null || true

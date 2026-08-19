@@ -161,3 +161,67 @@ prompt context, where they help.
 - The edge-server (Ollama) client is a URL swap in `providers.dart`, not a separate transport.
 
 **Next**: Sprint 5 — the evaluation harness.
+
+## Sprint 5 — Evaluation harness ✅
+
+**Shipped**
+- **249 gold-standard vignettes** across the 10 target presentations plus an emergency set.
+  Each carries Uzbek *and* Russian text, age, sex, vitals, ground-truth ICD-10, clinically
+  acceptable alternatives, red flags that **must** fire, and red flags that must **not** —
+  because a system that refers everyone would otherwise score perfect recall.
+- `app/ai/eval/metrics.py`: top-1/top-3 (strict and lenient), red-flag recall, false-referral
+  rate, expected calibration error, p50/p95 latency, cost per case, and the uz-vs-ru gap.
+- `make eval` prints the table and writes `results/<date>.json`; `make eval-gate` applies the
+  CI floors; `make eval-ab` compares two arms.
+- `eval/report.html` — a report for a medical advisor, an investor or a sandbox reviewer,
+  with the provenance banner above the numbers and a test asserting it stays there.
+- A/B harness that flags **safety regressions specifically**: a top-3 improvement that costs a
+  caught red flag exits non-zero, because that is a regression, not a win.
+- `RetrievalBaselineProvider`: a deterministic offline reasoner so the gate runs on every PR
+  with no keys and no network. It is labelled in every report — a baseline number must never
+  be read as a GPT-4o number — and it doubles as the quality floor for a clinic whose models
+  are all unreachable.
+
+**Results (offline rules baseline, 498 runs across both languages)**
+
+| Metric | Result | Floor |
+|---|---|---|
+| Top-3 accuracy | **97.6%** | 70% |
+| Top-1 accuracy | 94.4% | — |
+| **Red-flag recall** | **100%** (158/158) | **100%** |
+| False-referral rate | 10.8% | — |
+| Calibration error (ECE) | 0.279 | — |
+| p95 latency | 25 ms | 6000 ms |
+| Cost per case | $0.0000 | $0.05 |
+| Language gap (uz − ru) | 0.0 pp | — |
+
+**What the eval caught — this is why the sprint exists.** The first full run reported
+**62% red-flag recall: 60 missed red flags.** Every one was a real defect, none of which any
+unit test had caught:
+
+1. *Vocabulary, first person vs third.* The map had "kechasi terlayman" (*I* sweat at night)
+   but not "kechasi terlaydi" (*the patient* sweats) — which is how a clinician writes it. TB
+   suspicion was missed 24 times in Uzbek while working in Russian.
+2. *Vocabulary, singular vs plural.* "ko'zi ichiga botgan" was mapped, "ko'zlari ichiga botgan"
+   was not, so childhood dehydration went undetected.
+3. *A silent false positive.* "kecha" (yesterday) was matching inside "kechasi" (at night),
+   producing a wrong duration and suppressing the TB rule. Adding the longer surface fixed
+   both the miss and the false positive.
+4. *A rule bug.* Longest-match retrieval yields `pediatric_diarrhea`, never plain `diarrhea`,
+   so the childhood-dehydration rule failed in Uzbek and passed in Russian. Red-flag rules now
+   apply a `CONCEPT_IMPLIES` table, so a specialised concept satisfies a rule written against
+   the general one.
+
+155 synonyms and 3 concepts were added; the terminology map is now 132 concepts and **803
+recognised surfaces**. Recall went 62% → 96.2% → **100%**.
+
+**Honest limits**
+- **Every vignette is synthetic and unreviewed by a clinician.** These numbers describe
+  engineering behaviour, not clinical accuracy, and the report says so above the fold. Advisor
+  review is open question #1 in `docs/PLAN.md` and blocks any clinical claim.
+- 97.6% on a set the same team wrote is a measure of internal consistency. The number that
+  matters comes from advisor-reviewed vignettes and, later, real consultations.
+- The baseline is a rules engine, not an LLM. Its ECE (0.28) is poor because a rules table
+  cannot really estimate confidence; that is a known gap the LLM arms should beat.
+
+**Next**: Sprint 6 — admin dashboard, deployment, edge bundle, pilot runbook.

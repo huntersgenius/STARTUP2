@@ -1,10 +1,10 @@
 term_uz,term_ru,term_en,icd10,concept,category,synonyms
-yo'tal,кашель,cough,R05,cough,symptom,yutal|yo'tel|jo'tal|yo'talyapman|yo'taladi
+yo'tal,кашель,cough,R05,cough,symptom,yutal|yo'tel|jo'tal|yo'talyapman|yo'taladi|yo'tal|yo'talyapti|kashel|кашель
 quruq yo'tal,сухой кашель,dry cough,R05,dry_cough,symptom,quruq yutal
-balg'amli yo'tal,влажный кашель,productive cough,R05,productive_cough,symptom,balgamli yutal|ho'l yo'tal
-balg'am,мокрота,sputum,R09.3,sputum,symptom,balgam
-qonli balg'am,кровь в мокроте,hemoptysis,R04.2,hemoptysis,red_flag,qon tupurish|qon tuflash
-nafas qisishi,одышка,dyspnea,R06.0,dyspnea,symptom,nafas qisish|nafas yetishmasligi|hansirash|nafas olisi qiyin|nafasim qisyapti
+balg'amli yo'tal,влажный кашель,productive cough,R05,productive_cough,symptom,balgamli yutal|ho'l yo'tal|balg'amli yo'tal|balgamli yotal|кашель с мокротой|влажный кашель
+balg'am,мокрота,sputum,R09.3,sputum,symptom,balgam|balg'am ko'p|мокрота|много мокроты
+qonli balg'am,кровь в мокроте,hemoptysis,R04.2,hemoptysis,red_flag,qon tupurish|qon tuflash|balg'amda qon|balgamda qon|yo'talganda qon|кровь в мокроте|кровохарканье
+nafas qisishi,одышка,dyspnea,R06.0,dyspnea,symptom,nafas qisish|nafas yetishmasligi|hansirash|nafas olisi qiyin|nafasim qisyapti|tinch holatda nafas qisishi|yurganda nafas qisishi|одышка в покое|одышка при ходьбе
 hansirash,одышка при нагрузке,exertional dyspnea,R06.0,exertional_dyspnea,symptom,yurganda nafas qisadi
 tomoq og'rig'i,боль в горле,sore throat,J02.9,sore_throat,symptom,tomoq ogrigi|bo'g'iz og'riyapti|tomoq achishishi
 burun bitishi,заложенность носа,nasal congestion,J31.0,nasal_congestion,symptom,burun bitgan|dimog' bitishi
@@ -14,43 +14,43 @@ gripp,грипп,influenza,J11.1,influenza,condition,gripp bo'ldi
 zotiljam,пневмония,pneumonia,J18.9,pneumonia,condition,o'pka shamollashi|pnevmoniya
 bronxit,бронхит,bronchitis,J40,bronchitis,condition,bronhit
 bo'g'ilish,удушье,choking,R06.8,choking,red_flag,bo'g'ilib qolish|nafas ololmayapti
-xirillash,хрипы,wheezing,R06.2,wheezing,symptom,xirillagan nafas|hushtak
+xirillash,хрипы,wheezing,R06.2,wheezing,symptom,xirillagan nafas|hushtak|xirillash|хрипы|свистящее дыхание
 astma,астма,asthma,J45.9,asthma,condition,bo'g'ma|nafas astmasi
 sil,туберкулёз,tuberculosis,A15.0,tuberculosis,condition,sil kasali|tuberkulyoz|quruq kasal|o'pka sili
-tunda terlash,ночная потливость,night sweats,R61,night_sweats,symptom,kechasi terlayman|tungi ter
+tunda terlash,ночная потливость,night sweats,R61,night_sweats,symptom,kechasi terlayman|tungi ter|kechasi terlaydi|tunda terlaydi|kechalari terlaydi|tungi terlash|ночная потливость|потеет ночью
 ovoz bo'g'ilishi,осиплость голоса,hoarseness,R49.0,hoarseness,symptom,ovoz o'tirib qolgan
 isitma,температура,fever,R50.9,fever,symptom,harorat|qizitma|olov|tana harorati ko'tarilgan|issiq|isitmam bor|harorati bor|isityapti
 titroq,озноб,chills,R68.83,chills,symptom,qaltirash|junjikish|dildirash
-holsizlik,слабость,weakness,R53,weakness,symptom,madorsizlik|kuchsizlik|darmonsizlik|holim yo'q|holsizman|darmonim yoq
-charchoq,усталость,fatigue,R53.83,fatigue,symptom,tez charchash|toliqish
-terlash,потливость,sweating,R61,sweating,symptom,ter bosishi
-ozish,потеря веса,weight loss,R63.4,weight_loss,symptom,vazn yo'qotish|ozib ketdim|oriqlash
+holsizlik,слабость,weakness,R53,weakness,symptom,madorsizlik|kuchsizlik|darmonsizlik|holim yo'q|holsizman|darmonim yoq|kuchli holsizlik|holsizlik|выраженная слабость|слабость
+charchoq,усталость,fatigue,R53.83,fatigue,symptom,tez charchash|toliqish|tez charchaydi|быстрая утомляемость|утомляемость
+terlash,потливость,sweating,R61,sweating,symptom,ter bosishi|sovuq ter|sovuq terga botdi|холодный пот|потливость
+ozish,потеря веса,weight loss,R63.4,weight_loss,symptom,vazn yo'qotish|ozib ketdim|oriqlash|vazn kamaydi|vazni kamaydi|vazn yo'qotdi|oriqlab ketdi|ozib ketgan|похудел|похудела|снижение веса|потеря веса
 ishtaha yo'qligi,отсутствие аппетита,anorexia,R63.0,appetite_loss,symptom,ishtaham yo'q|ovqat yeg'im kelmaydi
 uyqusizlik,бессонница,insomnia,G47.0,insomnia,symptom,uxlay olmayman|uyqu buzilishi
-ko'krak og'rig'i,боль в груди,chest pain,R07.4,chest_pain,red_flag,ko'krak ogrigi|yurak og'rig'i|ko'kragim og'riyapti|to'sh og'rig'i|kokragim ogriyapti|kokrak ogrigi
-yurak siqishi,сжимающая боль в груди,crushing chest pain,I20.0,crushing_chest_pain,red_flag,ko'krak siqilishi|yurak siqib og'riyapti
+ko'krak og'rig'i,боль в груди,chest pain,R07.4,chest_pain,red_flag,ko'krak ogrigi|yurak og'rig'i|ko'kragim og'riyapti|to'sh og'rig'i|kokragim ogriyapti|kokrak ogrigi|ko'krak qafasida og'riq|kokrak qafasida ogriq|to'sh orqasida og'riq|за грудиной боль|боль за грудиной
+yurak siqishi,сжимающая боль в груди,crushing chest pain,I20.0,crushing_chest_pain,red_flag,ko'krak siqilishi|yurak siqib og'riyapti|siquvchi og'riq|ko'krak qafasida siquvchi og'riq|chap qo'lga uzatiladi|сжимающая боль|давящая боль|иррадиация в левую руку
 yurak urishi tezlashishi,сердцебиение,palpitations,R00.2,palpitations,symptom,yurak tez urishi|yurak dukillashi
 qon bosimi ko'tarilishi,повышенное давление,hypertension,I10,hypertension,condition,bosim oshgan|gipertoniya|qon bosimi baland|bosimim ko'tarildi|bosim ko'tarilgan|bosim ko'tarilishi|bosimim baland|yuqori bosim
 qon bosimi pasayishi,пониженное давление,hypotension,I95.9,hypotension,condition,bosim tushgan|gipotoniya|bosim past|bosimim tushdi
 bosh aylanishi,головокружение,dizziness,R42,dizziness,symptom,boshim aylanyapti|garangsirash|boshim aylanadi
-hushdan ketish,обморок,syncope,R55,syncope,red_flag,es-hushdan ketish|yiqilib tushish|hushini yo'qotdi
+hushdan ketish,обморок,syncope,R55,syncope,red_flag,es-hushdan ketish|yiqilib tushish|hushini yo'qotdi|hushidan ketay deydi|hushi og'yapti|почти теряет сознание|обморочное состояние
 oyoq shishi,отёки ног,leg edema,R60.0,edema,symptom,oyoq shishgan|oyoqlarim shishyapti|shish
 insult,инсульт,stroke,I64,stroke,red_flag,qon quyilishi|miya qon aylanishi buzilishi|falaj
 yurak xurujii,инфаркт,myocardial infarction,I21.9,myocardial_infarction,red_flag,infarkt|yurak tutdi
 qandli diabet,сахарный диабет,diabetes mellitus,E11.9,diabetes_t2,condition,diabet|shakar kasali|qand kasali|shakarim baland|qandim baland|shakarim oshgan
-chanqoq,жажда,polydipsia,R63.1,polydipsia,symptom,tez-tez suv ichish|og'zim quriydi|chanqayapman
-tez-tez siyish,частое мочеиспускание,polyuria,R35.0,polyuria,symptom,ko'p siyish|tungi siyish
-qalqonsimon bez kattalashishi,увеличение щитовидной железы,goitre,E01.2,goitre,condition,buqoq|bo'qoq|bo'yin shishi
+chanqoq,жажда,polydipsia,R63.1,polydipsia,symptom,tez-tez suv ichish|og'zim quriydi|chanqayapman|chanqoq|ko'p suv ichadi|жажда|пьёт много воды
+tez-tez siyish,частое мочеиспускание,polyuria,R35.0,polyuria,symptom,ko'p siyish|tungi siyish|tez-tez siyish|ko'p siyadi|частое мочеиспускание
+qalqonsimon bez kattalashishi,увеличение щитовидной железы,goitre,E01.2,goitre,condition,buqoq|bo'qoq|bo'yin shishi|bo'yinda shish|boyinda shish|припухлость на шее|увеличение щитовидной железы
 yod yetishmovchiligi,дефицит йода,iodine deficiency,E01.8,iodine_deficiency,condition,yod tanqisligi
 semizlik,ожирение,obesity,E66.9,obesity,condition,ortiqcha vazn|to'lalik
 qorin og'rig'i,боль в животе,abdominal pain,R10.4,abdominal_pain,symptom,qorin ogrigi|ich og'rig'i|qornim og'riyapti|qornim ogriyapti|ich ogrigi
-oshqozon og'rig'i,боль в желудке,epigastric pain,R10.13,epigastric_pain,symptom,oshqozonim og'riyapti|me'da og'rig'i
+oshqozon og'rig'i,боль в желудке,epigastric pain,R10.13,epigastric_pain,symptom,oshqozonim og'riyapti|me'da og'rig'i|epigastral og'riq|epigastriyda og'riq|ovqatdan keyin og'riq|боль в эпигастрии|боль после еды
 ko'ngil aynishi,тошнота,nausea,R11.0,nausea,symptom,ko'nglim aynyapti|qusgim kelyapti|kongim aynyapti|kongil aynishi|ko'ngil aynishi|qusgim keladi
-qusish,рвота,vomiting,R11.10,vomiting,symptom,qusdim|qayt qilish
-qonli qusish,рвота с кровью,hematemesis,K92.0,hematemesis,red_flag,qon qusish
-ich ketishi,диарея,diarrhea,A09,diarrhea,symptom,ich ketdi|diareya|suyuq najas|ich buzilishi|ichim ketyapti|ich ketyapti
+qusish,рвота,vomiting,R11.10,vomiting,symptom,qusdim|qayt qilish|qayt qildi|qusyapti|рвота|рвёт|рвет
+qonli qusish,рвота с кровью,hematemesis,K92.0,hematemesis,red_flag,qon qusish|qon qusdi|рвота с кровью|рвало кровью
+ich ketishi,диарея,diarrhea,A09,diarrhea,symptom,ich ketdi|diareya|suyuq najas|ich buzilishi|ichim ketyapti|ich ketyapti|kuniga 5-6 marta|жидкий стул|частый стул
 qonli ich ketishi,кровь в стуле,bloody diarrhea,A09,bloody_diarrhea,red_flag,najasda qon|qonli najas
-qora najas,чёрный стул,melena,K92.1,melena,red_flag,najas qora rangda
+qora najas,чёрный стул,melena,K92.1,melena,red_flag,najas qora rangda|qora najas|najas qora|чёрный стул|черный стул
 qabziyat,запор,constipation,K59.00,constipation,symptom,ich qotishi|ich kelmayapti
 jig'ildon qaynashi,изжога,heartburn,R12,heartburn,symptom,jigildon qaynashi|kuyish|achishish
 gastrit,гастрит,gastritis,K29.70,gastritis,condition,oshqozon yallig'lanishi
@@ -59,18 +59,18 @@ helikobakter,хеликобактер,H. pylori,B96.81,h_pylori,condition,xeliko
 sariq kasali,желтуха,jaundice,R17,jaundice,symptom,sarg'ayish|terisi sarg'aygan|sariq
 gijja,глисты,helminthiasis,B83.9,helminthiasis,condition,qurt|parazit
 bolada ich ketishi,диарея у ребёнка,pediatric diarrhea,A09,pediatric_diarrhea,condition,bola ich ketdi
-suvsizlanish,обезвоживание,dehydration,E86,dehydration,red_flag,suv yo'qotish|degidratatsiya|ko'zi ichiga botgan
-bola emmayapti,ребёнок не сосёт,unable to feed,R63.3,unable_to_feed,red_flag,ko'krak emmaydi|ovqat yemayapti
+suvsizlanish,обезвоживание,dehydration,E86,dehydration,red_flag,suv yo'qotish|degidratatsiya|ko'zi ichiga botgan|ko'zlari ichiga botgan|kozlari ichiga botgan|suv ichmayapti|ichmayapti|teri turgori pasaygan|запавшие глаза|не пьёт|не пьет|обезвоживание|сухость кожи
+bola emmayapti,ребёнок не сосёт,unable to feed,R63.3,unable_to_feed,red_flag,ko'krak emmaydi|ovqat yemayapti|emmayapti|ko'krak emmayapti|не сосёт|не сосет|отказывается от еды
 bolada talvasa,судороги у ребёнка,febrile seizure,R56.0,febrile_seizure,red_flag,tirishish|talvasa|qaltirab qoldi
-bola letargik,вялый ребёнок,lethargic child,R53.83,lethargy,red_flag,bo'shashgan|uyquchan|uyg'onmayapti
+bola letargik,вялый ребёнок,lethargic child,R53.83,lethargy,red_flag,bo'shashgan|uyquchan|uyg'onmayapti|boshashgan|sust|вялый|вялая|заторможенный|сонливый
 qizamiq,корь,measles,B05.9,measles,condition,qizilcha emas|qizamiq toshmasi
 suvchechak,ветрянка,chickenpox,B01.9,chickenpox,condition,suv chechak
 quloq og'rig'i,боль в ухе,ear pain,H92.0,ear_pain,symptom,qulog'im og'riyapti|otit
 kamqonlik,анемия,anemia,D64.9,anemia,condition,anemiya|qon kamligi|gemoglobin past
-rangparlik,бледность,pallor,R23.1,pallor,symptom,oqarib ketgan|rangi oq
+rangparlik,бледность,pallor,R23.1,pallor,symptom,oqarib ketgan|rangi oq|rangpar|juda rangpar|rangi oqargan|oqargan|бледный|бледность|очень бледный
 temir yetishmovchiligi,дефицит железа,iron deficiency,D50.9,iron_deficiency,condition,temir tanqisligi
-tirnoq sinishi,ломкость ногтей,brittle nails,L60.3,brittle_nails,symptom,tirnoq sinadi
-bel og'rig'i,боль в пояснице,low back pain,M54.5,low_back_pain,symptom,bel ogrigi|belim og'riyapti|umurtqa og'rig'i
+tirnoq sinishi,ломкость ногтей,brittle nails,L60.3,brittle_nails,symptom,tirnoq sinadi|tirnoqlari sinadi|ломкие ногти
+bel og'rig'i,боль в пояснице,low back pain,M54.5,low_back_pain,symptom,bel ogrigi|belim og'riyapti|umurtqa og'rig'i|bel og'rig'i|og'ir ko'targandan keyin bel|боль в пояснице|поясничная боль
 bo'g'im og'rig'i,боль в суставах,joint pain,M25.50,joint_pain,symptom,bo'g'imlar og'riyapti|bug'in og'rig'i
 bo'yin og'rig'i,боль в шее,neck pain,M54.2,neck_pain,symptom,bo'ynim og'riyapti
 mushak og'rig'i,боль в мышцах,myalgia,M79.1,myalgia,symptom,mushaklar og'riyapti|badan og'rig'i|lomota
@@ -78,18 +78,18 @@ artrit,артрит,arthritis,M13.9,arthritis,condition,bo'g'im yallig'lanishi
 bo'g'im shishi,отёк сустава,joint swelling,M25.40,joint_swelling,symptom,bo'g'im shishgan
 bosh og'rig'i,головная боль,headache,R51.9,headache,symptom,bosh ogrigi|boshim og'riyapti|migren|bosh ogriyapti|bosh og'riyapti
 kuchli bosh og'rig'i,сильнейшая головная боль,thunderclap headache,R51.9,thunderclap_headache,red_flag,hayotimdagi eng kuchli bosh og'rig'i
-bo'yin qotishi,ригидность затылка,neck stiffness,R29.1,neck_stiffness,red_flag,bo'yin qattiq|iyagi ko'kragiga tegmaydi|meningizm
-yorug'likdan qo'rqish,светобоязнь,photophobia,H53.14,photophobia,red_flag,yorug'lik ko'zni og'ritadi
+bo'yin qotishi,ригидность затылка,neck stiffness,R29.1,neck_stiffness,red_flag,bo'yin qattiq|iyagi ko'kragiga tegmaydi|meningizm|bo'yin qotgan|bo'yni qotgan|ригидность затылка|напряжение затылочных мышц
+yorug'likdan qo'rqish,светобоязнь,photophobia,H53.14,photophobia,red_flag,yorug'lik ko'zni og'ritadi|yorug'likdan qo'rqadi|светобоязнь|боится света
 talvasa,судороги,seizure,R56.9,seizure,red_flag,tutqanoq|epilepsiya xuruji
-nutq buzilishi,нарушение речи,slurred speech,R47.81,slurred_speech,red_flag,gapira olmayapti|tili tutildi
-bir tomon holsizligi,слабость в одной стороне,unilateral weakness,R29.898,unilateral_weakness,red_flag,qo'li ishlamayapti|yuzi qiyshaygan|bir tarafi falaj
+nutq buzilishi,нарушение речи,slurred speech,R47.81,slurred_speech,red_flag,gapira olmayapti|tili tutildi|nutqi buzilgan|so'zlari tushunarsiz|не может говорить|нарушение речи|невнятная речь
+bir tomon holsizligi,слабость в одной стороне,unilateral weakness,R29.898,unilateral_weakness,red_flag,qo'li ishlamayapti|yuzi qiyshaygan|bir tarafi falaj|o'ng qo'li ishlamayapti|chap qo'li ishlamayapti|перекос лица|не работает рука|слабость в руке
 ko'rish xiralashishi,нечёткое зрение,blurred vision,H53.8,blurred_vision,symptom,ko'zim xira ko'ryapti
 uvishish,онемение,numbness,R20.0,numbness,symptom,sezgi yo'qolishi|karaxtlik
 siyganda achishish,жжение при мочеиспускании,dysuria,R30.0,dysuria,symptom,siyish og'riqli|achishib siyish
 siydikda qon,кровь в моче,hematuria,R31.9,hematuria,red_flag,qonli siydik
 buyrak og'rig'i,боль в почках,flank pain,N23,flank_pain,symptom,buyragim og'riyapti|yon og'rig'i
 homiladorlik,беременность,pregnancy,Z34.90,pregnancy,context,homilador|bo'yida bor|ikkiqat
-homiladorlikda qon ketishi,кровотечение при беременности,pregnancy bleeding,O20.9,pregnancy_bleeding,red_flag,homilador qon ketyapti|bachadondan qon
+homiladorlikda qon ketishi,кровотечение при беременности,pregnancy bleeding,O20.9,pregnancy_bleeding,red_flag,homilador qon ketyapti|bachadondan qon|bachadondan qon ketmoqda|маточное кровотечение|кровотечение при беременности
 hayz buzilishi,нарушение цикла,menstrual irregularity,N92.6,menstrual_irregularity,symptom,hayz kelmayapti|oyboshi buzilgan
 toshma,сыпь,rash,R21,rash,symptom,teri toshmasi|dog'lar|qichima
 qichishish,зуд,itching,L29.9,pruritus,symptom,qichiyapti|qichima
@@ -109,7 +109,7 @@ uch kundan beri,три дня,three days,,onset_3d,modifier,3 kun bo'ldi|3 kun|3
 bir haftadan beri,неделю,one week,,onset_1w,modifier,1 hafta bo'ldi|1 hafta|bir hafta|hafta bo'ldi
 ikki haftadan beri,две недели,two weeks,,onset_2w,modifier,2 hafta|ikki hafta
 bir oydan beri,месяц,one month,,onset_1m,modifier,1 oy bo'ldi|1 oy|bir oy
-uch haftadan ortiq,более трёх недель,over three weeks,,onset_over_3w,modifier,3 haftadan ko'p
+uch haftadan ortiq,более трёх недель,over three weeks,,onset_over_3w,modifier,3 haftadan ko'p|uch haftadan ortiq|3 haftadan ortiq|uzoq davom etgan|более трёх недель|более 3 недель|длительный
 kuchli,сильный,severe,,severity_severe,modifier,juda qattiq|chidab bo'lmaydigan
 o'rtacha,умеренный,moderate,,severity_moderate,modifier,o'rta darajada
 yengil,лёгкий,mild,,severity_mild,modifier,sal|biroz
@@ -128,3 +128,6 @@ jismoniy faollik,физическая активность,physical activity,,ph
 balg'am tahlili,анализ мокроты,sputum test,,sputum_test,lab,balgam tekshiruvi|genexpert
 regidratatsiya,регидратация,rehydration,,rehydration,treatment,ors|og'iz orqali regidratatsiya|suyuqlik berish
 emizish,грудное вскармливание,breastfeeding,,breastfeeding,context,ko'krak suti|emizikli
+chalkashlik,спутанность сознания,confusion,R41.0,confusion,red_flag,es-hushi chalkash|hushi chalkashgan|спутанность|дезориентация
+chuqur nafas,глубокое дыхание,kussmaul breathing,R06.4,kussmaul_breathing,red_flag,kussmaul nafas|дыхание Куссмауля
+subfebril harorat,субфебрильная температура,low grade fever,R50.9,low_grade_fever,symptom,37 daraja|subfebrilitet
