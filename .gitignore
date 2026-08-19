@@ -22,7 +22,7 @@ web/.next/
 web/out/
 web/next-env.d.ts
 
-# Flutter
+# Flutter — generated sources are rebuilt by build_runner in CI
 mobile/.dart_tool/
 mobile/build/
 mobile/.flutter-plugins*

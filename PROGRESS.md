@@ -117,3 +117,47 @@ prompt context, where they help.
 - Cassettes are recorded per prompt hash; no live-API recordings are committed yet.
 
 **Next**: Sprint 4 — the Flutter offline-first clinic app.
+
+## Sprint 4 — Flutter clinic app (offline-first) ✅
+
+**Shipped** — and genuinely verified: Flutter 3.24.5 was installed in this environment, so
+`flutter analyze` is clean and all **51 tests pass**, rather than the code merely being written.
+
+- Drift (SQLite) local store as the record of truth while offline. Two schema-level invariants:
+  nothing is deleted on sync (rows are marked), and **every mutation writes its outbox row in the
+  same transaction** as the data it describes, so there is no window where a consultation exists
+  with nothing scheduled to send it.
+- `SyncEngine`: idempotent per `operation_id`, exponential backoff, and an outbox row that is
+  deleted only after the server confirms it. A rejected operation is kept and surfaced, never
+  dropped — losing a patient record because the server disliked it is not an option.
+- **On-device red flags** (`local_red_flags.dart`): 12 rules mirroring the server's table, so a
+  feldsher with no signal still gets the immediate-referral banner. A test asserts every device
+  code exists in the server's rule table, so the two cannot drift apart silently.
+- `OfflineEngine` deliberately produces **no differentials** offline. Without retrieval, a
+  citation or a formulary check, a ranked list would be a guess dressed up as advice; what it
+  does produce is the red flags, a complete captured case, and honest follow-up questions.
+- UI built for the actual user: 64dp touch targets, 18sp body text, high contrast, symptom chips
+  plus free text plus mic, uz/ru toggle on every screen.
+- `SyncIndicator` states three things a non-technical user can act on: how many records are
+  waiting, when it last worked, and a retry button.
+- Safety surfaces are enforced by test: red flags render **above** any differential, the
+  disclaimer is present and non-dismissible, a blocked paediatric dose is shown rather than
+  hidden, and the accept/edit/reject gate must be closed before a consultation completes.
+- **Airplane-mode end-to-end test**: a full consultation is entered, assessed and decided with
+  the network down, and the record is verified on disk and in the outbox afterwards.
+
+**Two real bugs found by these tests**
+1. *Sync ordering.* A patient and their first consultation are created seconds apart offline and
+   became due in the same batch — but the consultation's payload still carried the patient's
+   **local** id, which the server had never seen, so it would have been rejected as an orphan.
+   The engine now sends parents before children and rewrites the references in between.
+2. *Touch targets.* `VisualDensity.comfortable` silently subtracted 4dp from every button,
+   rendering the promised 64dp target at 60dp. The theme now uses standard density.
+
+**Stubbed**
+- Voice input is wired through an injected recorder so tests can drive it; the Whisper upload
+  path itself queues audio but is not yet transcribing.
+- The patient handout (`printing`/`pdf`) is a dependency, not yet a screen.
+- The edge-server (Ollama) client is a URL swap in `providers.dart`, not a separate transport.
+
+**Next**: Sprint 5 — the evaluation harness.
