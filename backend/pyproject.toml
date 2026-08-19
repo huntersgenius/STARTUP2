@@ -1,0 +1,39 @@
+[project]
+name = "sihhatai-backend"
+version = "0.1.0"
+description = "SihhatAI clinical decision support backend"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [".venv", "alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "C4", "SIM"]
+ignore = ["B008", "E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+ignore_missing_imports = true
+disallow_untyped_defs = false
+plugins = []
+exclude = "(alembic/|tests/)"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers -p no:cacheprovider"
+asyncio_default_fixture_loop_scope = "function"
+markers = [
+  "redteam: de-identification red-team suite; may never be skipped",
+  "eval: evaluation harness tests",
+]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/ai/eval/*", "alembic/*"]

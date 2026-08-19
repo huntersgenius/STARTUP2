@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.db
+*.sqlite3
+
+# Secrets — never commit a real key
+.env
+.env.local
+*.pem
+
+# Node / Next.js
+node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+
+# Flutter
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins*
+mobile/**/*.g.dart
+mobile/**/*.freezed.dart
+
+# Eval outputs are regenerated; only the committed baseline is tracked
+backend/app/ai/eval/results/*.json
+!backend/app/ai/eval/results/baseline.json
+backend/app/ai/eval/results/report.html
+
+# OS
+.DS_Store
