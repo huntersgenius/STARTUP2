@@ -56,6 +56,18 @@ eval-ab: $(VENV)  ## compare two prompt versions on the same vignette set
 	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
 		../$(PY) -m app.ai.eval.ab $(ARGS)
 
+web-dev:  ## run the admin dashboard against a local API
+	cd web && npm run dev
+
+web-check:  ## lint, typecheck and build the admin dashboard
+	cd web && npm run lint && npm run typecheck && npm run build
+
+mobile-check:  ## analyse and test the Flutter app
+	cd mobile && flutter pub get && dart run build_runner build --delete-conflicting-outputs && flutter analyze && flutter test
+
+backup:  ## take a verified Postgres backup
+	infra/ops/backup.sh
+
 clean:
 	find . -name __pycache__ -type d -prune -exec rm -rf {} + 2>/dev/null || true
 	rm -rf backend/.pytest_cache backend/.mypy_cache backend/.coverage

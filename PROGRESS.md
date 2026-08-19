@@ -225,3 +225,51 @@ recognised surfaces**. Recall went 62% → 96.2% → **100%**.
   cannot really estimate confidence; that is a known gap the LLM arms should beat.
 
 **Next**: Sprint 6 — admin dashboard, deployment, edge bundle, pilot runbook.
+
+## Sprint 6 — Admin dashboard, deployment, edge bundle, pilot readiness ✅
+
+**Shipped**
+- **Next.js admin dashboard** (uz/ru, dark-mode aware), verified: `npm run lint`,
+  `typecheck` and `build` all clean. Leads with **AI acceptance rate** — the key product
+  metric — and puts **undecided suggestions** next to it, because an open clinician gate is
+  the one number that must never be quietly ignored. Per-clinic table adds edit/reject rates,
+  red flags fired, mean latency, degraded share, sync conflicts and cost.
+- Audit page: chain verification and the CSV export that goes to the regulatory sandbox
+  reviewer, with the guarantee stated in the clinician's language on the page itself.
+- The browser never sees the API address or a token: requests go through a same-origin
+  Next.js rewrite.
+- **Edge bundle** (`infra/edge/`): docker-compose running Postgres+pgvector, Redis, Ollama and
+  the API on a clinic mini-PC. It deliberately holds **no cloud API keys** — a stolen box
+  cannot spend the API budget. `INSTALL.md` is a one-page procedure written for a non-engineer,
+  including what to do when it goes wrong.
+- **Terraform** for staging and prod with encrypted RDS, Secrets-Manager-managed credentials,
+  encrypted ElastiCache, immutable ECR tags, and a 30-day backup window in prod. The region is
+  a variable with a comment pointing at ADR 0002, so nobody settles data residency by editing
+  a default.
+- **Backups that are actually verified**: `infra/ops/backup.sh` restores every dump into a
+  scratch database and counts rows — including the audit chain — before declaring success. A
+  backup nobody has restored is a hope, not a backup. `restore.sh` requires typed confirmation
+  and prints what it will overwrite.
+- **Ops**: Sentry wired with a `before_send` hook that strips identifiers by key *and* by
+  pattern, request bodies never sent, and five Prometheus alerts that each name what a human
+  should do. One of them, `NoDecisionsRecorded`, treats a silent clinician gate as a
+  compliance incident rather than a bug.
+- **`docs/PILOT_RUNBOOK.md`**: blockers before travel, install, a 45-minute training script,
+  first-week checks, the weekly metrics review, rollback (always available, never a failure),
+  exit criteria, and the printable one-page staff guide in Uzbek.
+
+**Two judgements worth recording**
+- The runbook says a **90%+ acceptance rate is a negative result** until proven otherwise.
+  Rubber-stamping is the most likely way this product fails safely-looking.
+- Rollback is documented as ordinary and blameless. A clinician who feels they cannot stop
+  using a tool will work around it instead, which is worse for the patient and worse for us.
+
+**Numbers**: backend 393 tests green, 87% coverage, mypy clean on 62 files; Flutter analyze
+clean with 51 tests; web lint, typecheck and build clean.
+
+**Stubbed / next**
+- ECS services and load balancer are not in terraform yet — the modules define data, network
+  and registry; compute is the next slice.
+- The dashboard reads live metrics but has no charts over time yet; the API returns a single
+  window, not a series.
+- Whisper transcription still queues audio without transcribing it.

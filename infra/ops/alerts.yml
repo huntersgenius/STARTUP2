@@ -1,0 +1,95 @@
+# Prometheus alerting rules.
+#
+# Deliberately few. An alert that fires weekly and is ignored is worse than no
+# alert, so each of these means "a person should look now", and each names what
+# the person should do.
+
+groups:
+  - name: sihhatai-availability
+    interval: 30s
+    rules:
+      - alert: ApiDown
+        expr: up{job="sihhatai-backend"} == 0
+        for: 2m
+        labels: {severity: page}
+        annotations:
+          summary: "SihhatAI API is unreachable"
+          runbook: >
+            Clinics cannot sync. Tablets keep working offline and queue records,
+            so no data is lost, but suggestions are unavailable.
+            Check the container, then the database.
+
+      - alert: HighErrorRate
+        expr: |
+          sum(rate(sihhatai_requests_total{status=~"5.."}[5m]))
+            / sum(rate(sihhatai_requests_total[5m])) > 0.05
+        for: 10m
+        labels: {severity: page}
+        annotations:
+          summary: "Over 5% of requests are failing"
+
+  - name: sihhatai-clinical
+    interval: 60s
+    rules:
+      - alert: DegradedSuggestionRate
+        expr: |
+          sum(rate(sihhatai_analyses_total{degraded="true"}[30m]))
+            / sum(rate(sihhatai_analyses_total[30m])) > 0.25
+        for: 15m
+        labels: {severity: page}
+        annotations:
+          summary: "More than a quarter of suggestions are falling back"
+          runbook: >
+            Clinicians are getting rules-only answers. Check the provider
+            circuit breakers (sihhatai_breaker_opened_total) and the model
+            provider's status page.
+
+      - alert: SlowSuggestions
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(sihhatai_analysis_latency_seconds_bucket[15m])) by (le)) > 6
+        for: 15m
+        labels: {severity: ticket}
+        annotations:
+          summary: "p95 suggestion latency is over the 6s budget"
+
+      - alert: NoDecisionsRecorded
+        expr: |
+          sum(increase(sihhatai_analyses_total[6h])) > 20
+            and sum(increase(sihhatai_decisions_total[6h])) == 0
+        for: 30m
+        labels: {severity: page}
+        annotations:
+          summary: "Suggestions are being generated but no clinician decisions recorded"
+          runbook: >
+            The clinician-in-the-loop gate may be broken in the client, which
+            would mean AI output is reaching clinicians without being accepted,
+            edited or rejected. Treat as a compliance incident until disproven.
+
+  - name: sihhatai-cost
+    interval: 300s
+    rules:
+      - alert: ApiSpendAboveCeiling
+        expr: |
+          sum(rate(sihhatai_analysis_cost_usd_sum[1h]))
+            / sum(rate(sihhatai_analysis_cost_usd_count[1h])) > 0.05
+        for: 30m
+        labels: {severity: ticket}
+        annotations:
+          summary: "Mean cost per consultation is above the $0.05 ceiling"
+          runbook: >
+            Check the semantic cache hit rate and whether routing is sending
+            simple cases to the frontier model.
+
+  - name: sihhatai-sync
+    interval: 300s
+    rules:
+      - alert: SyncBacklogGrowing
+        expr: sum(rate(sihhatai_requests_total{path="/api/v1/sync",status="200"}[1h])) == 0
+        for: 6h
+        labels: {severity: ticket}
+        annotations:
+          summary: "No clinic has synced successfully in six hours"
+          runbook: >
+            Records are accumulating on tablets. They are safe, but a device
+            that is replaced before syncing loses them. Contact the clinics.

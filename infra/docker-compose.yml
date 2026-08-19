@@ -54,6 +54,15 @@ services:
       - ../backend:/srv/backend
       - ../knowledge:/srv/knowledge
 
+  web:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.web
+    environment:
+      SIHHAT_API_URL: http://backend:8000
+    ports: ["3000:3000"]
+    depends_on: [backend]
+
   mailhog:
     image: mailhog/mailhog:latest
     ports: ["1025:1025", "8025:8025"]

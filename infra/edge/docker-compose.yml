@@ -1,0 +1,82 @@
+# SihhatAI edge bundle — runs on a mini-PC inside a clinic.
+#
+# Everything here works with the internet unplugged. The clinic's tablets talk
+# to this box over the local network; the box syncs upstream whenever it can.
+#
+# Hardware this is sized for: an Intel N100 mini-PC, 16 GB RAM, 512 GB SSD.
+# See INSTALL.md for the one-page procedure.
+
+name: sihhatai-edge
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sihhat
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+      POSTGRES_DB: sihhat
+    volumes:
+      - edge-pgdata:/var/lib/postgresql/data
+      # Nightly dump, kept on the box so a failed upstream sync is survivable.
+      - ./backups:/backups
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sihhat -d sihhat"]
+      interval: 10s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "512mb", "--maxmemory-policy", "allkeys-lru"]
+    volumes:
+      - edge-redisdata:/data
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - edge-ollama:/root/.ollama
+    # No ports published: only the API container may reach the model.
+    expose: ["11434"]
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list || exit 1"]
+      interval: 30s
+      start_period: 120s
+      retries: 10
+
+  api:
+    image: ghcr.io/sihhatai/backend:${SIHHAT_VERSION:-latest}
+    restart: unless-stopped
+    environment:
+      ENVIRONMENT: prod
+      DATABASE_URL: postgresql+psycopg://sihhat:${DB_PASSWORD}@postgres:5432/sihhat
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY in .env}
+      PII_ENCRYPTION_KEY: ${PII_ENCRYPTION_KEY:?set PII_ENCRYPTION_KEY in .env}
+      # No cloud keys on the edge box: it runs the local model only, so a
+      # stolen mini-PC cannot spend the company's API budget.
+      LOCAL_LLM_BASE_URL: http://ollama:11434
+      LOCAL_MODEL: ${LOCAL_MODEL:-llama3:8b}
+      LOG_LEVEL: INFO
+    ports: ["8000:8000"]
+    depends_on:
+      postgres: {condition: service_healthy}
+    command: >
+      sh -c "alembic upgrade head &&
+             python -m knowledge.ingest --corpus /srv/knowledge/corpus --offline &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 2"
+
+  # Pulls the model once on first boot, then exits.
+  model-init:
+    image: ollama/ollama:latest
+    depends_on: [ollama]
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "OLLAMA_HOST=http://ollama:11434 ollama pull ${LOCAL_MODEL:-llama3:8b} || true"
+    restart: on-failure
+
+volumes:
+  edge-pgdata:
+  edge-redisdata:
+  edge-ollama:

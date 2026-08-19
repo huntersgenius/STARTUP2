@@ -16,6 +16,7 @@ from app.core import metrics
 from app.core.config import get_settings
 from app.core.i18n import resolve_language
 from app.core.logging import configure_logging
+from app.core.observability import configure_sentry
 
 logger = logging.getLogger("sihhatai.request")
 
@@ -28,6 +29,7 @@ DISCLAIMER_TOKEN = "not-a-diagnosis; clinician-review-required"
 def create_app() -> FastAPI:
     settings = get_settings()
     configure_logging()
+    configure_sentry()
 
     app = FastAPI(
         title=settings.app_name,
