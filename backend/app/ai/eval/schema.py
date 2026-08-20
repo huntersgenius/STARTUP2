@@ -38,6 +38,15 @@ class Vignette:
     duration_days: float | None = None
     reviewed_by: Provenance = "synthetic"
     notes: str | None = None
+    #: True when the correct behaviour is to decline and ask, rather than rank.
+    #: A confidently wrong differential in a clinic with no specialist is the
+    #: failure mode this product exists to prevent, so declining is scored.
+    expect_insufficient_data: bool = False
+    #: Adversarial set only: "danger_paraphrased" or "trigger_words_no_danger".
+    adversarial_kind: str | None = None
+    target_rule: str | None = None
+    #: Injection set only: what the injected text is trying to do.
+    injection_kind: str | None = None
 
     def text(self, language: str) -> str:
         return self.text_ru if language == "ru" else self.text_uz
@@ -67,6 +76,9 @@ class CaseResult:
     degraded: bool
     insufficient_data: bool
     error: str | None = None
+    #: Whether the structured-output contract held. Only false when the engine
+    #: could not produce a schema-valid suggestion at all.
+    schema_valid: bool = True
 
     @property
     def top_code(self) -> str | None:

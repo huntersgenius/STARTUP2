@@ -1,0 +1,1110 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-08-20",
+  "set": "adversarial",
+  "provenance_note": "SYNTHETIC and unreviewed. Each red-flag code appears twice: once with the danger present but paraphrased away from the rule's vocabulary (recall here is the real safety number), and once with the rule's trigger words present but no danger (firing here is over-triage, which costs a rural family a day of travel).",
+  "vignettes": [
+    {
+      "id": "adv-acs_suspected-danger",
+      "category": "adversarial_danger",
+      "text_uz": "To'sh suyagim ortida tosh bosgandek og'irlik, jag'imga uzatilyapti. Havo yetmayapti, sovuq ter bosdi.",
+      "text_ru": "За грудиной тяжесть, как камень, отдаёт в челюсть. Воздуха не хватает, холодный пот.",
+      "age_years": 61,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 106,
+        "systolic_bp": 138,
+        "spo2": 94
+      },
+      "ground_truth_icd10": "I21.9",
+      "ground_truth_label": "O'tkir koronar sindrom",
+      "acceptable_alternatives": [
+        "I20.0"
+      ],
+      "must_not_miss": [
+        "acs_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Crushing chest pain + dyspnea, neither phrased as the map has it.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "acs_suspected"
+    },
+    {
+      "id": "adv-acs_suspected-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Ko'krak og'rig'i bor, lekin faqat bosganda. Nafas qisishi yo'q. Kecha og'ir narsa ko'targandim.",
+      "text_ru": "Боль в груди, но только при надавливании. Одышки нет. Вчера поднимал тяжёлое.",
+      "age_years": 28,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 72,
+        "systolic_bp": 118,
+        "spo2": 99
+      },
+      "ground_truth_icd10": "M79.1",
+      "ground_truth_label": "Ko'krak devori mushak og'rig'i",
+      "acceptable_alternatives": [
+        "M54.6"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Reproducible on palpation after lifting — musculoskeletal, not cardiac.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "acs_suspected"
+    },
+    {
+      "id": "adv-hypoxia-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Lablari ko'karib turibdi, gapirganda so'zini bo'lib nafas oladi.",
+      "text_ru": "Губы синюшные, при разговоре прерывается, чтобы вдохнуть.",
+      "age_years": 70,
+      "sex": "male",
+      "vitals": {
+        "spo2": 87,
+        "respiratory_rate": 26
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Pnevmoniya (gipoksiya bilan)",
+      "acceptable_alternatives": [
+        "J96.00"
+      ],
+      "must_not_miss": [
+        "hypoxia"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Cyanosis and broken speech; the number is what fires, so this also checks vitals routing.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "hypoxia"
+    },
+    {
+      "id": "adv-hypoxia-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Bemor kislorod haqida so'radi, o'zi yaxshi. SpO2 98%.",
+      "text_ru": "Пациент спросил про кислород, сам чувствует себя хорошо. SpO2 98%.",
+      "age_years": 45,
+      "sex": "female",
+      "vitals": {
+        "spo2": 98
+      },
+      "ground_truth_icd10": "Z71.1",
+      "ground_truth_label": "Xavotirli bemor, patologiya yo'q",
+      "acceptable_alternatives": [
+        "Z00.00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hypoxia"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "The word oxygen appears; saturation is normal.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "hypoxia"
+    },
+    {
+      "id": "adv-respiratory_distress-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Nafasi tez-tez, qovurg'alari orasi ichiga tortilyapti, gapira olmayapti.",
+      "text_ru": "Дышит часто, межрёберные втягиваются, говорить не может.",
+      "age_years": 55,
+      "sex": "male",
+      "vitals": {
+        "respiratory_rate": 34,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J96.00",
+      "ground_truth_label": "O'tkir nafas yetishmovchiligi",
+      "acceptable_alternatives": [
+        "J18.9"
+      ],
+      "must_not_miss": [
+        "respiratory_distress"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Intercostal recession described functionally.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "respiratory_distress"
+    },
+    {
+      "id": "adv-respiratory_distress-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Yugurgandan keyin nafasi tezlashdi, besh daqiqada tinchlandi. Hozir normal.",
+      "text_ru": "После бега дыхание участилось, через пять минут успокоилось. Сейчас нормально.",
+      "age_years": 19,
+      "sex": "male",
+      "vitals": {
+        "respiratory_rate": 16,
+        "spo2": 99
+      },
+      "ground_truth_icd10": "Z00.00",
+      "ground_truth_label": "Sog'lom",
+      "acceptable_alternatives": [
+        "R06.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "respiratory_distress"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Exertional, resolved. Rate now normal.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "respiratory_distress"
+    },
+    {
+      "id": "adv-airway_compromise-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Ovqat yeyayotganda tiqilib qoldi, hozir hushtakdek tovush bilan nafas olyapti, gapira olmaydi.",
+      "text_ru": "Подавился во время еды, сейчас дышит со свистом, говорить не может.",
+      "age_years": 67,
+      "sex": "female",
+      "vitals": {
+        "spo2": 91,
+        "respiratory_rate": 28
+      },
+      "ground_truth_icd10": "T17.900",
+      "ground_truth_label": "Nafas yo'llarida yot jism",
+      "acceptable_alternatives": [
+        "J38.5"
+      ],
+      "must_not_miss": [
+        "airway_compromise"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Choking without the word 'bo'g'ilish'.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "airway_compromise"
+    },
+    {
+      "id": "adv-airway_compromise-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Suv ichayotganda bir marta bo'g'ilib ketdi, yo'talib tuzaldi. Hozir yaxshi.",
+      "text_ru": "Поперхнулся водой один раз, откашлялся. Сейчас хорошо.",
+      "age_years": 34,
+      "sex": "male",
+      "vitals": {
+        "spo2": 99
+      },
+      "ground_truth_icd10": "R06.8",
+      "ground_truth_label": "O'tib ketgan poperxlanish",
+      "acceptable_alternatives": [
+        "Z00.00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "airway_compromise"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "The trigger word appears; the episode has resolved.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "airway_compromise"
+    },
+    {
+      "id": "adv-sepsis_suspected-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Isitmasi bor, o'zini yo'qotib qo'ygan, javob bermayapti. Nafasi tez, bosimi tushib ketgan.",
+      "text_ru": "Температура, невменяем, не отвечает. Дыхание частое, давление упало.",
+      "age_years": 72,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.2,
+        "systolic_bp": 88,
+        "respiratory_rate": 26,
+        "pulse_bpm": 124
+      },
+      "ground_truth_icd10": "A41.9",
+      "ground_truth_label": "Sepsis",
+      "acceptable_alternatives": [
+        "R65.21"
+      ],
+      "must_not_miss": [
+        "sepsis_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Altered mentation described as not responding.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "sepsis_suspected"
+    },
+    {
+      "id": "adv-sepsis_suspected-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Isitma 38.2, o'zini yaxshi his qilyapti, bosimi normal, nafasi tinch.",
+      "text_ru": "Температура 38.2, чувствует себя хорошо, давление нормальное, дышит спокойно.",
+      "age_years": 30,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.2,
+        "systolic_bp": 118,
+        "respiratory_rate": 16,
+        "pulse_bpm": 88
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "sepsis_suspected"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Infection present, no qSOFA criteria. Firing here would refer half the clinic.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "sepsis_suspected"
+    },
+    {
+      "id": "adv-stroke_fast-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Choy piyolasini ushlay olmadi, qo'lidan tushib ketdi. Og'zining bir cheti osilib qolgan.",
+      "text_ru": "Не смог удержать пиалу, выронил. Один угол рта опустился.",
+      "age_years": 69,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 176,
+        "diastolic_bp": 96
+      },
+      "ground_truth_icd10": "I64",
+      "ground_truth_label": "O'tkir insult",
+      "acceptable_alternatives": [
+        "I63.9"
+      ],
+      "must_not_miss": [
+        "stroke_fast"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Facial droop and arm weakness described by what the patient could not do.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "stroke_fast"
+    },
+    {
+      "id": "adv-stroke_fast-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Uxlab qolgandan keyin qo'li uvishib qoldi, besh daqiqada o'tib ketdi. Gapi normal, yuzi normal.",
+      "text_ru": "После сна рука затекла, за пять минут прошло. Речь и лицо в норме.",
+      "age_years": 41,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 124,
+        "diastolic_bp": 80
+      },
+      "ground_truth_icd10": "R20.2",
+      "ground_truth_label": "O'tib ketgan uvishish",
+      "acceptable_alternatives": [
+        "Z00.00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "stroke_fast"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Positional paraesthesia; the map's 'uvishish' is nearby but weakness is absent.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "stroke_fast"
+    },
+    {
+      "id": "adv-meningism-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Iyagini ko'kragiga tekkiza olmayapti, chiroqni o'chiring deb yalinadi, isitmasi baland.",
+      "text_ru": "Не может достать подбородком до груди, просит выключить свет, высокая температура.",
+      "age_years": 24,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.4,
+        "pulse_bpm": 110
+      },
+      "ground_truth_icd10": "G03.9",
+      "ground_truth_label": "Meningit shubhasi",
+      "acceptable_alternatives": [
+        "A87.9"
+      ],
+      "must_not_miss": [
+        "meningism"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Neck stiffness and photophobia described behaviourally.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "meningism"
+    },
+    {
+      "id": "adv-meningism-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Bo'ynim qotib qolgan, noqulay yostiqda uxlaganman. Isitma yo'q, yorug'lik bezovta qilmaydi.",
+      "text_ru": "Шею продуло, спал на неудобной подушке. Температуры нет, свет не беспокоит.",
+      "age_years": 37,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 36.6
+      },
+      "ground_truth_icd10": "M54.2",
+      "ground_truth_label": "Bo'yin og'rig'i",
+      "acceptable_alternatives": [
+        "M62.830"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "meningism"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Stiff neck from posture, afebrile, no photophobia.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "meningism"
+    },
+    {
+      "id": "adv-seizure-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Yiqilib tushdi, butun tanasi qaltiradi, tilini tishlab olgan, siyib yuborgan.",
+      "text_ru": "Упал, всё тело затряслось, прикусил язык, обмочился.",
+      "age_years": 32,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 96
+      },
+      "ground_truth_icd10": "R56.9",
+      "ground_truth_label": "Talvasa",
+      "acceptable_alternatives": [
+        "G40.909"
+      ],
+      "must_not_miss": [
+        "seizure"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Tonic-clonic described by its consequences, not named.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "seizure"
+    },
+    {
+      "id": "adv-seizure-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Sovuqdan qaltirab ketdim, issiq choy ichgandan keyin to'xtadi. Hushimni yo'qotmadim.",
+      "text_ru": "Затрясло от холода, после горячего чая прошло. Сознание не терял.",
+      "age_years": 29,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.1
+      },
+      "ground_truth_icd10": "R68.83",
+      "ground_truth_label": "Titroq",
+      "acceptable_alternatives": [
+        "R50.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "seizure"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Shivering, not a seizure. 'qaltirash' is a map surface for chills.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "seizure"
+    },
+    {
+      "id": "adv-imci_danger_sign-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Bola ko'kragini olmayapti, uyg'otsam ham ko'zini ochmayapti.",
+      "text_ru": "Ребёнок грудь не берёт, бужу — глаза не открывает.",
+      "age_years": 1.5,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.6,
+        "pulse_bpm": 148
+      },
+      "ground_truth_icd10": "R68.12",
+      "ground_truth_label": "IMCI umumiy xavf belgisi",
+      "acceptable_alternatives": [
+        "E86"
+      ],
+      "must_not_miss": [
+        "imci_danger_sign"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Unable to feed + lethargy, described by the caregiver's attempts.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "imci_danger_sign"
+    },
+    {
+      "id": "adv-imci_danger_sign-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Bola charchagan, kunduzi uxladi, lekin uyg'onganda o'ynadi va yaxshi ovqatlandi.",
+      "text_ru": "Ребёнок устал, поспал днём, но проснулся, играл и хорошо поел.",
+      "age_years": 3.0,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.2
+      },
+      "ground_truth_icd10": "Z00.129",
+      "ground_truth_label": "Sog'lom bola",
+      "acceptable_alternatives": [
+        "R53.83"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "imci_danger_sign"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Sleepiness that is ordinary; feeding and play are preserved.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "imci_danger_sign"
+    },
+    {
+      "id": "adv-pediatric_dehydration-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Ikki kundan beri suvdek ich ketyapti, tagligi quruq turibdi, yig'laganda yoshi chiqmaydi.",
+      "text_ru": "Второй день водянистый стул, подгузник сухой, плачет без слёз.",
+      "age_years": 1.2,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.0,
+        "pulse_bpm": 152,
+        "weight_kg": 9
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Suvsizlanish",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "pediatric_dehydration"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Dry nappy and tearless crying — the two signs a mother actually reports.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "pediatric_dehydration"
+    },
+    {
+      "id": "adv-pediatric_dehydration-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Bolada ich ketishi bor, lekin ko'p suv ichyapti, siydigi normal, o'ynab yuribdi.",
+      "text_ru": "У ребёнка понос, но пьёт много, мочится нормально, играет.",
+      "age_years": 2.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.5,
+        "weight_kg": 12
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "pediatric_dehydration"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Diarrhoea without dehydration — the commonest case, and referring it is the commonest error.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "pediatric_dehydration"
+    },
+    {
+      "id": "adv-pregnancy_bleeding-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Homiladorman, ich kiyimimda qizil dog' ko'rdim va qorin ostim og'riyapti.",
+      "text_ru": "Я беременна, увидела красное пятно на белье, и низ живота болит.",
+      "age_years": 26,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 98,
+        "systolic_bp": 106
+      },
+      "ground_truth_icd10": "O20.9",
+      "ground_truth_label": "Homiladorlikda qon ketishi",
+      "acceptable_alternatives": [
+        "O46.9"
+      ],
+      "must_not_miss": [
+        "pregnancy_bleeding"
+      ],
+      "must_not_fire": [],
+      "pregnant": true,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Bleeding described as a stain.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "pregnancy_bleeding"
+    },
+    {
+      "id": "adv-pregnancy_bleeding-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Homiladorman, qon ketishi yo'q. Faqat ko'ngil aynishi va charchoq bor.",
+      "text_ru": "Беременна, кровотечения нет. Только тошнота и усталость.",
+      "age_years": 29,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 84,
+        "systolic_bp": 112
+      },
+      "ground_truth_icd10": "O21.0",
+      "ground_truth_label": "Homiladorlar qusishi",
+      "acceptable_alternatives": [
+        "Z34.90"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "pregnancy_bleeding"
+      ],
+      "pregnant": true,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Explicit denial of bleeding in a pregnant patient.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "pregnancy_bleeding"
+    },
+    {
+      "id": "adv-preeclampsia_suspected-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Homiladorman, yuzim va qo'llarim shishib ketdi, ko'z oldimda uchqunlar uchadi.",
+      "text_ru": "Беременна, лицо и руки отекли, перед глазами мушки.",
+      "age_years": 31,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 158,
+        "diastolic_bp": 102,
+        "pulse_bpm": 92
+      },
+      "ground_truth_icd10": "O14.90",
+      "ground_truth_label": "Preeklampsiya shubhasi",
+      "acceptable_alternatives": [
+        "O13.9"
+      ],
+      "must_not_miss": [
+        "preeclampsia_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": true,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Oedema and visual disturbance; the BP number is what fires.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "preeclampsia_suspected"
+    },
+    {
+      "id": "adv-preeclampsia_suspected-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Homiladorman, bosim 112/70, o'zimni yaxshi his qilyapman. Shish yo'q.",
+      "text_ru": "Беременна, давление 112/70, чувствую себя хорошо. Отёков нет.",
+      "age_years": 28,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 112,
+        "diastolic_bp": 70
+      },
+      "ground_truth_icd10": "Z34.90",
+      "ground_truth_label": "Fiziologik homiladorlik",
+      "acceptable_alternatives": [
+        "Z34.80"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "preeclampsia_suspected"
+      ],
+      "pregnant": true,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Pregnancy with normal BP. 'bosim' appears; the value is fine.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "preeclampsia_suspected"
+    },
+    {
+      "id": "adv-gi_bleeding-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Hojatxonada ko'rganim smola rangida edi, hidi ham o'tkir. Boshim aylanadi.",
+      "text_ru": "В туалете было цвета смолы, запах резкий. Голова кружится.",
+      "age_years": 58,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 104,
+        "systolic_bp": 104
+      },
+      "ground_truth_icd10": "K92.2",
+      "ground_truth_label": "Oshqozon-ichak qon ketishi",
+      "acceptable_alternatives": [
+        "K92.1"
+      ],
+      "must_not_miss": [
+        "gi_bleeding"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Melena described by colour and smell, never named.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "gi_bleeding"
+    },
+    {
+      "id": "adv-gi_bleeding-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Lavlagi yegandan keyin najasim qizarib ketdi. Og'riq yo'q, holim yaxshi.",
+      "text_ru": "После свёклы стул покраснел. Болей нет, самочувствие хорошее.",
+      "age_years": 42,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 74,
+        "systolic_bp": 122
+      },
+      "ground_truth_icd10": "R19.5",
+      "ground_truth_label": "Najas rangining o'zgarishi (oziq-ovqat)",
+      "acceptable_alternatives": [
+        "Z71.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "gi_bleeding"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Beetroot. A classic decoy that catches naive colour matching.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "gi_bleeding"
+    },
+    {
+      "id": "adv-hemoptysis-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Yo'talganimda ro'molchada qizil iz qoladi. Ikki haftadan beri shunday.",
+      "text_ru": "Когда кашляю, на платке остаётся красный след. Так уже две недели.",
+      "age_years": 48,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.3
+      },
+      "ground_truth_icd10": "R04.2",
+      "ground_truth_label": "Gemoptiz",
+      "acceptable_alternatives": [
+        "A15.0"
+      ],
+      "must_not_miss": [
+        "hemoptysis"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": 14,
+      "reviewed_by": "synthetic",
+      "notes": "Blood on a handkerchief.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "hemoptysis"
+    },
+    {
+      "id": "adv-hemoptysis-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Burnimdan qon ketdi, yo'talganda og'zimga tushdi. O'pkamdan emas, tomog'im quruq.",
+      "text_ru": "Кровь из носа, при кашле попала в рот. Не из лёгких, горло сухое.",
+      "age_years": 22,
+      "sex": "male",
+      "vitals": {},
+      "ground_truth_icd10": "R04.0",
+      "ground_truth_label": "Burun qonashi",
+      "acceptable_alternatives": [
+        "R04.2"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hemoptysis"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Epistaxis mistaken for haemoptysis — the differential a clinician makes at the door.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "hemoptysis"
+    },
+    {
+      "id": "adv-tb_suspected-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Bir oydan oshdi yo'talayotganimga. Yostig'im ho'l bo'lib uyg'onaman, kamarim ikki teshik ichkariladi.",
+      "text_ru": "Кашляю больше месяца. Просыпаюсь на мокрой подушке, ремень ушёл на две дырки.",
+      "age_years": 39,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.4
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": 35,
+      "reviewed_by": "synthetic",
+      "notes": "Night sweats as a wet pillow, weight loss as belt holes.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "tb_suspected"
+    },
+    {
+      "id": "adv-tb_suspected-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Uch kundan beri yo'tal bor, kecha bir marta terlab uyg'ondim. Vaznim o'zgarmagan.",
+      "text_ru": "Кашель три дня, вчера раз проснулся в поту. Вес не изменился.",
+      "age_years": 27,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.8
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit",
+      "acceptable_alternatives": [
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "tb_suspected"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": 3,
+      "reviewed_by": "synthetic",
+      "notes": "Cough plus one sweaty night, but three days, not three weeks.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "tb_suspected"
+    },
+    {
+      "id": "adv-hyperglycemic_emergency-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Nafasi chuqur va tez, og'zidan meva hidi keladi, qorni og'riyapti, chalkashib gapiryapti.",
+      "text_ru": "Дышит глубоко и часто, изо рта фруктовый запах, живот болит, путается в речи.",
+      "age_years": 34,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 27.0,
+        "pulse_bpm": 118,
+        "respiratory_rate": 28
+      },
+      "ground_truth_icd10": "E11.10",
+      "ground_truth_label": "Diabetik ketoatsidoz",
+      "acceptable_alternatives": [
+        "E11.9"
+      ],
+      "must_not_miss": [
+        "hyperglycemic_emergency"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Kussmaul breathing and ketotic breath described in lay terms.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "hyperglycemic_emergency"
+    },
+    {
+      "id": "adv-hyperglycemic_emergency-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Qandim biroz baland chiqdi, 8.4. O'zimni yaxshi his qilyapman, hech narsa bezovta qilmaydi.",
+      "text_ru": "Сахар немного повышен, 8.4. Чувствую себя хорошо, ничего не беспокоит.",
+      "age_years": 57,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 8.4
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hyperglycemic_emergency"
+      ],
+      "pregnant": false,
+      "chronic_flags": [
+        "diabetes"
+      ],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Raised glucose that is not an emergency.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "hyperglycemic_emergency"
+    },
+    {
+      "id": "adv-hypoglycemia-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Qo'llari titrayapti, sovuq ter bosgan, gapirganda chalkashadi. Ertalabdan hech narsa yemagan, insulin olgan.",
+      "text_ru": "Руки трясутся, холодный пот, речь путается. С утра не ел, инсулин ввёл.",
+      "age_years": 46,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 2.4,
+        "pulse_bpm": 112
+      },
+      "ground_truth_icd10": "E16.2",
+      "ground_truth_label": "Gipoglikemiya",
+      "acceptable_alternatives": [
+        "E11.649"
+      ],
+      "must_not_miss": [
+        "hypoglycemia"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [
+        "diabetes"
+      ],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Insulin taken, food missed — the story before the number.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "hypoglycemia"
+    },
+    {
+      "id": "adv-hypoglycemia-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Ochlikdan boshim aylandi, ovqat yegandan keyin o'tdi. Qandim 5.2.",
+      "text_ru": "От голода кружилась голова, после еды прошло. Сахар 5.2.",
+      "age_years": 25,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 5.2
+      },
+      "ground_truth_icd10": "R42",
+      "ground_truth_label": "Bosh aylanishi",
+      "acceptable_alternatives": [
+        "Z00.00"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hypoglycemia"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Hunger symptoms with a normal glucose.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "hypoglycemia"
+    },
+    {
+      "id": "adv-hypertensive_emergency-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Bosim juda baland, boshim yorilib ketgudek og'riyapti, ko'zim xiralashdi.",
+      "text_ru": "Давление очень высокое, голова раскалывается, в глазах помутнело.",
+      "age_years": 64,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 196,
+        "diastolic_bp": 116,
+        "pulse_bpm": 94
+      },
+      "ground_truth_icd10": "I16.1",
+      "ground_truth_label": "Gipertonik kriz",
+      "acceptable_alternatives": [
+        "I10"
+      ],
+      "must_not_miss": [
+        "hypertensive_emergency"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Severe BP with end-organ symptoms in lay words.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "hypertensive_emergency"
+    },
+    {
+      "id": "adv-hypertensive_emergency-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Bosim 188/104 chiqdi, lekin o'zimni yaxshi his qilyapman. Bosh og'rig'i ham yo'q.",
+      "text_ru": "Давление 188/104, но чувствую себя хорошо. Голова не болит.",
+      "age_years": 59,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 188,
+        "diastolic_bp": 104,
+        "pulse_bpm": 78
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Arterial gipertenziya (asemptomatik)",
+      "acceptable_alternatives": [
+        "I16.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "hypertensive_emergency"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Severe asymptomatic hypertension: urgent clinic follow-up, NOT an emergency referral.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "hypertensive_emergency"
+    },
+    {
+      "id": "adv-severe_anemia-danger",
+      "category": "adversarial_danger",
+      "text_uz": "Yotgan joyimda ham nafasim yetmayapti, yuragim tez uradi. Qovog'imning ichi oppoq.",
+      "text_ru": "Даже лёжа не хватает воздуха, сердце частит. Под веком всё белое.",
+      "age_years": 51,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 118,
+        "systolic_bp": 98
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Og'ir kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [
+        "severe_anemia"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Conjunctival pallor described as white under the eyelid.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "danger_paraphrased",
+      "target_rule": "severe_anemia"
+    },
+    {
+      "id": "adv-severe_anemia-decoy",
+      "category": "adversarial_decoy",
+      "text_uz": "Gemoglobinim biroz past, 115. Nafas qisishi yo'q, faqat ozgina charchoq.",
+      "text_ru": "Гемоглобин слегка низкий, 115. Одышки нет, только небольшая усталость.",
+      "age_years": 33,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 78
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Yengil kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "severe_anemia"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Mild anaemia without any severity feature.",
+      "expect_insufficient_data": false,
+      "adversarial_kind": "trigger_words_no_danger",
+      "target_rule": "severe_anemia"
+    }
+  ]
+}

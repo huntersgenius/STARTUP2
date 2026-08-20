@@ -131,3 +131,4 @@ emizish,грудное вскармливание,breastfeeding,,breastfeeding,c
 chalkashlik,спутанность сознания,confusion,R41.0,confusion,red_flag,es-hushi chalkash|hushi chalkashgan|спутанность|дезориентация
 chuqur nafas,глубокое дыхание,kussmaul breathing,R06.4,kussmaul_breathing,red_flag,kussmaul nafas|дыхание Куссмауля
 subfebril harorat,субфебрильная температура,low grade fever,R50.9,low_grade_fever,symptom,37 daraja|subfebrilitet
+tinch holatda nafas qisishi,одышка в покое,dyspnea at rest,R06.0,dyspnea_at_rest,red_flag,yotganda nafas qisishi|yotgan joyimda nafasim yetmayapti|yotgan joyimda ham nafasim yetmayapti|dam olganda ham nafas qisishi|одышка в состоянии покоя|даже лёжа не хватает воздуха|не хватает воздуха в покое

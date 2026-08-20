@@ -52,6 +52,33 @@ eval-gate: $(VENV)  ## run the evaluation suite with the CI release gates applie
 	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
 		../$(PY) -m app.ai.eval.run --offline --fail-under-top3 0.70 --fail-under-redflag 1.0
 
+eval-oov: $(VENV)  ## run the out-of-vocabulary set — the honest accuracy number
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.run --offline --set oov
+
+eval-adversarial: $(VENV)  ## red flags probed from both sides
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.run --offline --set adversarial
+
+eval-overlap: $(VENV)  ## how much of the score is vocabulary matching
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.overlap
+
+eval-all: $(VENV)  ## every set plus the overlap report, in one pass
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.summary --html
+
+PROVIDER ?= openai
+eval-model: $(VENV)  ## evaluate the real engine (needs an API key; refuses without one)
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.run --provider $(PROVIDER) --set main --html \
+		--fail-under-top3 0.70 --fail-under-redflag 1.0
+
+eval-model-gate: $(VENV)  ## the per-push model gate: deterministic stratified subset
+	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+		../$(PY) -m app.ai.eval.run --provider $(PROVIDER) --set main --subset 2 \
+		--fail-under-top3 0.70 --fail-under-redflag 1.0
+
 eval-ab: $(VENV)  ## compare two prompt versions on the same vignette set
 	cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
 		../$(PY) -m app.ai.eval.ab $(ARGS)

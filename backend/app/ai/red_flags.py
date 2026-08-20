@@ -56,6 +56,7 @@ CONCEPT_IMPLIES: dict[str, tuple[str, ...]] = {
     "productive_cough": ("cough",),
     "dry_cough": ("cough",),
     "exertional_dyspnea": ("dyspnea",),
+    "dyspnea_at_rest": ("dyspnea",),
     "crushing_chest_pain": ("chest_pain",),
     "thunderclap_headache": ("headache",),
     "febrile_seizure": ("seizure",),
@@ -466,7 +467,19 @@ def hypertensive_emergency(facts: CaseFacts) -> RedFlag | None:
 
 @rule
 def severe_anemia(facts: CaseFacts) -> RedFlag | None:
-    if facts.has("anemia", "pallor") and facts.has("dyspnea", "syncope", "chest_pain"):
+    """Anaemia with a feature that makes it urgent.
+
+    The trigger is breathlessness **at rest**, not on exertion. WHO anaemia
+    guidance (knowledge/corpus/who-anemia-primary-care.md) lists exertional
+    breathlessness as an ordinary detection sign of anaemia and reserves
+    urgent referral for "breathlessness at rest, chest pain or altered
+    consciousness". The rule originally matched generic `dyspnea` and so fired
+    on every mild iron-deficiency case, which was the entire false-referral
+    rate on the main evaluation set — 40 of 40.
+    """
+    if facts.has("anemia", "pallor") and facts.has(
+        "dyspnea_at_rest", "syncope", "chest_pain", "confusion"
+    ):
         return _flag(
             "severe_anemia",
             Urgency.same_day,

@@ -18,6 +18,32 @@ Band = Literal["low", "moderate", "high", "very_high"]
 #: Points per finding. Weights are ordinal, not probabilities: they rank
 #: patients for attention, they do not estimate an event rate. Anything
 #: claiming to be a probability needs outcome data we do not have.
+#:
+#: **Sources.** Every *threshold* below cites the protocol it comes from. The
+#: *relative weights* do not have a source and are not claimed to: no published
+#: instrument scores this particular mix of findings, so the ordering was set
+#: by clinical severity and is a judgement to be reviewed by an advisor, not a
+#: fitted parameter. That distinction is the honest one — a weight with a
+#: fabricated citation would be worse than a weight that admits what it is.
+#:
+#: Thresholds:
+#:   SpO2 <90 / <94            UzMoH pneumonia protocol, CRB-65 section
+#:                             (knowledge/corpus/uz-moh-pneumonia-protocol.md:
+#:                             "SpO2 92% dan past bo'lsa ... shoshilinch yo'naltiring")
+#:   systolic <90              qSOFA / CRB-65 hypotension criterion, same protocol
+#:   systolic >=140 / >=180    WHO hypertension guideline 2021
+#:                             (knowledge/corpus/who-hypertension-primary-care.md)
+#:   respiratory rate >=30     CRB-65, same UzMoH protocol
+#:   respiratory rate, child   WHO IMCI age bands (fast breathing: >=50/min at
+#:                             2-11 months, >=40/min at 1-5 years)
+#:                             (knowledge/corpus/who-imci-diarrhoea.md and IMCI)
+#:   glucose >=20 / <3.0       UzMoH diabetes protocol, urgent-referral section
+#:                             (knowledge/corpus/uz-moh-diabetes-t2.md)
+#:   glucose >=11.1            WHO/IDF diagnostic threshold for random plasma
+#:                             glucose, same protocol
+#:   temperature >=40 / <35    Sepsis-3 supporting criteria; extremes only
+#:   age >=65 / >=80           CRB-65 uses 65; the 80 step is a judgement
+#:   age <1 / <5               WHO IMCI treats under-5 as a distinct risk group
 CONCEPT_POINTS: dict[str, int] = {
     # Immediate-danger findings dominate by construction: a patient with one of
     # these must sort above any accumulation of chronic risk.
@@ -72,6 +98,10 @@ CHRONIC_POINTS: dict[str, int] = {
     "pregnancy": 6,
 }
 
+#: Band cut-points. These are **not** sourced: no external instrument maps this
+#: point total to a risk band. They were chosen so that any single
+#: immediate-danger finding lands in "very_high" and an accumulation of chronic
+#: factors alone cannot. Treat them as a triage ordering, not a probability.
 BAND_THRESHOLDS: tuple[tuple[int, Band], ...] = (
     (60, "very_high"),
     (35, "high"),
@@ -81,6 +111,15 @@ BAND_THRESHOLDS: tuple[tuple[int, Band], ...] = (
 #: A fired red flag pins the score to at least this, whatever else is true.
 #: The rule layer has already decided this patient needs referral; the risk
 #: score must not quietly disagree with it.
+#:
+#: **Operating point.** This scorer is deliberately tuned to avoid missing a
+#: high-risk patient, at the cost of flagging low-risk ones. In a rural clinic
+#: the two errors are not symmetric: a missed deterioration can be fatal, while
+#: an unnecessary "high" band costs a clinician thirty seconds of attention —
+#: note that the *referral* decision is made by the red-flag rules and the
+#: clinician, not by this score, so a false "high" does not by itself send
+#: anyone anywhere. Measured sensitivity and specificity at this operating
+#: point are reported by `python -m ml.evaluate_risk` and in ml/README.md.
 RED_FLAG_FLOOR = 70
 
 

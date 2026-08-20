@@ -158,6 +158,42 @@ void main() {
     });
   });
 
+  group('confidence is not shown as a probability', () {
+    testWidgets('a differential shows a match band, never a percentage',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(_wrap(
+        const SuggestionView(
+          language: 'uz',
+          suggestion: ClinicalSuggestion(
+            differentials: <Differential>[
+              Differential(
+                condition: 'Bronxit',
+                confidence: 0.62,
+                why: "yo'tal",
+                citations: <String>['c1'],
+              ),
+            ],
+          ),
+        ),
+      ));
+
+      // The number is uncalibrated (ECE 0.28) and on out-of-vocabulary text a
+      // higher score was less often correct. Printing "62%" invites a
+      // clinician to read it as a probability.
+      expect(find.text('62%'), findsNothing);
+      expect(find.textContaining('%'), findsNothing);
+      expect(find.byKey(const Key('match-band-Bronxit')), findsOneWidget);
+      expect(find.text(kUz['match.moderate']!), findsOneWidget);
+    });
+
+    test('bands are ordered and cover the whole range', () {
+      expect(matchBandLabel(0.95, 'uz'), kUz['match.strong']);
+      expect(matchBandLabel(0.55, 'uz'), kUz['match.moderate']);
+      expect(matchBandLabel(0.10, 'uz'), kUz['match.weak']);
+      expect(matchBandLabel(0.55, 'ru'), kRu['match.moderate']);
+    });
+  });
+
   group('decision gate', () {
     testWidgets('accept records immediately', (WidgetTester tester) async {
       DecisionResult? captured;

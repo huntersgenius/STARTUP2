@@ -1,0 +1,1076 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-08-20",
+  "set": "out_of_vocabulary",
+  "provenance_note": "SYNTHETIC and unreviewed by any clinician, like the main set. Written deliberately to avoid the terminology map's surfaces: dialect, code-switching, misspellings, negation, vague somatic complaint, time expressed as events, third-party reporting, and minimisation. Never merge into the main set — the gap between the two scores is the measurement.",
+  "vignettes": [
+    {
+      "id": "oov-001",
+      "category": "vague",
+      "text_uz": "Holim yo'q. Ichim yomon. Nima bo'layotganini bilmayman.",
+      "text_ru": "Мне нехорошо. Внутри плохо. Не знаю, что происходит.",
+      "age_years": 44,
+      "sex": "female",
+      "vitals": {},
+      "ground_truth_icd10": "R53.83",
+      "ground_truth_label": "Noaniq holsizlik",
+      "acceptable_alternatives": [
+        "R68.89",
+        "R53"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Deliberately uninformative; the honest output is follow-up questions.",
+      "expect_insufficient_data": true
+    },
+    {
+      "id": "oov-002",
+      "category": "vague",
+      "text_uz": "Badanim og'irlashib ketdi, o'zimni yomon his qilyapman.",
+      "text_ru": "Тело словно налилось тяжестью, чувствую себя плохо.",
+      "age_years": 52,
+      "sex": "male",
+      "vitals": {},
+      "ground_truth_icd10": "R53.83",
+      "ground_truth_label": "Noaniq holsizlik",
+      "acceptable_alternatives": [
+        "R68.89"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": true
+    },
+    {
+      "id": "oov-003",
+      "category": "vague",
+      "text_uz": "Ichim siqiladi, tinchligim yo'q. Uxlolmayapman ham.",
+      "text_ru": "Тревожно внутри, нет покоя. И спать не могу.",
+      "age_years": 36,
+      "sex": "female",
+      "vitals": {},
+      "ground_truth_icd10": "G47.00",
+      "ground_truth_label": "Uyqu buzilishi",
+      "acceptable_alternatives": [
+        "F41.9",
+        "R45.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": true
+    },
+    {
+      "id": "oov-004",
+      "category": "vague",
+      "text_uz": "Bolam sustkash bo'lib qoldi, o'ynagisi kelmayapti.",
+      "text_ru": "Ребёнок стал каким-то квёлым, играть не хочет.",
+      "age_years": 3,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.4
+      },
+      "ground_truth_icd10": "R53.83",
+      "ground_truth_label": "Bolada sustlik",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Caregiver's word 'sustkash' is not in the map.",
+      "expect_insufficient_data": true
+    },
+    {
+      "id": "oov-010",
+      "category": "respiratory_infection",
+      "text_uz": "Ko'kragim xirillab turibdi, ichimdan tovush chiqadi. Tomog'im ham qirillaydi.",
+      "text_ru": "В груди свистит, изнутри звук идёт. И в горле першит.",
+      "age_years": 58,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.6,
+        "respiratory_rate": 22
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J45.9",
+        "J20.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'qirillaydi', 'tovush chiqadi' — Khorezm/Fergana colloquialisms.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-011",
+      "category": "respiratory_infection",
+      "text_uz": "Uch haftadan ko'p bo'ldi, kunda-kunora quruq bo'g'iq yo'talaman. Kechalari ko'ylagim ho'l bo'ladi, kiyimlarim keng bo'lib qoldi.",
+      "text_ru": "Больше трёх недель, через день сухой глухой кашель. По ночам рубашка мокрая, одежда стала велика.",
+      "age_years": 41,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.5
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2",
+        "R05"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": 25,
+      "reviewed_by": "synthetic",
+      "notes": "TB triad with no map surface: wet shirt for night sweats, loose clothes for weight loss.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-012",
+      "category": "gastritis_hpylori",
+      "text_uz": "Oshqozonim achishadi, kuydiradi. Ovqatdan keyin toshdek bo'lib qoladi.",
+      "text_ru": "В желудке жжёт, печёт. После еды как камень.",
+      "age_years": 38,
+      "sex": "female",
+      "vitals": {},
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30",
+        "K27.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'toshdek' (like a stone) for early satiety.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-013",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Belim qadaldi, qimirlolmayapman. Egilsam sanchadi.",
+      "text_ru": "Поясницу заклинило, не могу двинуться. Нагнусь — стреляет.",
+      "age_years": 45,
+      "sex": "male",
+      "vitals": {},
+      "ground_truth_icd10": "M54.5",
+      "ground_truth_label": "Nospetsifik bel og'rig'i",
+      "acceptable_alternatives": [
+        "M54.4",
+        "M25.50"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'qadaldi' (seized), 'sanchadi' (shoots) — neither in the map.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-014",
+      "category": "anemia",
+      "text_uz": "Yuzimda qon qolmagan deyishadi. Zinadan chiqsam yuragim po'killaydi.",
+      "text_ru": "Говорят, в лице ни кровинки. Поднимусь по лестнице — сердце колотится.",
+      "age_years": 29,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 98
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Temir tanqisligi kamqonligi",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Pallor and exertional palpitation, said the way patients say it.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-015",
+      "category": "hypertension",
+      "text_uz": "Ensam tortishadi, boshim g'uvillaydi. Apparat 165 ga 100 ko'rsatdi.",
+      "text_ru": "Затылок тянет, в голове гудит. Аппарат показал 165 на 100.",
+      "age_years": 57,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 165,
+        "diastolic_bp": 100
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'ensam tortishadi' (nape pulling) is the classic Uzbek hypertension complaint.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-016",
+      "category": "type2_diabetes",
+      "text_uz": "Og'zim qurib ketadi, tunda ikki-uch marta hojatxonaga turaman. Oriqlab ham ketdim.",
+      "text_ru": "Во рту сохнет, ночью два-три раза встаю в туалет. И похудел.",
+      "age_years": 49,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 12.8
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Nocturia described as trips to the toilet.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-017",
+      "category": "iodine_deficiency",
+      "text_uz": "Bo'ynim yo'g'onlashib qoldi, ro'molim tor bo'lib qoldi. Sovuqqa chidolmayman.",
+      "text_ru": "Шея стала толще, платок жмёт. Холод не переношу.",
+      "age_years": 34,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 58
+      },
+      "ground_truth_icd10": "E01.2",
+      "ground_truth_label": "Endemik buqoq",
+      "acceptable_alternatives": [
+        "E03.9",
+        "E01.8"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Goitre noticed via a headscarf, not a word for goitre.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-018",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Bolaning ichi ketyapti, kuniga besh-olti marta suvdek. Lekin suv ichyapti, ko'zi ham normal.",
+      "text_ru": "У ребёнка понос, пять-шесть раз в день водой. Но пьёт, глаза нормальные.",
+      "age_years": 2.5,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.8,
+        "weight_kg": 12
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit (suvsizlanishsiz)",
+      "acceptable_alternatives": [
+        "A08.4"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "pediatric_dehydration",
+        "imci_danger_sign"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Explicitly NOT dehydrated. Over-triage here costs a family a day of travel.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-020",
+      "category": "respiratory_infection",
+      "text_uz": "Три дня температура, yo'talim bor, tomog'im og'riydi. Голова тоже болит.",
+      "text_ru": "Uch kun температура, кашель бор, горло болит. Boshim ham og'riydi.",
+      "age_years": 31,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.3
+      },
+      "ground_truth_icd10": "J00",
+      "ground_truth_label": "O'tkir nazofaringit",
+      "acceptable_alternatives": [
+        "J06.9",
+        "J11.1"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": 3,
+      "reviewed_by": "synthetic",
+      "notes": "Real Tashkent speech: clauses alternate language mid-sentence.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-021",
+      "category": "hypertension",
+      "text_uz": "Давление скачет, boshim aylanadi, ensam og'riydi. Таблетки пью нерегулярно.",
+      "text_ru": "Bosim sakraydi, голова кружится, затылок болит. Tabletkalarni tartibsiz ichaman.",
+      "age_years": 62,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 158,
+        "diastolic_bp": 96
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [
+        "hypertension"
+      ],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-022",
+      "category": "type2_diabetes",
+      "text_uz": "Сахар 14 chiqdi, жажда bor, tez-tez в туалет юраман.",
+      "text_ru": "Qand 14 вышел, chanqoq есть, часто в туалет хожу.",
+      "age_years": 55,
+      "sex": "female",
+      "vitals": {
+        "glucose_mmol": 14.0
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "R73.03"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-030",
+      "category": "respiratory_infection",
+      "text_uz": "kokragim ogriydi, yotal bor, isitmam 38.4, nafas olishim qiyin",
+      "text_ru": "грудь болит, кашил есть, температура 38.4, дышать тяжело",
+      "age_years": 47,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.4,
+        "respiratory_rate": 26,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "J18.9",
+      "ground_truth_label": "Pnevmoniya",
+      "acceptable_alternatives": [
+        "J15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "No apostrophes, dropped letters, Russian 'кашил' misspelt.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-031",
+      "category": "gastritis_hpylori",
+      "text_uz": "epigastrda ogriq, jigildon qaynaydi, kongil aynaydi",
+      "text_ru": "боль в эпигастри, изжога, тошнит",
+      "age_years": 40,
+      "sex": "male",
+      "vitals": {},
+      "ground_truth_icd10": "K29.70",
+      "ground_truth_label": "Gastrit",
+      "acceptable_alternatives": [
+        "K30"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-032",
+      "category": "anemia",
+      "text_uz": "gemaglabin past chiqdi, holsizman, tez charchayman",
+      "text_ru": "гемаглабин низкий, слабость, быстро устаю",
+      "age_years": 26,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 92
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'gemaglabin' / 'гемаглабин' misspelt as commonly written.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-040",
+      "category": "gastritis_hpylori",
+      "text_uz": "Ich ketishi yo'q, faqat qusish bor. Qorin og'rig'i ham yo'q.",
+      "text_ru": "Поноса нет, только рвота. Боли в животе тоже нет.",
+      "age_years": 33,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 37.2
+      },
+      "ground_truth_icd10": "R11.10",
+      "ground_truth_label": "Izolyatsiyalangan qusish",
+      "acceptable_alternatives": [
+        "K29.70",
+        "A09"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "pediatric_dehydration",
+        "gi_bleeding"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Negation test: naive matching sees 'ich ketishi' and 'qorin og'rig'i'.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-041",
+      "category": "respiratory_infection",
+      "text_uz": "Yo'tal yo'q, balg'am ham yo'q. Faqat tomoq og'riydi va harorat.",
+      "text_ru": "Кашля нет, мокроты тоже нет. Только горло болит и температура.",
+      "age_years": 22,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.1
+      },
+      "ground_truth_icd10": "J02.9",
+      "ground_truth_label": "O'tkir faringit",
+      "acceptable_alternatives": [
+        "J00",
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "tb_suspected"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Negation: 'yo'tal yo'q' must not count as cough.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-042",
+      "category": "cardiovascular_risk",
+      "text_uz": "Ko'krak og'rig'i yo'q, nafas qisishi ham yo'q. Profilaktika uchun keldim.",
+      "text_ru": "Боли в груди нет, одышки нет. Пришёл на профилактику.",
+      "age_years": 50,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 138,
+        "diastolic_bp": 86,
+        "weight_kg": 92
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E66.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [
+        "acs_suspected"
+      ],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "The strongest negation case: both ACS trigger concepts appear, negated.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-043",
+      "category": "vague",
+      "text_uz": "Bosh og'rig'i yo'q, ko'ngil aynishi yo'q, isitma yo'q. Shunchaki charchoq.",
+      "text_ru": "Головной боли нет, тошноты нет, температуры нет. Просто усталость.",
+      "age_years": 39,
+      "sex": "female",
+      "vitals": {},
+      "ground_truth_icd10": "R53.83",
+      "ground_truth_label": "Charchoq",
+      "acceptable_alternatives": [
+        "R53"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": true
+    },
+    {
+      "id": "oov-050",
+      "category": "tb_suspicion",
+      "text_uz": "Navro'zdan beri yo'talaman, hali ham to'xtamadi. Kechalari ter bosadi.",
+      "text_ru": "Кашляю с Навруза, до сих пор не проходит. По ночам обливаюсь потом.",
+      "age_years": 37,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.4
+      },
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Duration given as a festival (21 March). No numeric duration at all.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-051",
+      "category": "tb_suspicion",
+      "text_uz": "Ramazondan buyon yo'tal bor, ozib ketdim ham.",
+      "text_ru": "С Рамадана кашель, и похудел.",
+      "age_years": 45,
+      "sex": "female",
+      "vitals": {},
+      "ground_truth_icd10": "A15.0",
+      "ground_truth_label": "O'pka sili shubhasi",
+      "acceptable_alternatives": [
+        "A16.2"
+      ],
+      "must_not_miss": [
+        "tb_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Same problem: duration only inferable from a religious month.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-052",
+      "category": "respiratory_infection",
+      "text_uz": "Paxta terimidan keyin boshlandi, ikki hafta bo'ldi shekilli.",
+      "text_ru": "Началось после сбора хлопка, недели две наверное.",
+      "age_years": 28,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 37.2
+      },
+      "ground_truth_icd10": "J40",
+      "ground_truth_label": "Bronxit",
+      "acceptable_alternatives": [
+        "J20.9",
+        "J45.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": 14,
+      "reviewed_by": "synthetic",
+      "notes": "Time anchored to the cotton harvest.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-060",
+      "category": "emergency",
+      "text_uz": "Dadamni olib keldim. Ko'kragini ushlab qoldi, rangi oqarib ketdi, terlab ketdi. O'zi gapirolmayapti.",
+      "text_ru": "Привёз отца. Схватился за грудь, побледнел, вспотел. Сам говорить не может.",
+      "age_years": 68,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 112,
+        "systolic_bp": 96,
+        "spo2": 93
+      },
+      "ground_truth_icd10": "I21.9",
+      "ground_truth_label": "O'tkir koronar sindrom",
+      "acceptable_alternatives": [
+        "I20.0"
+      ],
+      "must_not_miss": [
+        "acs_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Third-party report; the patient never speaks. 'Ko'kragini ushlab qoldi' is not a map surface.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-061",
+      "category": "emergency",
+      "text_uz": "Onamning gapi chalkashib qoldi, bir tomoni ishlamayapti deb qo'ng'iroq qilishdi.",
+      "text_ru": "Позвонили: у мамы речь спуталась, одна сторона не работает.",
+      "age_years": 74,
+      "sex": "female",
+      "vitals": {
+        "systolic_bp": 172,
+        "diastolic_bp": 94
+      },
+      "ground_truth_icd10": "I64",
+      "ground_truth_label": "O'tkir insult",
+      "acceptable_alternatives": [
+        "I63.9"
+      ],
+      "must_not_miss": [
+        "stroke_fast"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-062",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Nabiramni ko'rsatgani keldim. Ikki kundan beri ichi ketyapti, endi emmayapti ham, ko'zlari cho'kib qolgan.",
+      "text_ru": "Привела внучку. Второй день понос, теперь и грудь не берёт, глаза запали.",
+      "age_years": 1.0,
+      "sex": "female",
+      "vitals": {
+        "temperature_c": 38.4,
+        "pulse_bpm": 150,
+        "weight_kg": 8
+      },
+      "ground_truth_icd10": "E86",
+      "ground_truth_label": "Suvsizlanish bilan ich ketishi",
+      "acceptable_alternatives": [
+        "A09"
+      ],
+      "must_not_miss": [
+        "pediatric_dehydration",
+        "imci_danger_sign"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Grandmother reporting; 'cho'kib qolgan' instead of 'ichiga botgan'.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-070",
+      "category": "emergency",
+      "text_uz": "Unchalik emas, ozgina ko'kragim siqilgandek bo'ldi. Ishga borsam bo'ladimi?",
+      "text_ru": "Да ничего особенного, чуть-чуть сдавило в груди. На работу можно?",
+      "age_years": 59,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 104,
+        "systolic_bp": 142,
+        "spo2": 94
+      },
+      "ground_truth_icd10": "I20.0",
+      "ground_truth_label": "Beqaror stenokardiya",
+      "acceptable_alternatives": [
+        "I21.9"
+      ],
+      "must_not_miss": [
+        "acs_suspected"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Minimisation. The clinical content is buried under 'unchalik emas'.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-071",
+      "category": "gastritis_hpylori",
+      "text_uz": "Jiddiy narsa emas, shunchaki bir-ikki marta qora rangda ketdi. O'tib ketar.",
+      "text_ru": "Ничего серьёзного, просто пару раз было тёмного цвета. Пройдёт.",
+      "age_years": 61,
+      "sex": "male",
+      "vitals": {
+        "pulse_bpm": 96,
+        "systolic_bp": 112
+      },
+      "ground_truth_icd10": "K92.2",
+      "ground_truth_label": "Oshqozon-ichak qon ketishi",
+      "acceptable_alternatives": [
+        "K92.1",
+        "K27.9"
+      ],
+      "must_not_miss": [
+        "gi_bleeding"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Melena, minimised, never named.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-072",
+      "category": "anemia",
+      "text_uz": "Ozgina charchayman xolos, hamma shunday-ku. Nafasim biroz qisiladi zinada.",
+      "text_ru": "Немного устаю, у всех же так. Слегка задыхаюсь на лестнице.",
+      "age_years": 54,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 104
+      },
+      "ground_truth_icd10": "D50.9",
+      "ground_truth_label": "Kamqonlik",
+      "acceptable_alternatives": [
+        "D64.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-080",
+      "category": "respiratory_infection",
+      "text_uz": "Isitmam bor, suyaklarim sindirilgandek og'riydi, tumov ham bor.",
+      "text_ru": "Температура, кости словно ломает, и насморк.",
+      "age_years": 30,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.7
+      },
+      "ground_truth_icd10": "J11.1",
+      "ground_truth_label": "Gripp",
+      "acceptable_alternatives": [
+        "J00",
+        "J06.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'suyaklarim sindirilgandek' — the standard flu description, not in the map.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-081",
+      "category": "hypertension",
+      "text_uz": "Ko'z oldim qorayib ketdi turganimda. Bosimim baland bo'lsa kerak.",
+      "text_ru": "В глазах потемнело, когда встал. Наверное, давление.",
+      "age_years": 66,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 168,
+        "diastolic_bp": 92
+      },
+      "ground_truth_icd10": "I10",
+      "ground_truth_label": "Arterial gipertenziya",
+      "acceptable_alternatives": [
+        "I95.1",
+        "I15.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-082",
+      "category": "cardiovascular_risk",
+      "text_uz": "Tekshiruvdan o'tay dedim. Yog'li ovqat yeyman, kunda bir quti chekaman, harakat kam.",
+      "text_ru": "Решил провериться. Ем жирное, курю пачку в день, двигаюсь мало.",
+      "age_years": 52,
+      "sex": "male",
+      "vitals": {
+        "systolic_bp": 142,
+        "diastolic_bp": 90,
+        "weight_kg": 98
+      },
+      "ground_truth_icd10": "Z13.6",
+      "ground_truth_label": "Yurak-qon tomir xavfini baholash",
+      "acceptable_alternatives": [
+        "I25.10",
+        "E66.9",
+        "Z72.0"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-083",
+      "category": "musculoskeletal_pain",
+      "text_uz": "Bo'g'imlarim shishib, ertalab qotib qoladi. Bir soatdan keyin yoziladi.",
+      "text_ru": "Суставы опухают, утром скованность. Через час расходится.",
+      "age_years": 48,
+      "sex": "female",
+      "vitals": {},
+      "ground_truth_icd10": "M13.9",
+      "ground_truth_label": "Artrit",
+      "acceptable_alternatives": [
+        "M25.50",
+        "M25.40"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Morning stiffness described functionally.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-084",
+      "category": "iodine_deficiency",
+      "text_uz": "Sochim to'kilyapti, terim qurib ketdi, ish qilishga xohish yo'q.",
+      "text_ru": "Волосы выпадают, кожа сухая, ничего делать не хочется.",
+      "age_years": 41,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 56
+      },
+      "ground_truth_icd10": "E03.9",
+      "ground_truth_label": "Gipotireoz shubhasi",
+      "acceptable_alternatives": [
+        "E01.2",
+        "E01.8"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-085",
+      "category": "pediatric_diarrhea",
+      "text_uz": "Chaqaloq to'xtovsiz yig'laydi, qorni dam bo'lgan, kuniga o'n marta ich ketyapti.",
+      "text_ru": "Младенец без конца плачет, живот вздут, десять раз в день понос.",
+      "age_years": 0.6,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 38.0,
+        "pulse_bpm": 148,
+        "weight_kg": 7
+      },
+      "ground_truth_icd10": "A09",
+      "ground_truth_label": "O'tkir gastroenterit",
+      "acceptable_alternatives": [
+        "E86",
+        "A08.4"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Infant, high frequency; borderline for dehydration and deliberately so.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-086",
+      "category": "emergency",
+      "text_uz": "Homiladorman, qorin ostim tortishyapti va ozgina qon ketdi.",
+      "text_ru": "Я беременна, низ живота тянет и немного кровило.",
+      "age_years": 27,
+      "sex": "female",
+      "vitals": {
+        "pulse_bpm": 96,
+        "systolic_bp": 108
+      },
+      "ground_truth_icd10": "O20.9",
+      "ground_truth_label": "Homiladorlikda qon ketishi",
+      "acceptable_alternatives": [
+        "O46.9"
+      ],
+      "must_not_miss": [
+        "pregnancy_bleeding"
+      ],
+      "must_not_fire": [],
+      "pregnant": true,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "'qon ketdi' minimised as 'ozgina'; 'qorin ostim tortishyapti' not in the map.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-087",
+      "category": "emergency",
+      "text_uz": "Boshim shunday og'riydiki, hayotimda bunday bo'lmagan. Yorug'likka qarolmayman, bo'ynim qotib qolgan.",
+      "text_ru": "Голова болит так, как никогда в жизни. На свет смотреть не могу, шея не гнётся.",
+      "age_years": 33,
+      "sex": "male",
+      "vitals": {
+        "temperature_c": 39.1,
+        "pulse_bpm": 108
+      },
+      "ground_truth_icd10": "G03.9",
+      "ground_truth_label": "Meningit shubhasi",
+      "acceptable_alternatives": [
+        "A87.9"
+      ],
+      "must_not_miss": [
+        "meningism"
+      ],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Thunderclap + photophobia + neck stiffness, all paraphrased.",
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-088",
+      "category": "type2_diabetes",
+      "text_uz": "Oyog'imdagi yara bitmayapti, ikki oy bo'ldi. Qandim bor.",
+      "text_ru": "Рана на ноге не заживает, два месяца. Диабет есть.",
+      "age_years": 63,
+      "sex": "male",
+      "vitals": {
+        "glucose_mmol": 13.2
+      },
+      "ground_truth_icd10": "E11.9",
+      "ground_truth_label": "2-tip qandli diabet",
+      "acceptable_alternatives": [
+        "E11.65",
+        "L97.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [
+        "diabetes"
+      ],
+      "duration_days": 60,
+      "reviewed_by": "synthetic",
+      "notes": null,
+      "expect_insufficient_data": false
+    },
+    {
+      "id": "oov-089",
+      "category": "vague",
+      "text_uz": "Shifokor, menga vitamin kerak deb o'ylayman. Charchoq bor xolos.",
+      "text_ru": "Доктор, думаю мне нужны витамины. Просто усталость.",
+      "age_years": 35,
+      "sex": "male",
+      "vitals": {},
+      "ground_truth_icd10": "R53.83",
+      "ground_truth_label": "Charchoq",
+      "acceptable_alternatives": [
+        "R53",
+        "D50.9"
+      ],
+      "must_not_miss": [],
+      "must_not_fire": [],
+      "pregnant": false,
+      "chronic_flags": [],
+      "duration_days": null,
+      "reviewed_by": "synthetic",
+      "notes": "Patient self-prescribes; almost no clinical content.",
+      "expect_insufficient_data": true
+    }
+  ]
+}

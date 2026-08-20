@@ -47,6 +47,7 @@ make lint typecheck
 | `backend/app/ai/eval/` | 249-vignette evaluation harness, metrics, A/B, HTML report |
 | `knowledge/` | Protocol corpus, ingestion, terminology map (uz/ru/en → ICD-10), national formulary |
 | `ml/` | Deterministic risk scoring; the XGBoost baseline to beat once pilot data exists |
+| `docs/EVAL_INTEGRITY.md` | What the headline number means, measured rather than asserted |
 | `mobile/` | Flutter tablet app, offline-first (Drift + outbox sync) |
 | `web/` | Next.js admin dashboard |
 | `infra/` | docker-compose, Dockerfiles, terraform, edge bundle, ops scripts and alerts |
@@ -77,24 +78,59 @@ make lint typecheck
 
 ## Current evaluation results
 
-Offline rules baseline, 249 vignettes × 2 languages:
+**Produced by the deterministic rules baseline, not by the diagnostic engine.**
+The eight-stage engine has never been evaluated — see "What this repository has
+not shown" below. Every vignette is synthetic and reviewed by no clinician.
 
-| Metric | Result | Floor |
+| Metric | In-vocabulary set | Out-of-vocabulary set |
 |---|---|---|
-| Top-3 accuracy | 97.6% | 70% |
-| **Red-flag recall** | **100%** (158/158) | **100%** |
-| False-referral rate | 10.8% | — |
-| p95 latency | 25 ms | 6000 ms |
-| Cost per consultation | $0.00 | $0.05 |
+| Corpus | 249 synthetic vignettes (26 distinct templates) | 42 synthetic vignettes, all distinct |
+| Provider | rules baseline — no model called | rules baseline — no model called |
+| Top-3 agreement with our own answer key | 97.6% | **31.0%** |
+| Top-1 agreement | 94.4% | 23.8% |
+| **Red-flag recall** | 100.0% (158/158) | **4.5% (1/22)** |
+| False-referral rate | 0.0% | 3.1% |
+| Declined correctly when it should | — | 83.3% (10/12) |
+| Risk scorer sensitivity | 100.0% | 20.0% |
 
-> **Every vignette is synthetic and has not been reviewed by a licensed
-> clinician.** These numbers describe engineering behaviour, not clinical
-> accuracy. Advisor review is the first open question in `docs/PLAN.md` and it
-> blocks any clinical claim.
+> The two columns are the same code on the same day; only the wording differs.
+> The left column is very largely a measure of whether text written by this
+> project matches a dictionary written by this project — 58.9% of each
+> in-vocabulary vignette's words are already terminology-map entries, and 8 of
+> 11 presentation classes are identifiable by a single shared phrase. **The
+> right column is the more honest estimate, and is itself optimistic.**
+> Full working: [`docs/EVAL_INTEGRITY.md`](docs/EVAL_INTEGRITY.md).
 
-Regenerate with `make eval`; the CI gate is `make eval-gate`.
+Adversarial red-flag probing — dangers described in words the rules do not
+contain — catches **31.6% (12/38)**. `158/158` is recall on text written in the
+rules' own vocabulary.
 
----
+Regenerate everything with `make eval-all`; the free CI gate is `make eval-gate`
+and the key-gated model gate is `make eval-model`.
+
+## What this repository has not shown
+
+Stated plainly, because everything above is easy to over-read:
+
+- **No clinician has reviewed any vignette.** All 339 across all four sets are
+  synthetic and written by this project. "Accuracy" throughout means agreement
+  with our own answer key.
+- **No real patient case has ever been processed.** There is no pilot data.
+- **The diagnostic engine is unmeasured.** Every number published here comes
+  from the rules baseline. Nothing has called GPT-4o or Claude, so the
+  $0.05-per-consultation ceiling and the 6-second p95 budget are **unmeasured,
+  not met** — the reported `$0.0000` and `19 ms` are the cost and latency of
+  calling no model at all.
+- **Whether the LLM path beats the rules baseline is unknown.** It is a wired,
+  one-command experiment (`make eval-model`) that is blocked only on an API key.
+- **Red-flag detection is fragile to wording**, at 4.5% recall on unfamiliar
+  phrasing. The app must not be described to a clinician as a safety net for
+  missed danger signs. See `docs/SAFETY_REVIEW.md` S1.
+- **The regulatory position is unestablished.** No IT Park sandbox admission,
+  no clinical advisor engaged, no data-residency decision for production.
+- **CI has never actually run.** The workflow file was invalid YAML from Sprint 1
+  until this pass; every prior "CI passes" claim meant the steps had been run by
+  hand.
 
 ## Before this touches a real patient
 
@@ -117,7 +153,9 @@ make migrate       # apply migrations
 make ingest        # rebuild the knowledge base from knowledge/corpus
 make test          # backend tests
 make coverage      # with the 80% gate
-make eval          # clinical evaluation + report
+make eval          # baseline path, main set
+make eval-all      # every set side by side + the overlap measurement
+make eval-model    # the real engine (needs an API key; refuses without one)
 make web-check     # admin: lint, typecheck, build
 make mobile-check  # Flutter: analyze + test
 ```

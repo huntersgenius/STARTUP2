@@ -33,6 +33,11 @@ const Map<String, String> kUz = <String, String>{
   'consultation.print': 'Bemorga chop etish',
   'suggestion.title': 'AI takliflari',
   'suggestion.why': 'Nima uchun',
+  'match.strong': 'Kuchli moslik',
+  'match.moderate': 'O\'rtacha moslik',
+  'match.weak': 'Zaif moslik',
+  'match.explain':
+      'Belgilar protokolga qanchalik mos kelishi. Bu ehtimollik emas.',
   'suggestion.tests': 'Tavsiya etilgan tekshiruvlar',
   'suggestion.treatment': 'Davolash',
   'suggestion.referral': 'Yo\'naltirish',
@@ -101,6 +106,11 @@ const Map<String, String> kRu = <String, String>{
   'consultation.print': 'Печать для пациента',
   'suggestion.title': 'Предложения ИИ',
   'suggestion.why': 'Почему',
+  'match.strong': 'Сильное совпадение',
+  'match.moderate': 'Умеренное совпадение',
+  'match.weak': 'Слабое совпадение',
+  'match.explain':
+      'Насколько признаки совпадают с протоколом. Это не вероятность.',
   'suggestion.tests': 'Рекомендуемые исследования',
   'suggestion.treatment': 'Лечение',
   'suggestion.referral': 'Направление',
@@ -147,4 +157,15 @@ const Map<String, String> kRu = <String, String>{
 String tr(String key, String language) {
   final Map<String, String> table = language == 'ru' ? kRu : kUz;
   return table[key] ?? kUz[key] ?? key;
+}
+
+/// Coarse band for how well the findings matched a protocol.
+///
+/// Deliberately three words rather than a number. The underlying score is not
+/// calibrated — see `docs/EVAL_INTEGRITY.md` — and a percentage shown to a
+/// clinician will be read as a probability whatever the caption says.
+String matchBandLabel(double score, String language) {
+  if (score >= 0.7) return tr('match.strong', language);
+  if (score >= 0.4) return tr('match.moderate', language);
+  return tr('match.weak', language);
 }

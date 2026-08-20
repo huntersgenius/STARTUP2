@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SihhatAI evaluation — all sets</title>
+<style>
+  :root {
+    --bg:#fff; --fg:#16181d; --muted:#5b6270; --line:#e3e6ec; --card:#f7f8fa;
+    --ok:#1b7f4b; --warn:#b25b00; --bad:#b3261e; --accent:#00695c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161a; --fg:#e9ecf1; --muted:#9aa3b2; --line:#2a2e37;
+             --card:#1c1f26; --accent:#4db6ac; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:28px;margin:0 0 4px}
+  h2{font-size:20px;margin:40px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .sub{color:var(--muted);margin-bottom:20px}
+  .banner{border:2px solid var(--bad);
+    background:color-mix(in srgb, var(--bad) 8%, transparent);
+    padding:16px 18px;border-radius:8px;margin:20px 0 28px}
+  .banner strong{color:var(--bad)}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr.headline td{font-weight:650}
+  .good{color:var(--ok)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+  .gap{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:18px;margin-top:16px}
+  .gap .big{font-size:30px;font-weight:680;color:var(--bad);
+    font-variant-numeric:tabular-nums}
+  footer{margin-top:48px;color:var(--muted);font-size:14px;
+    border-top:1px solid var(--line);padding-top:16px}
+  code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SihhatAI — evaluation, all sets</h1>
+  <div class="sub">
+    provider <strong>baseline</strong> (rules-baseline-v1) · deterministic rules baseline (no model called) ·
+    prompt v1@e478f9f615be · generated 2026-08-20 05:50:31
+  </div>
+
+  <div class="banner">
+    <strong>Read this before any number below.</strong>
+    Every vignette in every set is <strong>synthetic</strong> and has been reviewed by
+    <strong>no clinician</strong>. These are engineering measurements, not clinical
+    accuracy. The in-vocabulary score is inflated by construction — see
+    <code>docs/EVAL_INTEGRITY.md</code> — and the out-of-vocabulary score below is the
+    more honest estimate of behaviour on text this team did not write.
+  </div>
+
+  <h2>All sets, side by side</h2>
+  <table>
+    <thead><tr>
+      <th>Set</th><th>Cases</th><th>Top-3</th><th>Top-1</th>
+      <th>Red-flag recall</th><th>Declined correctly</th>
+    </tr></thead>
+    <tbody><tr class='headline'><td>in-vocabulary (main)</td><td class='num'>498</td><td class='num'>97.6%</td><td class='num'>94.4%</td><td class='num good'>100.0%</td><td class='num'>—</td></tr><tr class='headline'><td>out-of-vocabulary</td><td class='num'>84</td><td class='num'>31.0%</td><td class='num'>23.8%</td><td class='num bad'>4.5%</td><td class='num'>83.3%</td></tr><tr class=''><td>adversarial red flags</td><td class='num'>76</td><td class='num'>25.0%</td><td class='num'>21.1%</td><td class='num bad'>31.6%</td><td class='num'>—</td></tr><tr class=''><td>prompt injection</td><td class='num'>20</td><td class='num'>100.0%</td><td class='num'>100.0%</td><td class='num good'>100.0%</td><td class='num'>—</td></tr></tbody>
+  </table>
+
+  <div class="gap">
+    <div>Accuracy lost when the wording leaves the terminology map</div>
+    <div class="big">−66.6 points</div>
+    <div class="sub" style="margin:6px 0 0">
+      top-3 97.6% in-vocabulary → 31.0% out-of-vocabulary ·
+      red-flag recall 100.0% → <strong class="bad">4.5%</strong>
+    </div>
+  </div>
+
+  <h2>Why the in-vocabulary number is high</h2>
+  <table>
+    <tbody>
+      <tr><td>Main-set words already in the terminology map</td>
+          <td class="num">58.9%</td></tr>
+      <tr><td>Distinct templates behind 249 "vignettes"</td>
+          <td class="num">26</td></tr>
+      <tr><td>Vignettes that are exact duplicates of another</td>
+          <td class="num">157</td></tr>
+      <tr><td>Terminology surfaces no vignette exercises</td>
+          <td class="num">637 of 811</td></tr>
+      <tr><td>Presentation classes identifiable by one shared phrase</td>
+          <td class="num">8</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Safety, probed adversarially</h2>
+  <p>When the danger is present but described in words the rule does not contain, <strong class='bad'>31.6%</strong> of dangers are caught (12/38). When the rule's trigger words appear with no danger present, 2.6% wrongly fire. The 100% recall reported on the main set is recall on text written in the rules' own vocabulary.</p>
+
+  <footer>
+    Every AI output in SihhatAI is a suggestion for a licensed clinician and passes
+    through an accept / edit / reject gate that is recorded. This report describes
+    system behaviour on synthetic text; it is not clinical validation.
+  </footer>
+</div>
+</body>
+</html>

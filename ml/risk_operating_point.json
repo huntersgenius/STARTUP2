@@ -1,0 +1,32 @@
+[
+  {
+    "set": "main",
+    "n": 249,
+    "tp": 63,
+    "fp": 5,
+    "tn": 181,
+    "fn": 0,
+    "sensitivity": 1.0,
+    "specificity": 0.9731182795698925
+  },
+  {
+    "set": "oov",
+    "n": 42,
+    "tp": 2,
+    "fp": 3,
+    "tn": 29,
+    "fn": 8,
+    "sensitivity": 0.2,
+    "specificity": 0.90625
+  },
+  {
+    "set": "adversarial",
+    "n": 38,
+    "tp": 8,
+    "fp": 1,
+    "tn": 18,
+    "fn": 11,
+    "sensitivity": 0.42105263157894735,
+    "specificity": 0.9473684210526315
+  }
+]

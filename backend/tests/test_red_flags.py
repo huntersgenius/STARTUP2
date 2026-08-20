@@ -186,8 +186,24 @@ def test_hypertensive_emergency_needs_symptoms():
     assert "hypertensive_emergency" in codes(symptomatic)
 
 
-def test_severe_anemia_fires_with_breathlessness():
-    assert "severe_anemia" in codes(CaseFacts(concepts={"anemia", "dyspnea"}))
+def test_severe_anemia_fires_on_breathlessness_at_rest():
+    assert "severe_anemia" in codes(CaseFacts(concepts={"anemia", "dyspnea_at_rest"}))
+    assert "severe_anemia" in codes(CaseFacts(concepts={"pallor", "syncope"}))
+
+
+def test_severe_anemia_does_not_fire_on_exertional_breathlessness():
+    """Exertional breathlessness is an ordinary sign of anaemia, not urgency.
+
+    This test replaced one asserting the opposite. The original encoded a
+    defect: WHO guidance in knowledge/corpus/who-anemia-primary-care.md lists
+    breathlessness *on exertion* as a detection sign and reserves referral for
+    breathlessness *at rest*. Firing on the exertional form produced the whole
+    of the main set's 10.8% false-referral rate — 40 of 40 cases — which in a
+    rural clinic means sending forty families on a journey they did not need.
+    """
+    assert "severe_anemia" not in codes(
+        CaseFacts(concepts={"anemia", "pallor", "exertional_dyspnea"})
+    )
 
 
 # --- ordering and messages ----------------------------------------------

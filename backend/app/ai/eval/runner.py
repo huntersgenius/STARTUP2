@@ -23,14 +23,71 @@ DATA_DIR = Path(__file__).parent / "data"
 RESULTS_DIR = Path(__file__).parent / "results"
 VIGNETTES_PATH = DATA_DIR / "vignettes.json"
 
+#: Written deliberately to avoid the terminology map's surfaces. Kept separate
+#: and reported separately: the gap between this set and the main one is the
+#: honest estimate of how much of the headline score is vocabulary matching.
+OOV_VIGNETTES_PATH = DATA_DIR / "vignettes_oov.json"
+
+#: Red-flag rules probed from both sides — danger described in words the rule
+#: does not contain, and the rule's trigger words with no danger present.
+ADVERSARIAL_VIGNETTES_PATH = DATA_DIR / "vignettes_adversarial.json"
+
+#: Free text carrying instructions aimed at the model.
+INJECTION_VIGNETTES_PATH = DATA_DIR / "vignettes_injection.json"
+
+#: The sets a run may be pointed at, by name.
+VIGNETTE_SETS: dict[str, Path] = {
+    "main": VIGNETTES_PATH,
+    "oov": OOV_VIGNETTES_PATH,
+    "adversarial": ADVERSARIAL_VIGNETTES_PATH,
+    "injection": INJECTION_VIGNETTES_PATH,
+}
+
 
 def load_vignettes(path: Path = VIGNETTES_PATH) -> list[Vignette]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     return [Vignette.from_json(item) for item in payload["vignettes"]]
 
 
+def resolve_set(name: str) -> Path:
+    """Map a set name to its file, failing loudly on a typo."""
+    try:
+        path = VIGNETTE_SETS[name]
+    except KeyError:
+        raise SystemExit(
+            f"unknown vignette set {name!r}; choose from {sorted(VIGNETTE_SETS)}"
+        ) from None
+    if not path.exists():
+        raise SystemExit(f"vignette set {name!r} has no file at {path}")
+    return path
+
+
 def provenance_note(path: Path = VIGNETTES_PATH) -> str:
     return json.loads(path.read_text(encoding="utf-8")).get("provenance_note", "")
+
+
+def stratified_subset(vignettes: list[Vignette], per_category: int) -> list[str]:
+    """A deterministic stratified sample, for the paid model gate in CI.
+
+    Running 249 vignettes x 2 languages against a frontier model on every push
+    is not affordable, so the per-push gate runs a subset. Selection must be
+    deterministic or the gate becomes a coin flip that occasionally catches a
+    regression: cases are sorted by id and the first N of each presentation
+    class are taken, so the same commit always gets the same subset, and any
+    case carrying a must-not-miss red flag is always included regardless of
+    the cap — the safety metric is not sampled.
+    """
+    by_category: dict[str, list[Vignette]] = {}
+    for vignette in sorted(vignettes, key=lambda v: v.id):
+        by_category.setdefault(vignette.category, []).append(vignette)
+
+    chosen: list[str] = []
+    for category in sorted(by_category):
+        members = by_category[category]
+        safety = [v.id for v in members if v.must_not_miss]
+        others = [v.id for v in members if not v.must_not_miss][:per_category]
+        chosen.extend(safety + others)
+    return sorted(set(chosen))
 
 
 def build_session() -> Session:
@@ -133,6 +190,9 @@ def run_case(
         )
 
     suggestion = result.suggestion
+    # `degradation: rules_only` means no schema-valid model response survived
+    # two retries. That is the signal the injection set asserts on.
+    schema_valid = result.trace.get("degradation") != "rules_only"
     return CaseResult(
         vignette_id=vignette.id,
         language=language,
@@ -146,6 +206,7 @@ def run_case(
         cost_usd=result.cost_usd,
         degraded=result.degraded,
         insufficient_data=suggestion.insufficient_data,
+        schema_valid=schema_valid,
     )
 
 
@@ -170,8 +231,13 @@ def run_suite(
     languages: tuple[str, ...] = ("uz", "ru"),
     limit: int | None = None,
     prompt_version: str = "v1",
+    vignettes_path: Path | None = None,
+    subset_ids: list[str] | None = None,
 ) -> tuple[list[CaseResult], dict[str, Vignette]]:
-    vignettes = load_vignettes()
+    vignettes = load_vignettes(vignettes_path or VIGNETTES_PATH)
+    if subset_ids is not None:
+        wanted = set(subset_ids)
+        vignettes = [v for v in vignettes if v.id in wanted]
     if limit:
         vignettes = vignettes[:limit]
     lookup = {v.id: v for v in vignettes}

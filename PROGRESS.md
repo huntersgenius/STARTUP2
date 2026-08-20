@@ -182,18 +182,32 @@ prompt context, where they help.
   be read as a GPT-4o number — and it doubles as the quality floor for a clinic whose models
   are all unreachable.
 
-**Results (offline rules baseline, 498 runs across both languages)**
+**Results — corrected 2026-08-20. See the remediation entry below; the original
+version of this table was materially misleading.**
 
-| Metric | Result | Floor |
-|---|---|---|
-| Top-3 accuracy | **97.6%** | 70% |
-| Top-1 accuracy | 94.4% | — |
-| **Red-flag recall** | **100%** (158/158) | **100%** |
-| False-referral rate | 10.8% | — |
-| Calibration error (ECE) | 0.279 | — |
-| p95 latency | 25 ms | 6000 ms |
-| Cost per case | $0.0000 | $0.05 |
-| Language gap (uz − ru) | 0.0 pp | — |
+Provider: **deterministic rules baseline — no model was called.** Corpus: 249
+synthetic vignettes, reviewed by no clinician, built from 26 distinct templates.
+
+| Metric | In-vocabulary | Out-of-vocabulary | Floor |
+|---|---|---|---|
+| Top-3 agreement with our answer key | 97.6% | **31.0%** | 70% |
+| Top-1 agreement | 94.4% | 23.8% | — |
+| **Red-flag recall** | 100% (158/158) | **4.5% (1/22)** | 100% |
+| False-referral rate | 0.0%¹ | 3.1% | — |
+| Calibration error (ECE) | 0.279 | 0.084 | — |
+| p95 latency | 19 ms² | 18 ms² | 6000 ms |
+| Cost per case | $0.0000² | $0.0000² | $0.05 |
+| Language gap (uz − ru) | 0.0 pp | +4.8 pp | — |
+
+¹ Was 10.8% until a genuine rule bug was fixed on 2026-08-20 (see S2 in
+`docs/SAFETY_REVIEW.md`). ² **Not a measurement of the product.** No model was
+called, so latency and cost describe the rules table only; the p95 and cost
+budgets remain **unmeasured**.
+
+> The two result columns are the same code on the same day; only the wording
+> differs. The in-vocabulary column is very largely a measure of whether text
+> this project wrote matches a dictionary this project wrote. Full working:
+> [`docs/EVAL_INTEGRITY.md`](docs/EVAL_INTEGRITY.md).
 
 **What the eval caught — this is why the sprint exists.** The first full run reported
 **62% red-flag recall: 60 missed red flags.** Every one was a real defect, none of which any
@@ -303,6 +317,90 @@ Checked and found sound: red-flag rules import nothing model-related and still f
 provider down; no test asserts something trivially true (the five assertion-free red-team tests
 call a helper that raises, and that helper has its own mutation test).
 
-**Final state**: backend 414 tests at 88% coverage with mypy clean; Flutter analyze clean with
-51 tests; web lint, typecheck and build clean; eval gate green at 97.6% top-3 and 100%
-red-flag recall.
+**State at that point**: backend 414 tests at 88% coverage with mypy clean; Flutter analyze
+clean with 51 tests; web lint, typecheck and build clean. The eval gate was green — but on the
+rules baseline only, which the next section corrects.
+
+## Remediation pass — the evaluation was measuring the wrong thing ✅
+
+*2026-08-20. Full working in [`docs/EVAL_INTEGRITY.md`](docs/EVAL_INTEGRITY.md) and
+[`REMEDIATION.md`](REMEDIATION.md); safety findings in
+[`docs/SAFETY_REVIEW.md`](docs/SAFETY_REVIEW.md).*
+
+### The headline correction
+
+`--offline` resolves to the rules baseline, and every published number was produced with it.
+**The eight-stage diagnostic engine — the product — has never been evaluated.** The reported
+`$0.0000` cost and `19 ms` p95 were not achievements; they are what it costs to call no model.
+
+Worse, the number itself was inflated by construction. Two new vignette sets and an overlap
+measurement quantify by how much:
+
+| | in-vocabulary | out-of-vocabulary |
+|---|---|---|
+| Top-3 | 97.6% | **31.0%** |
+| **Red-flag recall** | 100% | **4.5%** |
+| Risk scorer sensitivity | 100% | **20.0%** |
+
+Same code, same day; only the wording differs. The in-vocabulary set has **58.9% of its words
+already in the terminology map**, is built from **26 templates rather than 249 vignettes**
+(157 exact duplicates), and **8 of its 11 presentation classes are identifiable by one shared
+phrase** — so those classes' 100.0% scores mean nothing at all.
+
+### Does the LLM path beat the rules baseline?
+
+**Unknown, and it is the most important open question in the project.** No API key is available
+in this environment, so rather than estimate, the experiment was built and left one command
+from running:
+
+```bash
+export OPENAI_API_KEY=...
+make eval-model                     # or PROVIDER=anthropic
+```
+
+`--provider openai` now **refuses to run without a key** rather than silently degrading to the
+rules layer and printing a table that reads as a model evaluation. It did exactly that on the
+first attempt during this pass, which is why the guard exists and has a test.
+
+The question matters because of what the baseline scores. A rules table matching 97.6% on the
+main set does not show the rules are good; it shows the main set is easy. If the LLM cannot
+beat **31.0% and 4.5%** on the out-of-vocabulary set by a wide margin, it is not earning its
+cost or its latency, and the product is a terminology map with a language model attached for
+decoration. That is a real possible outcome and the repository now says so.
+
+### Safety findings
+
+- **Red-flag recall collapses to 4.5% on unfamiliar wording**, and to 31.6% on dangers
+  deliberately paraphrased. A myocardial infarction described as *"to'sh suyagim ortida tosh
+  bosgandek og'irlik"* is missed. Not fixed by adding those phrases to the map — that would
+  raise the score and change nothing. Published, and now gated in CI.
+- **`severe_anemia` contradicted its own cited protocol**, firing on exertional breathlessness
+  when WHO reserves referral for breathlessness at rest. It produced the entire 10.8%
+  false-referral rate — 40 of 40 cases, each a rural family sent travelling unnecessarily.
+  Fixed: **10.8% → 0.0%**, recall unchanged.
+- **Prompt injection holds on the baseline (20/20 schema, 20/20 red flags)** but that is a weak
+  result: a lookup table has no instructions to override. The meaningful run needs the model
+  path and is wired, key-blocked.
+- **The CI workflow has been invalid YAML since Sprint 1.** `DATABASE_URL:
+  sqlite+pysqlite:///:memory:` ends a plain scalar in a colon; GitHub would have rejected the
+  file. **No CI job has ever run.** Every previous "CI passes" claim meant the steps had been
+  executed by hand. Fixed and now covered by a test that parses the workflow.
+
+### Confidence
+
+ECE 0.279, and on out-of-vocabulary text the signal **inverts** — 0.8–1.0 confidence was correct
+62.5% of the time against 77.8% at 0.4–0.6 (small buckets: 8 and 9). The clinician UI no longer
+shows a percentage; it shows a three-level match band with the line "this is not a probability".
+No calibration was fitted: fitting on 26 templates would produce something that looks like a
+probability and is not one.
+
+### What was deliberately not done
+
+- No calibration fitted on synthetic data.
+- No out-of-vocabulary phrases added to the terminology map, which would have deleted the
+  measurement rather than improved the system. A test now fails if anyone does this.
+- No accuracy floor placed on the out-of-vocabulary or adversarial gates — those sets exist to
+  be reported, not passed. The red-flag floor still gates the injection set and the model path.
+
+**State now**: backend **438 tests** green, mypy clean on 64 files; Flutter analyze clean with
+53 tests; web lint, typecheck and build clean; CI workflow parses for the first time.

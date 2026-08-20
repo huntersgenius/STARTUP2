@@ -194,6 +194,14 @@ class TerminologyMap:
         """Total distinct strings a clinician can type and be understood."""
         return len(self._index)
 
+    def all_surfaces(self) -> list[str]:
+        """Every distinct string a clinician can type and be understood.
+
+        Used by the evaluation overlap report to find vocabulary the test set
+        never exercises — coverage we claim but do not measure.
+        """
+        return list(self._index)
+
     def lookup(self, surface: str) -> Term | None:
         entry = self._index.get(_key(surface))
         return entry[0] if entry else None

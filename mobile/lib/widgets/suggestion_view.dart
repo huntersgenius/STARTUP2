@@ -180,16 +180,28 @@ class SuggestionView extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 8),
-                    // A bar, not a number: clinicians read relative confidence
-                    // faster than they read "0.62".
+                    // A band, never a percentage.
+                    //
+                    // The underlying number is not a probability. On the rules
+                    // path it is a normalised vote from a lookup table; on the
+                    // model path it is whatever the model wrote. Measured
+                    // calibration error is 0.28, and on text outside the
+                    // terminology map the signal trends the wrong way — higher
+                    // scores were *less* often correct. Printing "62%" invites
+                    // a clinician to read it as "62% likely", which it is not.
+                    // See docs/EVAL_INTEGRITY.md.
                     LinearProgressIndicator(
                       value: d.confidence.clamp(0, 1),
                       minHeight: 12,
                       backgroundColor: Colors.grey.shade300,
                     ),
-                    const SizedBox(height: 4),
-                    Text('${(d.confidence * 100).round()}%',
-                        style: const TextStyle(fontSize: 15)),
+                    const SizedBox(height: 6),
+                    Text(
+                      matchBandLabel(d.confidence, language),
+                      key: Key('match-band-${d.condition}'),
+                      style: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w600),
+                    ),
                     const SizedBox(height: 12),
                     Text(
                       '${tr('suggestion.why', language)}: ${d.why}',
