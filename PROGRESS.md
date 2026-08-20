@@ -273,3 +273,36 @@ clean with 51 tests; web lint, typecheck and build clean.
 - The dashboard reads live metrics but has no charts over time yet; the API returns a single
   window, not a series.
 - Whisper transcription still queues audio without transcribing it.
+
+## Post-sprint — adversarial safety review ✅
+
+Ran the review prompt from the build pack against the whole system, as a hostile senior
+engineer and a medical safety reviewer. **Five defects found, all fixed, each with a
+regression test that names the defect.** Full write-up: [`docs/SAFETY_REVIEW.md`](docs/SAFETY_REVIEW.md).
+
+The two that mattered:
+
+1. **A clinician's decision made offline was silently discarded.** The UI said "done", nothing
+   was written to the device, and the consultation reached the server with no evidence a human
+   had ever reviewed the output — breaking the offline-first guarantee and the
+   clinician-in-the-loop guarantee simultaneously, in exactly the setting this product exists
+   for. The device now persists the offline suggestion and queues it with the decision and the
+   red flags the clinician actually saw; the server records all three plus an audit row.
+
+2. **`chronic_flags` reached the prompt unscrubbed.** Every other field came from the
+   de-identified payload; this one came straight from the patient row. Chronic flags are free
+   text a clinician types, so a name written there would have gone to a third-party model. The
+   red-team suite missed it because it tests the scrubber in isolation rather than what the
+   prompt builder assembles — the new test asserts on the prompt string itself.
+
+Also fixed: the clinical gate could be bypassed by syncing (a nurse is refused online but was
+accepted offline — a rule that depends on connectivity is not a rule), and the raw model
+output was being copied into the audit metadata exported to the regulator as CSV.
+
+Checked and found sound: red-flag rules import nothing model-related and still fire with every
+provider down; no test asserts something trivially true (the five assertion-free red-team tests
+call a helper that raises, and that helper has its own mutation test).
+
+**Final state**: backend 414 tests at 88% coverage with mypy clean; Flutter analyze clean with
+51 tests; web lint, typecheck and build clean; eval gate green at 97.6% top-3 and 100%
+red-flag recall.
