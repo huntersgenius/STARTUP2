@@ -124,14 +124,23 @@ class _ConsultationScreenState extends ConsumerState<ConsultationScreen> {
         if (!e.transient) rethrow;
         // No server: fall back to the deterministic layer, which is the part
         // that catches the dangerous cases anyway.
+        final ClinicalSuggestion offline = const OfflineEngine().assess(
+          freeText: _complaint.text,
+          selectedConcepts: _selected,
+          vitals: vitals,
+          ageYears: _ageYears,
+          language: language,
+        );
+        // Persist it before showing it: the clinician's decision needs a row
+        // to attach to, or it is lost when they close the screen.
+        final LocalSuggestion stored =
+            await ref.read(repositoryProvider).saveOfflineSuggestion(
+                  consultationId: consultation.id,
+                  payload: offline.toJson(),
+                );
         setState(() {
-          _suggestion = const OfflineEngine().assess(
-            freeText: _complaint.text,
-            selectedConcepts: _selected,
-            vitals: vitals,
-            ageYears: _ageYears,
-            language: language,
-          );
+          _suggestion = offline;
+          _storedSuggestion = stored;
           _degraded = true;
         });
       }

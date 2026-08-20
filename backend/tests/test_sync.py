@@ -293,3 +293,225 @@ def test_server_owned_fields_cannot_be_overwritten_by_a_device(
     stored = db.get(Consultation, uuid.UUID(created["id"]))
     assert stored.clinic_id == clinic_a.id
     assert stored.patient_id == patient.id
+
+
+def test_offline_decision_is_not_lost(
+    client, clinic_factory, user_factory, patient_factory, auth_headers, db
+):
+    """A decision taken with no signal must still reach the audit trail.
+
+    Found in review: the app produced a rules-only suggestion offline, the
+    clinician accepted or rejected it, and nothing was recorded anywhere —
+    the consultation arrived at the server with no evidence a human had ever
+    looked at the output.
+    """
+    from app.models.ai import AiSuggestion, ClinicianDecision
+    from app.models.audit import AuditLog
+
+    clinic = clinic_factory()
+    user_factory(clinic, email="offline-doc@sihhat.uz")
+    patient = patient_factory(clinic)
+    headers = auth_headers("offline-doc@sihhat.uz")
+
+    # The device syncs the consultation and the decision it took on it.
+    created = client.post(
+        "/api/v1/sync",
+        headers=headers,
+        json={
+            "device_id": "tablet-offline",
+            "operations": [
+                _op(
+                    "consultation",
+                    "create",
+                    {
+                        "patient_id": str(patient.id),
+                        "chief_complaint": "ko'krak og'rig'i va nafas qisishi",
+                        "language": "uz",
+                        "client_uuid": "c-offline-1",
+                    },
+                )
+            ],
+        },
+    ).json()["results"][0]
+    assert created["status"] == "applied"
+
+    synced = client.post(
+        "/api/v1/sync",
+        headers=headers,
+        json={
+            "device_id": "tablet-offline",
+            "operations": [
+                _op(
+                    "offline_assessment",
+                    "create",
+                    {
+                        "consultation_client_uuid": "c-offline-1",
+                        "payload": {
+                            "red_flags": [
+                                {
+                                    "code": "acs_suspected",
+                                    "urgency": "immediate",
+                                    "message": "Yurak xurujii shubhasi",
+                                    "refer_to": "emergency_cardiology",
+                                }
+                            ],
+                            "insufficient_data": True,
+                        },
+                        "decision": {
+                            "action": "accept",
+                            "decided_at": datetime.now(UTC).isoformat(),
+                        },
+                    },
+                )
+            ],
+        },
+    ).json()["results"][0]
+
+    assert synced["status"] == "applied"
+    suggestion = db.query(AiSuggestion).one()
+    # Labelled honestly: a rules-only device output, never passed off as a model.
+    assert suggestion.model == "offline-rules"
+    assert suggestion.degraded is True
+
+    decision = db.query(ClinicianDecision).one()
+    assert decision.action.value == "accept"
+    assert decision.ai_suggestion_id == suggestion.id
+
+    actions = [row.action for row in db.query(AuditLog).all()]
+    assert "ai.offline_decision" in actions
+
+
+def test_offline_assessment_for_an_unknown_consultation_is_rejected(
+    client, clinic_factory, user_factory, auth_headers, db
+):
+    from app.models.ai import AiSuggestion
+
+    clinic = clinic_factory()
+    user_factory(clinic, email="offline-doc2@sihhat.uz")
+    response = client.post(
+        "/api/v1/sync",
+        headers=auth_headers("offline-doc2@sihhat.uz"),
+        json={
+            "device_id": "tablet-offline",
+            "operations": [
+                _op(
+                    "offline_assessment",
+                    "create",
+                    {
+                        "consultation_client_uuid": "does-not-exist",
+                        "payload": {},
+                        "decision": {"action": "accept"},
+                    },
+                )
+            ],
+        },
+    )
+    assert response.json()["results"][0]["status"] == "rejected"
+    assert db.query(AiSuggestion).count() == 0
+
+
+def test_offline_assessment_with_a_bad_action_is_rejected(
+    client, clinic_factory, user_factory, patient_factory, auth_headers, db
+):
+    from app.models.ai import AiSuggestion
+
+    clinic = clinic_factory()
+    user_factory(clinic, email="offline-doc3@sihhat.uz")
+    patient = patient_factory(clinic)
+    headers = auth_headers("offline-doc3@sihhat.uz")
+    client.post(
+        "/api/v1/sync",
+        headers=headers,
+        json={
+            "device_id": "t",
+            "operations": [
+                _op(
+                    "consultation",
+                    "create",
+                    {
+                        "patient_id": str(patient.id),
+                        "chief_complaint": "yo'tal",
+                        "client_uuid": "c-offline-2",
+                    },
+                )
+            ],
+        },
+    )
+    response = client.post(
+        "/api/v1/sync",
+        headers=headers,
+        json={
+            "device_id": "t",
+            "operations": [
+                _op(
+                    "offline_assessment",
+                    "create",
+                    {
+                        "consultation_client_uuid": "c-offline-2",
+                        "payload": {},
+                        "decision": {"action": "rubber-stamp"},
+                    },
+                )
+            ],
+        },
+    )
+    assert response.json()["results"][0]["status"] == "rejected"
+    assert db.query(AiSuggestion).count() == 0
+
+
+def test_a_nurse_cannot_close_the_clinical_gate_by_syncing(
+    client, clinic_factory, user_factory, patient_factory, auth_headers, db
+):
+    """The gate must not depend on connectivity.
+
+    Found in review: `/suggestions/{id}/decision` refuses a nurse, but the
+    sync path did not — so the same nurse could record a decision simply by
+    being offline when they made it.
+    """
+    from app.models.ai import AiSuggestion
+    from app.models.user import UserRole
+
+    clinic = clinic_factory()
+    user_factory(clinic, email="doc-gate@sihhat.uz")
+    user_factory(clinic, email="nurse-gate@sihhat.uz", role=UserRole.nurse)
+    patient = patient_factory(clinic)
+
+    client.post(
+        "/api/v1/sync",
+        headers=auth_headers("doc-gate@sihhat.uz"),
+        json={
+            "device_id": "t",
+            "operations": [
+                _op(
+                    "consultation",
+                    "create",
+                    {
+                        "patient_id": str(patient.id),
+                        "chief_complaint": "yo'tal",
+                        "client_uuid": "c-gate-1",
+                    },
+                )
+            ],
+        },
+    )
+
+    refused = client.post(
+        "/api/v1/sync",
+        headers=auth_headers("nurse-gate@sihhat.uz"),
+        json={
+            "device_id": "t",
+            "operations": [
+                _op(
+                    "offline_assessment",
+                    "create",
+                    {
+                        "consultation_client_uuid": "c-gate-1",
+                        "payload": {},
+                        "decision": {"action": "accept"},
+                    },
+                )
+            ],
+        },
+    )
+    assert refused.json()["results"][0]["status"] == "rejected"
+    assert db.query(AiSuggestion).count() == 0

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -330,6 +332,29 @@ void main() {
       await tester.tap(find.byKey(const Key('decision-accept')));
       await tester.pumpAndSettle();
       expect(find.byKey(const Key('decision-recorded')), findsOneWidget);
+
+      // Found in review: the decision used to be silently discarded when the
+      // suggestion came from the device, so a consultation reached the server
+      // with no evidence a clinician had reviewed the output.
+      final List<LocalSuggestion> suggestions =
+          await db.select(db.suggestions).get();
+      expect(suggestions, hasLength(1));
+      expect(suggestions.single.model, 'offline-rules');
+      expect(suggestions.single.decisionAction, 'accept');
+      expect(suggestions.single.decidedAt, isNotNull);
+
+      final List<OutboxEntry> queued = await db.select(db.outbox).get();
+      final Iterable<OutboxEntry> assessments =
+          queued.where((e) => e.entityType == 'offline_assessment');
+      expect(assessments, hasLength(1),
+          reason: 'the decision must be queued for the audit trail');
+      final Map<String, dynamic> payload =
+          jsonDecode(assessments.single.payloadJson) as Map<String, dynamic>;
+      expect(payload['decision']['action'], 'accept');
+      expect(payload['consultation_client_uuid'], stored.single.id);
+      // The red flags the device fired travel with it, so the server records
+      // what the clinician actually saw.
+      expect((payload['payload']['red_flags'] as List), isNotEmpty);
 
       await db.close();
     });

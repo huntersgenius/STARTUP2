@@ -25,13 +25,20 @@ from sqlalchemy import select
 from app.api.deps import CurrentUser, DbSession, Language, assert_clinic_scope
 from app.core import audit
 from app.core.i18n import translate
-from app.models.consultation import Consultation
+from app.models.ai import AiSuggestion, ClinicianDecision, DecisionAction, SuggestionKind
+from app.models.consultation import Consultation, ConsultationStatus
 from app.models.patient import Patient
 from app.models.sync import SyncMergeLog, SyncReceipt
+from app.models.user import PRESCRIBING_ROLES, UserRole
 from app.schemas.consultation import ConsultationCreate
 from app.schemas.patient import PatientCreate
 
-EntityType = Literal["patient", "consultation"]
+#: `offline_assessment` carries a rules-only suggestion produced on the device
+#: together with the clinician's decision on it. Without it, a consultation
+#: conducted with no signal would reach the server with no record that a
+#: clinician ever accepted, edited or rejected the output — which breaks both
+#: the audit trail and the clinician-in-the-loop guarantee.
+EntityType = Literal["patient", "consultation", "offline_assessment"]
 
 #: Fields a device is allowed to overwrite. Anything else (ids, clinic_id,
 #: status transitions driven by the server) is server-owned.
@@ -205,7 +212,113 @@ def sync(
 def _apply(db, device_id: str, op: SyncOperation, user, language: str) -> SyncResult:
     if op.entity_type == "patient":
         return _apply_patient(db, device_id, op, user, language)
+    if op.entity_type == "offline_assessment":
+        return _apply_offline_assessment(db, op, user, language)
     return _apply_consultation(db, device_id, op, user, language)
+
+
+def _apply_offline_assessment(db, op: SyncOperation, user, language: str) -> SyncResult:
+    """Record a suggestion produced on the device and the decision taken on it.
+
+    The suggestion is stored with `degraded=True` and a model name that says
+    plainly it came from the device's rule layer, so nobody reading the audit
+    trail later mistakes it for a model output.
+    """
+    data = op.data
+    consultation = _resolve_consultation(db, data, user, language)
+
+    # The same gate the online endpoint enforces. Without this, a nurse's
+    # tablet could close the clinical gate by syncing, while the same nurse is
+    # refused when online — a rule that depends on connectivity is not a rule.
+    if user.role not in PRESCRIBING_ROLES and user.role not in (
+        UserRole.admin,
+        UserRole.superadmin,
+    ):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN, detail=translate("error.forbidden", language)
+        )
+
+    decision_data = data.get("decision") or {}
+    action = decision_data.get("action")
+    if action not in {a.value for a in DecisionAction}:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"unknown decision action {action!r}",
+        )
+
+    payload = data.get("payload") or {}
+    suggestion = AiSuggestion(
+        consultation_id=consultation.id,
+        kind=SuggestionKind.diagnosis,
+        payload=payload,
+        confidence=None,
+        model="offline-rules",
+        prompt_version=str(data.get("prompt_version") or "device-rules"),
+        input_hash=str(data.get("input_hash") or ""),
+        raw_output=None,
+        latency_ms=int(data.get("latency_ms") or 0),
+        cost_usd=0.0,
+        degraded=True,
+        cache_hit=False,
+    )
+    db.add(suggestion)
+    db.flush()
+
+    decided_at = decision_data.get("decided_at")
+    db.add(
+        ClinicianDecision(
+            ai_suggestion_id=suggestion.id,
+            user_id=user.id,
+            action=DecisionAction(action),
+            final_text=decision_data.get("final_text"),
+            reason=decision_data.get("reason"),
+            decided_at=_as_aware(datetime.fromisoformat(decided_at))
+            if decided_at
+            else datetime.now(UTC),
+        )
+    )
+    consultation.status = ConsultationStatus.completed
+    db.flush()
+
+    audit.record(
+        db,
+        action="ai.offline_decision",
+        entity_type="ai_suggestion",
+        entity_id=suggestion.id,
+        actor_user_id=user.id,
+        clinic_id=consultation.clinic_id,
+        metadata={
+            "consultation_id": str(consultation.id),
+            "action": action,
+            "model": "offline-rules",
+            "red_flags": [f.get("code") for f in (payload.get("red_flags") or [])],
+        },
+    )
+    return SyncResult(
+        operation_id=op.operation_id,
+        status="applied",
+        entity_type="offline_assessment",
+        server_id=suggestion.id,
+    )
+
+
+def _resolve_consultation(db, data: dict[str, Any], user, language: str) -> Consultation:
+    """Find the consultation by server id, or by the client id it synced under."""
+    consultation: Consultation | None = None
+    if data.get("consultation_server_id"):
+        consultation = db.get(Consultation, uuid.UUID(str(data["consultation_server_id"])))
+    if consultation is None and data.get("consultation_client_uuid"):
+        consultation = db.execute(
+            select(Consultation).where(
+                Consultation.client_uuid == str(data["consultation_client_uuid"])
+            )
+        ).scalar_one_or_none()
+    if consultation is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail=translate("error.not_found", language)
+        )
+    assert_clinic_scope(user, consultation.clinic_id, language)
+    return consultation
 
 
 def _apply_patient(db, device_id: str, op: SyncOperation, user, language: str) -> SyncResult:

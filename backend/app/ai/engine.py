@@ -307,7 +307,9 @@ class DiagnosticEngine:
             age_detail=age_detail,
             sex=case.sex,
             pregnant="yes" if case.pregnant else "no/unknown",
-            chronic_flags=", ".join(case.chronic_flags) or "none recorded",
+            # From `scrubbed`, not `case`: chronic flags are free text a
+            # clinician typed and can carry a name.
+            chronic_flags=", ".join(scrubbed.get("chronic_flags") or []) or "none recorded",
             vitals=vitals_text,
             language=case.language,
             chief_complaint=scrubbed.get("chief_complaint", ""),
@@ -347,7 +349,12 @@ class DiagnosticEngine:
                     "degraded": result.degraded,
                 }
             )
+            # `raw_output` is returned to the caller so it can be persisted on
+            # AiSuggestion, then popped before the trace is written to the
+            # audit metadata — that metadata is exported to the regulator as
+            # CSV, and it should carry the length, not the model's prose.
             trace["raw_output"] = result.response.text
+            trace["response_chars"] = len(result.response.text)
             trace["model"] = result.response.model
             trace["degraded"] = result.degraded
 
@@ -564,8 +571,8 @@ class DiagnosticEngine:
         if suggestion is None:
             trace.setdefault("cache", {"hit": False})
             suggestion, reason_trace = self.reason(system, user, decision, budget)
+            raw_output = reason_trace.pop("raw_output", None)
             trace["reasoning"] = reason_trace
-            raw_output = reason_trace.get("raw_output")
             model_name = reason_trace.get("model", "rules-only")
             degraded = bool(reason_trace.get("degraded", False))
 

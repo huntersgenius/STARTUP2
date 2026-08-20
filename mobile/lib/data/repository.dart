@@ -190,7 +190,17 @@ class ClinicalRepository {
     );
 
     final String? serverId = suggestion.serverId;
-    if (serverId == null) return;
+
+    if (serverId == null) {
+      // The suggestion never reached the server — it was produced on the
+      // device. Queue the assessment and the decision together, keyed by the
+      // consultation's client id, so the server can attach both once the
+      // consultation itself has synced.
+      await _queueOfflineAssessment(
+          suggestion, action, finalText, reason, timestamp);
+      return;
+    }
+
     try {
       await _api.recordDecision(
         serverId,
@@ -217,6 +227,68 @@ class ClinicalRepository {
             ),
           );
     }
+  }
+
+  Future<void> _queueOfflineAssessment(
+    LocalSuggestion suggestion,
+    String action,
+    String? finalText,
+    String? reason,
+    DateTime timestamp,
+  ) async {
+    final LocalConsultation? consultation =
+        await _db.consultationById(suggestion.consultationId);
+    if (consultation == null) return;
+
+    await _db.into(_db.outbox).insertOnConflictUpdate(
+          OutboxCompanion.insert(
+            operationId: _uuid.v4(),
+            entityType: 'offline_assessment',
+            op: 'create',
+            localId: suggestion.id,
+            payloadJson: jsonEncode(<String, dynamic>{
+              if (consultation.serverId != null)
+                'consultation_server_id': consultation.serverId,
+              'consultation_client_uuid': consultation.id,
+              'payload': jsonDecode(suggestion.payloadJson),
+              'prompt_version': 'device-rules',
+              'decision': <String, dynamic>{
+                'action': action,
+                if (finalText != null) 'final_text': finalText,
+                if (reason != null) 'reason': reason,
+                'decided_at': timestamp.toIso8601String(),
+              },
+            }),
+            updatedAt: timestamp,
+            createdAt: timestamp,
+          ),
+        );
+  }
+
+  /// Persist a suggestion the device produced with no server.
+  ///
+  /// Without this row there is nothing for the clinician's decision to attach
+  /// to, and the decision was silently dropped — the consultation reached the
+  /// server with no evidence a human had reviewed the output.
+  Future<LocalSuggestion> saveOfflineSuggestion({
+    required String consultationId,
+    required Map<String, dynamic> payload,
+  }) async {
+    final String localId = _uuid.v4();
+    await _db.into(_db.suggestions).insertOnConflictUpdate(
+          SuggestionsCompanion.insert(
+            id: localId,
+            consultationId: consultationId,
+            payloadJson: jsonEncode(payload),
+            // Named so nobody reading the record later mistakes a device rule
+            // table for a model.
+            model: const Value('offline-rules'),
+            degraded: const Value(true),
+            createdAt: _now().toUtc(),
+          ),
+        );
+    return (_db.select(_db.suggestions)..where((s) => s.id.equals(localId)))
+        .getSingle();
   }
 
   Future<ClinicalSuggestion?> latestSuggestion(String consultationId) async {

@@ -169,6 +169,65 @@ class ClinicalSuggestion {
     );
   }
 
+  /// Serialise back to the server's schema shape.
+  ///
+  /// Used for an offline assessment, which is stored on the device and later
+  /// synced: the server records it as an AiSuggestion, so it has to arrive in
+  /// the same shape the API would have produced.
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'differentials': differentials
+            .map((d) => <String, dynamic>{
+                  'condition': d.condition,
+                  'icd10': d.icd10,
+                  'confidence': d.confidence,
+                  'why': d.why,
+                  'citations': d.citations,
+                  'red_flags': d.redFlags,
+                })
+            .toList(),
+        'red_flags': redFlags
+            .map((f) => <String, dynamic>{
+                  'code': f.code,
+                  'urgency': f.urgency,
+                  'message': f.message,
+                  'refer_to': f.referTo,
+                  'triggered_by': <String>[],
+                })
+            .toList(),
+        'recommended_tests': recommendedTests
+            .map((name) => <String, dynamic>{'name': name})
+            .toList(),
+        'treatment': <String, dynamic>{
+          'items': treatmentItems
+              .map((i) => <String, dynamic>{
+                    'drug': i.drug,
+                    'dose': i.dose,
+                    'route': i.route,
+                    'duration': i.duration,
+                    'local_availability': i.localAvailability,
+                    'substitute': i.substitute,
+                    'notes': i.notes,
+                  })
+              .toList(),
+          'non_pharmacological': nonPharmacological,
+          'blocked_reason': treatmentBlockedReason,
+          'notes': treatmentNotes,
+        },
+        'risk': <String, dynamic>{
+          'score': riskScore,
+          'band': riskBand,
+          'drivers': <String>[],
+        },
+        'referral': <String, dynamic>{
+          'needed': referral.needed,
+          'specialty': referral.specialty,
+          'urgency': referral.urgency,
+          'reason': referral.reason,
+        },
+        'follow_up_questions': followUpQuestions,
+        'insufficient_data': insufficientData,
+      };
+
   static ClinicalSuggestion fromJsonString(String source) =>
       ClinicalSuggestion.fromJson(
         (jsonDecode(source) as Map).cast<String, dynamic>(),
