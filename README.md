@@ -46,6 +46,7 @@ make lint typecheck
 | `backend/app/ai/` | The pipeline: normalize → de-identify → retrieve → route → reason → ground → constrain → present |
 | `backend/app/ai/eval/` | 249-vignette evaluation harness, metrics, A/B, HTML report |
 | `knowledge/` | Protocol corpus, ingestion, terminology map (uz/ru/en → ICD-10), national formulary |
+| `ml/` | Deterministic risk scoring; the XGBoost baseline to beat once pilot data exists |
 | `mobile/` | Flutter tablet app, offline-first (Drift + outbox sync) |
 | `web/` | Next.js admin dashboard |
 | `infra/` | docker-compose, Dockerfiles, terraform, edge bundle, ops scripts and alerts |

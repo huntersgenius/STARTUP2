@@ -28,7 +28,7 @@ jobs:
         run: pip install -r requirements-dev.txt
 
       - name: Lint (ruff)
-        run: ruff check app tests ../knowledge
+        run: ruff check app tests ../knowledge ../ml
 
       - name: Format check (ruff)
         run: ruff format --check app tests

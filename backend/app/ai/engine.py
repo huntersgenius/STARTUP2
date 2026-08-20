@@ -17,6 +17,7 @@ from typing import Any
 
 from knowledge.formulary import FormularyService
 from knowledge.terminology import get_terminology
+from ml.risk_scoring import score_patient
 from sqlalchemy.orm import Session
 
 from app.ai import prompts
@@ -445,9 +446,31 @@ class DiagnosticEngine:
         return suggestion
 
     # --- 8. present ------------------------------------------------------
+    def score_risk(self, case: NormalizedCase, red_flags: list[RedFlag]) -> RiskScore:
+        """Compute the risk score deterministically.
+
+        Previously this number came from the model's JSON. That is exactly the
+        kind of value an LLM should not invent: it reads as quantitative, it is
+        calibrated against nothing, and a clinician seeing "risk 0.7"
+        reasonably assumes something computed it. See `ml/README.md`.
+        """
+        assessment = score_patient(
+            concepts=set(case.concepts),
+            age_years=case.age_years,
+            vitals=case.vitals,
+            chronic_flags=case.chronic_flags,
+            red_flag_codes=[flag.code for flag in red_flags],
+            pregnant=case.pregnant,
+        )
+        payload = assessment.to_payload()
+        return RiskScore(score=payload["score"], band=payload["band"], drivers=payload["drivers"])
+
     def present(
         self, suggestion: ClinicalSuggestion, case: NormalizedCase, red_flags: list[RedFlag]
     ) -> ClinicalSuggestion:
+        # The model does not get to author the risk score.
+        suggestion.risk = self.score_risk(case, red_flags)
+
         suggestion.red_flags = [
             RedFlagOut(
                 code=flag.code,

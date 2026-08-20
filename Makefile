@@ -33,10 +33,10 @@ coverage: $(VENV)  ## run tests with coverage gate
 	cd backend && ../$(PY) -m pytest --cov=app --cov-report=term-missing --cov-fail-under=80
 
 lint: $(VENV)  ## ruff
-	cd backend && ../$(VENV)/bin/ruff check app tests ../knowledge
+	cd backend && ../$(VENV)/bin/ruff check app tests ../knowledge ../ml
 
 fmt: $(VENV)  ## ruff format
-	cd backend && ../$(VENV)/bin/ruff format app tests ../knowledge
+	cd backend && ../$(VENV)/bin/ruff format app tests ../knowledge ../ml
 
 typecheck: $(VENV)  ## mypy
 	cd backend && ../$(VENV)/bin/mypy app
