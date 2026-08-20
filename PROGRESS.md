@@ -226,8 +226,11 @@ unit test had caught:
    apply a `CONCEPT_IMPLIES` table, so a specialised concept satisfies a rule written against
    the general one.
 
-155 synonyms and 3 concepts were added; the terminology map is now 132 concepts and **803
-recognised surfaces**. Recall went 62% → 96.2% → **100%**.
+155 synonyms and 3 concepts were added; the terminology map was then 132 concepts and 803
+recognised surfaces. Recall went 62% → 96.2% → **100%** — on this set. The 2026-08-20
+remediation pass measured what that number is worth: see below.
+
+*(The map is now 133 concepts / 811 surfaces after `dyspnea_at_rest` was added on 2026-08-20.)*
 
 **Honest limits**
 - **Every vignette is synthetic and unreviewed by a clinician.** These numbers describe

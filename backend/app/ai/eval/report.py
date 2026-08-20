@@ -67,7 +67,10 @@ _TEMPLATE = """<!doctype html>
 <body>
 <div class="wrap">
   <h1>SihhatAI — clinical evaluation</h1>
-  <div class="sub">{label} · prompt {prompt_version} · generated {generated}</div>
+  <div class="sub">
+    provider <strong>{label}</strong> · <strong>{code_path}</strong> ·
+    set {vignette_set} · prompt {prompt_version} · generated {generated}
+  </div>
 
   <div class="banner">
     <strong>Provenance.</strong> {provenance}
@@ -177,6 +180,8 @@ def write_report(payload: dict[str, Any], vignettes: dict[str, Vignette]) -> Pat
 
     rendered = _TEMPLATE.format(
         label=html.escape(payload["label"]),
+        code_path=html.escape(payload.get("code_path", "unknown code path")),
+        vignette_set=html.escape(str(payload.get("vignette_set", "main"))),
         prompt_version=html.escape(payload["prompt_version"]),
         generated=html.escape(payload["generated_at"][:19].replace("T", " ")),
         provenance=html.escape(info["provenance_note"]),

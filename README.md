@@ -64,7 +64,7 @@ make lint typecheck
    Every mutation writes its outbox row in the same transaction as the data,
    sync is idempotent, and a rejected operation is kept rather than dropped.
 3. **Bilingual.** Uzbek (Latin and Cyrillic) and Russian, via a terminology map
-   of 132 concepts and 803 recognised surfaces built from colloquial usage —
+   of 133 concepts and 811 recognised surfaces built from colloquial usage —
    not textbook Uzbek, and not raw LLM translation.
 4. **Privacy.** Identifiers live in an AES-256-GCM blob bound to the patient
    row. De-identification runs before every outbound call, with a 100-case

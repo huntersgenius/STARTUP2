@@ -82,7 +82,7 @@ the engine is unmeasured, so silence is never mistaken for a pass.
 
 **2a — overlap, `app/ai/eval/overlap.py`.** 100% of main-set texts contain a
 terminology surface; **58.9% of the average vignette's words are surfaces**;
-**637 of 811 surfaces (78.6%) are never exercised** by any vignette.
+**637 of 811 surfaces (78.5%) are never exercised** by any vignette.
 
 The finding I did not expect: **the "249 vignettes" are 26 distinct templates**,
 157 of them exact duplicates, largest group 25. And **8 of 11 presentation

@@ -49,7 +49,7 @@ Measured by `python -m app.ai.eval.overlap`:
 | Distinct templates behind the "249 vignettes" | **26** |
 | Vignettes that are exact duplicates of another vignette | **157** |
 | Largest single template group | 25 cases |
-| Terminology surfaces never exercised by any vignette | **637 of 811 (78.6%)** |
+| Terminology surfaces never exercised by any vignette | **637 of 811 (78.5%)** |
 | Presentation classes identifiable by one shared phrase | **8 of 11** |
 
 Three of these deserve to be read twice.

@@ -308,6 +308,10 @@ def main(argv: list[str] | None = None) -> int:
         "label": label,
         "provider": provider_name,
         "model": model_name,
+        # Recorded in the artefact as well as printed, so a results file that
+        # outlives its terminal still says which path produced it.
+        "code_path": context["code_path"],
+        "vignette_set": context["set"],
         "prompt_version": prompts.prompt_version(args.prompt_version),
         "languages": list(languages),
         "vignettes": {
