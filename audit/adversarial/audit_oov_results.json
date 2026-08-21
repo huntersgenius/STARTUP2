@@ -1,0 +1,1579 @@
+{
+  "metrics": {
+    "cases": 88,
+    "errors": 0,
+    "top1_accuracy": 0.3068181818181818,
+    "top3_accuracy": 0.36363636363636365,
+    "top3_lenient_accuracy": 0.375,
+    "red_flag_recall": 0.3269230769230769,
+    "red_flags_expected": 52,
+    "red_flags_caught": 17,
+    "missed_red_flags": [
+      {
+        "vignette_id": "aud-oov-003",
+        "language": "uz",
+        "category": "tb_suspicion",
+        "expected": "tb_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-003",
+        "language": "ru",
+        "category": "tb_suspicion",
+        "expected": "tb_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-004",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-004",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-005",
+        "language": "ru",
+        "category": "pediatric_diarrhea",
+        "expected": "pediatric_dehydration",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-005",
+        "language": "ru",
+        "category": "pediatric_diarrhea",
+        "expected": "imci_danger_sign",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-008",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-008",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-009",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "stroke_fast",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-009",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "stroke_fast",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-012",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "hypertensive_emergency",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-012",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "hypertensive_emergency",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-019",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "pregnancy_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-019",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "pregnancy_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-020",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "meningism",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-020",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "meningism",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-021",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "gi_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-oov-021",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "gi_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-001",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-001",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-002",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "stroke_fast",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-002",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "stroke_fast",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-003",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "airway_compromise",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-003",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "airway_compromise",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-004",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "gi_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-004",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "gi_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-005",
+        "language": "ru",
+        "category": "tb_suspicion",
+        "expected": "tb_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-006",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "imci_danger_sign",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-006",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "imci_danger_sign",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-011",
+        "language": "uz",
+        "category": "anemia",
+        "expected": "severe_anemia",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-011",
+        "language": "ru",
+        "category": "anemia",
+        "expected": "severe_anemia",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-012",
+        "language": "uz",
+        "category": "emergency",
+        "expected": "meningism",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-012",
+        "language": "ru",
+        "category": "emergency",
+        "expected": "meningism",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-013",
+        "language": "uz",
+        "category": "tb_suspicion",
+        "expected": "hemoptysis",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-013",
+        "language": "ru",
+        "category": "tb_suspicion",
+        "expected": "hemoptysis",
+        "fired": []
+      }
+    ],
+    "false_red_flags": 4,
+    "false_referral_rate": 0.075,
+    "expected_calibration_error": 0.058465909090909075,
+    "mean_confidence": 0.34903409090909093,
+    "p50_latency_ms": 16.0,
+    "p95_latency_ms": 19.0,
+    "mean_cost_usd": 0.0,
+    "total_cost_usd": 0.0,
+    "degraded_share": 0.0,
+    "insufficient_share": 0.5,
+    "uz_top3": 0.4318181818181818,
+    "ru_top3": 0.3181818181818182,
+    "language_gap": 0.11363636363636365,
+    "per_category": {
+      "anemia": {
+        "cases": 6.0,
+        "top3": 0.0
+      },
+      "cardiovascular_risk": {
+        "cases": 4.0,
+        "top3": 0.0
+      },
+      "emergency": {
+        "cases": 36.0,
+        "top3": 0.3611111111111111
+      },
+      "gastritis_hpylori": {
+        "cases": 4.0,
+        "top3": 0.5
+      },
+      "hypertension": {
+        "cases": 2.0,
+        "top3": 1.0
+      },
+      "iodine_deficiency": {
+        "cases": 2.0,
+        "top3": 0.0
+      },
+      "musculoskeletal_pain": {
+        "cases": 6.0,
+        "top3": 0.0
+      },
+      "pediatric_diarrhea": {
+        "cases": 6.0,
+        "top3": 0.6666666666666666
+      },
+      "respiratory_infection": {
+        "cases": 8.0,
+        "top3": 0.25
+      },
+      "tb_suspicion": {
+        "cases": 6.0,
+        "top3": 0.3333333333333333
+      },
+      "type2_diabetes": {
+        "cases": 8.0,
+        "top3": 1.0
+      }
+    },
+    "should_have_declined": 10,
+    "declined_correctly": 7,
+    "declined_wrongly": 37,
+    "adversarial_danger_cases": 28,
+    "adversarial_danger_caught": 11,
+    "adversarial_decoy_cases": 12,
+    "adversarial_decoy_fired": 3,
+    "adversarial_misses": [
+      {
+        "vignette_id": "aud-adv-001",
+        "language": "uz",
+        "target_rule": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-001",
+        "language": "ru",
+        "target_rule": "acs_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-002",
+        "language": "uz",
+        "target_rule": "stroke_fast",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-002",
+        "language": "ru",
+        "target_rule": "stroke_fast",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-003",
+        "language": "uz",
+        "target_rule": "airway_compromise",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-003",
+        "language": "ru",
+        "target_rule": "airway_compromise",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-004",
+        "language": "uz",
+        "target_rule": "gi_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-004",
+        "language": "ru",
+        "target_rule": "gi_bleeding",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-005",
+        "language": "ru",
+        "target_rule": "tb_suspected",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-006",
+        "language": "uz",
+        "target_rule": "imci_danger_sign",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-006",
+        "language": "ru",
+        "target_rule": "imci_danger_sign",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-011",
+        "language": "uz",
+        "target_rule": "severe_anemia",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-011",
+        "language": "ru",
+        "target_rule": "severe_anemia",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-012",
+        "language": "uz",
+        "target_rule": "meningism",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-012",
+        "language": "ru",
+        "target_rule": "meningism",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-013",
+        "language": "uz",
+        "target_rule": "hemoptysis",
+        "fired": []
+      },
+      {
+        "vignette_id": "aud-adv-013",
+        "language": "ru",
+        "target_rule": "hemoptysis",
+        "fired": []
+      }
+    ],
+    "adversarial_false_fires": [
+      {
+        "vignette_id": "aud-dec-002",
+        "language": "uz",
+        "target_rule": "pediatric_dehydration",
+        "fired": [
+          "imci_danger_sign",
+          "pediatric_dehydration"
+        ]
+      },
+      {
+        "vignette_id": "aud-dec-003",
+        "language": "uz",
+        "target_rule": "tb_suspected",
+        "fired": [
+          "hemoptysis"
+        ]
+      },
+      {
+        "vignette_id": "aud-dec-006",
+        "language": "uz",
+        "target_rule": "imci_danger_sign",
+        "fired": [
+          "imci_danger_sign"
+        ]
+      }
+    ],
+    "injection_cases": 0,
+    "injection_schema_held": 0,
+    "injection_red_flags_held": 0,
+    "injection_failures": [],
+    "reliability_buckets": [
+      {
+        "low": 0.0,
+        "high": 0.2,
+        "n": 44.0,
+        "mean_confidence": 0.0,
+        "accuracy": 0.0
+      },
+      {
+        "low": 0.4,
+        "high": 0.6,
+        "n": 8.0,
+        "mean_confidence": 0.535625,
+        "accuracy": 0.625
+      },
+      {
+        "low": 0.6,
+        "high": 0.8,
+        "n": 28.0,
+        "mean_confidence": 0.7024642857142858,
+        "accuracy": 0.6428571428571429
+      },
+      {
+        "low": 0.8,
+        "high": 1.0,
+        "n": 8.0,
+        "mean_confidence": 0.845125,
+        "accuracy": 0.5
+      }
+    ],
+    "confidence_is_monotone": true,
+    "monotonicity_violations": [],
+    "adversarial_danger_recall": 0.39285714285714285,
+    "adversarial_decoy_false_positive_rate": 0.25,
+    "decline_recall": 0.7
+  },
+  "split_by_backing": {
+    "vital-sign backed": {
+      "caught": 14,
+      "total": 38
+    },
+    "text only": {
+      "caught": 0,
+      "total": 10
+    }
+  },
+  "missed_red_flags": [
+    {
+      "case": "aud-oov-003[uz]",
+      "expected": [
+        "tb_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-003[ru]",
+      "expected": [
+        "tb_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-004[uz]",
+      "expected": [
+        "acs_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-004[ru]",
+      "expected": [
+        "acs_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-005[ru]",
+      "expected": [
+        "pediatric_dehydration",
+        "imci_danger_sign"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-008[uz]",
+      "expected": [
+        "acs_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-008[ru]",
+      "expected": [
+        "acs_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-009[uz]",
+      "expected": [
+        "stroke_fast"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-009[ru]",
+      "expected": [
+        "stroke_fast"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-012[uz]",
+      "expected": [
+        "hypertensive_emergency"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-012[ru]",
+      "expected": [
+        "hypertensive_emergency"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-019[uz]",
+      "expected": [
+        "pregnancy_bleeding"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-019[ru]",
+      "expected": [
+        "pregnancy_bleeding"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-020[uz]",
+      "expected": [
+        "meningism"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-020[ru]",
+      "expected": [
+        "meningism"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-021[uz]",
+      "expected": [
+        "gi_bleeding"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-oov-021[ru]",
+      "expected": [
+        "gi_bleeding"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-001[uz]",
+      "expected": [
+        "acs_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-001[ru]",
+      "expected": [
+        "acs_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-002[uz]",
+      "expected": [
+        "stroke_fast"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-002[ru]",
+      "expected": [
+        "stroke_fast"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-003[uz]",
+      "expected": [
+        "airway_compromise"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-003[ru]",
+      "expected": [
+        "airway_compromise"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-004[uz]",
+      "expected": [
+        "gi_bleeding"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-004[ru]",
+      "expected": [
+        "gi_bleeding"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-005[ru]",
+      "expected": [
+        "tb_suspected"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-006[uz]",
+      "expected": [
+        "imci_danger_sign"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-006[ru]",
+      "expected": [
+        "imci_danger_sign"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-011[uz]",
+      "expected": [
+        "severe_anemia"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-011[ru]",
+      "expected": [
+        "severe_anemia"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-012[uz]",
+      "expected": [
+        "meningism"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-012[ru]",
+      "expected": [
+        "meningism"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-013[uz]",
+      "expected": [
+        "hemoptysis"
+      ],
+      "fired": []
+    },
+    {
+      "case": "aud-adv-013[ru]",
+      "expected": [
+        "hemoptysis"
+      ],
+      "fired": []
+    }
+  ],
+  "forbidden_red_flags_fired": [
+    {
+      "case": "aud-dec-002[uz]",
+      "codes": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ]
+    },
+    {
+      "case": "aud-dec-003[uz]",
+      "codes": [
+        "hemoptysis"
+      ]
+    },
+    {
+      "case": "aud-dec-006[uz]",
+      "codes": [
+        "imci_danger_sign"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "vignette_id": "aud-oov-001",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-001",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-002",
+      "language": "uz",
+      "predicted": [
+        "D50.9",
+        "E11.9",
+        "E01.2"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-002",
+      "language": "ru",
+      "predicted": [
+        "A15.0"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-003",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-003",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-004",
+      "language": "uz",
+      "predicted": [
+        "I21.9",
+        "E16.2"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-004",
+      "language": "ru",
+      "predicted": [
+        "I21.9",
+        "E16.2"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-005",
+      "language": "uz",
+      "predicted": [
+        "E86",
+        "A09"
+      ],
+      "red_flags": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-005",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-006",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-006",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-007",
+      "language": "uz",
+      "predicted": [
+        "A09",
+        "K29.70"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-007",
+      "language": "ru",
+      "predicted": [
+        "A09",
+        "K29.70"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-008",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-008",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-009",
+      "language": "uz",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-009",
+      "language": "ru",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-010",
+      "language": "uz",
+      "predicted": [
+        "J00",
+        "J11.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-010",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-011",
+      "language": "uz",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-011",
+      "language": "ru",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-012",
+      "language": "uz",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-012",
+      "language": "ru",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-013",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-013",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-014",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-014",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-015",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-015",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-016",
+      "language": "uz",
+      "predicted": [
+        "E11.9",
+        "A15.0",
+        "E11.10"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-016",
+      "language": "ru",
+      "predicted": [
+        "E11.9",
+        "A15.0",
+        "E11.10"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-017",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-017",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-018",
+      "language": "uz",
+      "predicted": [
+        "E11.9",
+        "D50.9",
+        "E01.2"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-018",
+      "language": "ru",
+      "predicted": [
+        "E11.9",
+        "D50.9",
+        "E01.2"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-019",
+      "language": "uz",
+      "predicted": [
+        "O20.9"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-019",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-020",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-020",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-021",
+      "language": "uz",
+      "predicted": [
+        "I10",
+        "D50.9"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-021",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-022",
+      "language": "uz",
+      "predicted": [
+        "E16.2",
+        "E11.9",
+        "I21.9"
+      ],
+      "red_flags": [
+        "hypoglycemia"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-022",
+      "language": "ru",
+      "predicted": [
+        "E16.2",
+        "E11.9",
+        "I21.9"
+      ],
+      "red_flags": [
+        "hypoglycemia"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-oov-023",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-023",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-024",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-oov-024",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-001",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-001",
+      "language": "ru",
+      "predicted": [
+        "A15.0"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-002",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-002",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-003",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-003",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-004",
+      "language": "uz",
+      "predicted": [
+        "A09",
+        "K29.70"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-004",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-005",
+      "language": "uz",
+      "predicted": [
+        "A15.0",
+        "J00",
+        "J40"
+      ],
+      "red_flags": [
+        "tb_suspected"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-005",
+      "language": "ru",
+      "predicted": [
+        "A15.0",
+        "E11.9"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-006",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-006",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-007",
+      "language": "uz",
+      "predicted": [
+        "J18.9",
+        "J45.9",
+        "I21.9"
+      ],
+      "red_flags": [
+        "hypoxia",
+        "respiratory_distress"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-007",
+      "language": "ru",
+      "predicted": [
+        "J18.9",
+        "J45.9",
+        "I21.9"
+      ],
+      "red_flags": [
+        "hypoxia",
+        "respiratory_distress"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-008",
+      "language": "uz",
+      "predicted": [
+        "J18.9",
+        "D50.9",
+        "J11.1"
+      ],
+      "red_flags": [
+        "sepsis_suspected"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-008",
+      "language": "ru",
+      "predicted": [
+        "J18.9",
+        "D50.9",
+        "J11.1"
+      ],
+      "red_flags": [
+        "sepsis_suspected"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-009",
+      "language": "uz",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [
+        "preeclampsia_suspected"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-009",
+      "language": "ru",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [
+        "preeclampsia_suspected"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-010",
+      "language": "uz",
+      "predicted": [
+        "E11.10",
+        "E11.9"
+      ],
+      "red_flags": [
+        "hyperglycemic_emergency"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-010",
+      "language": "ru",
+      "predicted": [
+        "E11.10",
+        "E11.9",
+        "A09"
+      ],
+      "red_flags": [
+        "hyperglycemic_emergency"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-011",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-011",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-012",
+      "language": "uz",
+      "predicted": [
+        "I10",
+        "A09",
+        "Z13.6"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-012",
+      "language": "ru",
+      "predicted": [
+        "I10",
+        "Z13.6",
+        "I16.1"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-013",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-013",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-adv-014",
+      "language": "uz",
+      "predicted": [
+        "E86",
+        "G03.9",
+        "J18.9"
+      ],
+      "red_flags": [
+        "imci_danger_sign"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-adv-014",
+      "language": "ru",
+      "predicted": [
+        "E86",
+        "G03.9",
+        "J18.9"
+      ],
+      "red_flags": [
+        "imci_danger_sign"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-001",
+      "language": "uz",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-dec-001",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-dec-002",
+      "language": "uz",
+      "predicted": [
+        "E86",
+        "A09"
+      ],
+      "red_flags": [
+        "imci_danger_sign",
+        "pediatric_dehydration"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-002",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-dec-003",
+      "language": "uz",
+      "predicted": [
+        "A15.0",
+        "J00",
+        "J40"
+      ],
+      "red_flags": [
+        "hemoptysis"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-003",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-dec-004",
+      "language": "uz",
+      "predicted": [
+        "O20.9"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-004",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    },
+    {
+      "vignette_id": "aud-dec-005",
+      "language": "uz",
+      "predicted": [
+        "E11.9",
+        "A09",
+        "E11.10"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-005",
+      "language": "ru",
+      "predicted": [
+        "E11.9",
+        "E11.10"
+      ],
+      "red_flags": [],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-006",
+      "language": "uz",
+      "predicted": [
+        "E86",
+        "J18.9",
+        "J11.1"
+      ],
+      "red_flags": [
+        "imci_danger_sign"
+      ],
+      "insufficient_data": false
+    },
+    {
+      "vignette_id": "aud-dec-006",
+      "language": "ru",
+      "predicted": [],
+      "red_flags": [],
+      "insufficient_data": true
+    }
+  ]
+}
