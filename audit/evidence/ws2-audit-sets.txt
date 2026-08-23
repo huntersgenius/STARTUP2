@@ -1,0 +1,178 @@
+
+=== oov (48 vignettes, vignettes_audit_oov.json)
+  red-flag expectations       62
+  RED-FLAG RECALL              32.3%  (20/62)
+  forbidden flags that fired  0
+
+  by phenomenon
+    intensifier-insertion          0.0%  (0/4)
+    no-medical-vocabulary          0.0%  (0/8)
+    severity-at-rest               0.0%  (0/2)
+    danger-described-plainly       0.0%  (0/2)
+    seizure-colloquial             0.0%  (0/2)
+    negation                       0.0%  (0/2)
+    symptom-denial                 0.0%  (0/2)
+    misspelling                    0.0%  (0/2)
+    understatement                12.5%  (1/8)
+    event-time                    16.7%  (1/6)
+    proxy-reporter                25.0%  (4/16)
+    colloquial                    27.5%  (11/40)
+    no-apostrophes                50.0%  (1/2)
+    phone-keyboard                50.0%  (1/2)
+    cyrillic-uzbek                50.0%  (1/2)
+    code-switching                50.0%  (2/4)
+    pregnancy                     50.0%  (1/2)
+    vitals-carry                  66.7%  (4/6)
+    danger-sign-colloquial       100.0%  (2/2)
+    mixed-script                 100.0%  (2/2)
+    asthma                       100.0%  (4/4)
+    sepsis-colloquial            100.0%  (2/2)
+
+  missed (case, expected flag, concepts the engine actually extracted)
+    aud-001/uz       want=acs_suspected            concepts=['sweating', 'hypertension'] got=[]
+    aud-001/ru       want=acs_suspected            concepts=['tuberculosis', 'sweating', 'hypertension'] got=[]
+    aud-002/uz       want=acs_suspected            concepts=['severity_mild'] got=[]
+    aud-002/ru       want=acs_suspected            concepts=[] got=[]
+    aud-003/uz       want=acs_suspected            concepts=['chest_pain', 'hypertension'] got=[]
+    aud-004/ru       want=acs_suspected            concepts=['dyspnea', 'sweating', 'hypertension'] got=[]
+    aud-005/uz       want=acs_suspected            concepts=[] got=[]
+    aud-005/ru       want=acs_suspected            concepts=['pallor', 'vital_height'] got=[]
+    aud-006/uz       want=stroke_fast              concepts=['hypertension'] got=[]
+    aud-006/ru       want=stroke_fast              concepts=['hypertension'] got=[]
+    aud-007/uz       want=stroke_fast              concepts=['hypertension'] got=[]
+    aud-007/ru       want=stroke_fast              concepts=['hypertension'] got=[]
+    aud-008/uz       want=meningism                concepts=['vital_height', 'fever'] got=[]
+    aud-008/ru       want=meningism                concepts=['fever'] got=[]
+    aud-009/uz       want=pregnancy_bleeding       concepts=['pregnancy'] got=[]
+    aud-009/ru       want=pregnancy_bleeding       concepts=[] got=[]
+    aud-011/uz       want=tb_suspected             concepts=['cough', 'appetite_loss'] got=[]
+    aud-011/ru       want=tb_suspected             concepts=[] got=[]
+    aud-012/uz       want=hemoptysis               concepts=['cough', 'sputum'] got=[]
+    aud-012/uz       want=tb_suspected             concepts=['cough', 'sputum'] got=[]
+    aud-012/ru       want=hemoptysis               concepts=['onset_1m', 'cough'] got=[]
+    aud-012/ru       want=tb_suspected             concepts=['onset_1m', 'cough'] got=[]
+    aud-013/uz       want=tb_suspected             concepts=['cough'] got=[]
+    aud-018/uz       want=pediatric_dehydration    concepts=['onset_3d', 'diarrhea'] got=[]
+    aud-018/ru       want=pediatric_dehydration    concepts=['onset_3d'] got=[]
+    aud-021/uz       want=hypertensive_emergency   concepts=['vital_bp', 'hypertension'] got=[]
+    aud-021/ru       want=hypertensive_emergency   concepts=['vital_bp', 'hypertension'] got=[]
+    aud-022/ru       want=preeclampsia_suspected   concepts=['hypertension'] got=[]
+    aud-026/uz       want=severe_anemia            concepts=[] got=[]
+    aud-026/ru       want=severe_anemia            concepts=[] got=[]
+    aud-028/uz       want=gi_bleeding              concepts=['onset_1d'] got=[]
+    aud-028/ru       want=gi_bleeding              concepts=['onset_1d'] got=[]
+    aud-035/uz       want=seizure                  concepts=[] got=[]
+    aud-035/ru       want=seizure                  concepts=[] got=[]
+    aud-040/uz       want=tb_suspected             concepts=['cough', 'vital_weight'] got=[]
+    aud-040/ru       want=tb_suspected             concepts=['cough', 'onset_1m', 'vital_weight'] got=[]
+    aud-041/uz       want=hypertensive_emergency   concepts=['vital_bp', 'severity_mild', 'headache', 'hypertension'] got=[]
+    aud-041/ru       want=hypertensive_emergency   concepts=['vital_bp', 'hypertension'] got=[]
+    aud-043/uz       want=pediatric_dehydration    concepts=['diarrhea', 'onset_3d'] got=[]
+    aud-043/ru       want=pediatric_dehydration    concepts=[] got=[]
+    aud-045/uz       want=hypertensive_emergency   concepts=['severity_severe', 'hypertension'] got=[]
+    aud-045/ru       want=hypertensive_emergency   concepts=['tuberculosis', 'hypertension'] got=[]
+
+=== evasion (19 vignettes, redflag_evasion.json)
+  red-flag expectations       38
+  RED-FLAG RECALL              10.5%  (4/38)
+  forbidden flags that fired  0
+
+  by phenomenon
+    evasion                       10.5%  (4/38)
+
+  missed (case, expected flag, concepts the engine actually extracted)
+    evade-acs/uz     want=acs_suspected            concepts=[] got=[]
+    evade-acs/ru     want=acs_suspected            concepts=[] got=[]
+    evade-hypoxia/uz want=hypoxia                  concepts=[] got=[]
+    evade-hypoxia/ru want=hypoxia                  concepts=[] got=[]
+    evade-resp-distress/uz want=respiratory_distress     concepts=['fever'] got=[]
+    evade-resp-distress/ru want=respiratory_distress     concepts=['fever'] got=[]
+    evade-stroke/uz  want=stroke_fast              concepts=['hypertension'] got=[]
+    evade-stroke/ru  want=stroke_fast              concepts=['hypertension'] got=[]
+    evade-meningism/uz want=meningism                concepts=['fever'] got=[]
+    evade-meningism/ru want=meningism                concepts=['fever'] got=[]
+    evade-seizure/uz want=seizure                  concepts=[] got=[]
+    evade-seizure/ru want=seizure                  concepts=[] got=[]
+    evade-imci/uz    want=imci_danger_sign         concepts=['fever'] got=[]
+    evade-imci/ru    want=imci_danger_sign         concepts=['fever'] got=[]
+    evade-dehydration/uz want=pediatric_dehydration    concepts=[] got=[]
+    evade-dehydration/ru want=pediatric_dehydration    concepts=[] got=[]
+    evade-pregnancy-bleeding/uz want=pregnancy_bleeding       concepts=['pregnancy'] got=[]
+    evade-pregnancy-bleeding/ru want=pregnancy_bleeding       concepts=['onset_1m'] got=[]
+    evade-gi-bleeding/uz want=gi_bleeding              concepts=['onset_1d', 'dizziness'] got=[]
+    evade-gi-bleeding/ru want=gi_bleeding              concepts=['onset_1d'] got=[]
+    evade-hemoptysis/uz want=hemoptysis               concepts=['rash'] got=[]
+    evade-hemoptysis/ru want=hemoptysis               concepts=[] got=[]
+    evade-tb/uz      want=tb_suspected             concepts=['cough'] got=[]
+    evade-tb/ru      want=tb_suspected             concepts=['onset_1m', 'cough'] got=[]
+    evade-hyperglycemia/uz want=hyperglycemic_emergency  concepts=['vital_glucose', 'onset_sudden'] got=['respiratory_distress']
+    evade-hyperglycemia/ru want=hyperglycemic_emergency  concepts=['vomiting'] got=['respiratory_distress']
+    evade-hypoglycemia/uz want=hypoglycemia             concepts=[] got=[]
+    evade-hypoglycemia/ru want=hypoglycemia             concepts=['vital_weight'] got=[]
+    evade-hypertensive/uz want=hypertensive_emergency   concepts=['vital_bp', 'hypertension'] got=[]
+    evade-hypertensive/ru want=hypertensive_emergency   concepts=['vital_bp', 'tuberculosis', 'hypertension'] got=[]
+    evade-severe-anemia/uz want=severe_anemia            concepts=[] got=[]
+    evade-severe-anemia/ru want=severe_anemia            concepts=[] got=[]
+    evade-airway/uz  want=airway_compromise        concepts=['wheezing', 'fever'] got=['respiratory_distress']
+    evade-airway/ru  want=airway_compromise        concepts=['fever'] got=['respiratory_distress']
+
+=== decoy (12 vignettes, redflag_decoy.json)
+  red-flag expectations       0
+  forbidden flags that fired  5
+
+  fired when it must not
+    decoy-history-not-now/uz fired=acs_suspected            concepts=['crushing_chest_pain']
+    decoy-history-not-now/ru fired=acs_suspected            concepts=['crushing_chest_pain']
+    decoy-negated-hemoptysis/uz fired=hemoptysis               concepts=['hemoptysis', 'sputum', 'onset_3d', 'cough']
+    decoy-controlled-hypertension/uz fired=acs_suspected            concepts=['hypertension', 'vital_bp', 'chest_pain', 'dyspnea']
+    decoy-postictal-known-epilepsy/uz fired=seizure                  concepts=['seizure']
+
+=== repo-main (249 vignettes, vignettes.json)
+  red-flag expectations       158
+  RED-FLAG RECALL             100.0%  (158/158)
+  forbidden flags that fired  0
+
+  by phenomenon
+    untagged                     100.0%  (158/158)
+
+=== repo-oov (42 vignettes, vignettes_oov.json)
+  red-flag expectations       22
+  RED-FLAG RECALL               4.5%  (1/22)
+  forbidden flags that fired  1
+
+  by phenomenon
+    untagged                       4.5%  (1/22)
+
+  missed (case, expected flag, concepts the engine actually extracted)
+    oov-011/uz       want=tb_suspected             concepts=['cough', 'onset_1d'] got=[]
+    oov-011/ru       want=tb_suspected             concepts=['cough'] got=[]
+    oov-050/uz       want=tb_suspected             concepts=['cough', 'onset_1d'] got=[]
+    oov-050/ru       want=tb_suspected             concepts=[] got=[]
+    oov-051/uz       want=tb_suspected             concepts=['cough', 'weight_loss'] got=[]
+    oov-051/ru       want=tb_suspected             concepts=['cough', 'weight_loss'] got=[]
+    oov-060/uz       want=acs_suspected            concepts=['pallor'] got=[]
+    oov-060/ru       want=acs_suspected            concepts=[] got=[]
+    oov-061/uz       want=stroke_fast              concepts=['hypertension'] got=[]
+    oov-061/ru       want=stroke_fast              concepts=['hypertension'] got=[]
+    oov-062/uz       want=pediatric_dehydration    concepts=['unable_to_feed', 'fever'] got=['imci_danger_sign']
+    oov-062/ru       want=pediatric_dehydration    concepts=['fever'] got=[]
+    oov-062/ru       want=imci_danger_sign         concepts=['fever'] got=[]
+    oov-070/uz       want=acs_suspected            concepts=['hypertension'] got=[]
+    oov-070/ru       want=acs_suspected            concepts=['hypertension'] got=[]
+    oov-071/uz       want=gi_bleeding              concepts=[] got=[]
+    oov-071/ru       want=gi_bleeding              concepts=[] got=[]
+    oov-086/uz       want=pregnancy_bleeding       concepts=['pregnancy'] got=[]
+    oov-086/ru       want=pregnancy_bleeding       concepts=[] got=[]
+    oov-087/uz       want=meningism                concepts=['vital_height', 'fever'] got=[]
+    oov-087/ru       want=meningism                concepts=['fever'] got=[]
+
+  fired when it must not
+    oov-042/uz       fired=acs_suspected            concepts=['chest_pain', 'dyspnea']
+
+=== side by side
+  set              recall      n
+  oov               32.3%     62
+  evasion           10.5%     38
+  decoy               n/a      0
+  repo-main        100.0%    158
+  repo-oov           4.5%     22

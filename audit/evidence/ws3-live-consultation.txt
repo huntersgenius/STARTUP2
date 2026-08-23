@@ -1,0 +1,106 @@
+=== A real consultation through the running API (PostgreSQL 16 + uvicorn, no mocks) ===
+=== audit second pass, commit 8365d54 ===
+
+--- Case 1: the eval set's exact wording (emg-001) ---
+            "items": [],
+            "non_pharmacological": [],
+            "notes": null,
+            "blocked_reason": null
+        },
+        "risk": {
+            "score": 0.7,
+            "band": "very_high",
+            "drivers": [
+                "crushing chest pain (+40)",
+                "dyspnea (+12)",
+                "red flag: acs_suspected"
+            ]
+        },
+        "referral": {
+            "needed": true,
+            "specialty": "emergency_cardiology",
+            "urgency": "immediate",
+            "reason": "Yurak xurujii shubhasi. Zudlik bilan tez yordam chaqiring, aspirin 300 mg chaynatib bering (allergiya bo'lmasa)."
+        },
+        "red_flags": [
+            {
+                "code": "acs_suspected",
+                "urgency": "immediate",
+                "message": "Yurak xurujii shubhasi. Zudlik bilan tez yordam chaqiring, aspirin 300 mg chaynatib bering (allergiya bo'lmasa).",
+                "refer_to": "emergency_cardiology",
+                "triggered_by": [
+                    "chest_pain",
+                    "dyspnea"
+                ]
+            }
+        ],
+        "follow_up_questions": [
+            "Shikoyat qachon boshlangan va qanday o'zgargan?",
+            "Harorat o'lchandimi? Necha daraja?",
+            "Boshqa qanday belgilar bor (nafas qisishi, og'riq, qusish)?",
+            "Qanday dorilar qabul qilinmoqda?",
+            "Surunkali kasalliklar yoki allergiya bormi?"
+        ],
+        "insufficient_data": true
+    },
+    "model": "rules-only",
+    "prompt_version": "v1@e478f9f615be",
+    "latency_ms": 2683,
+    "cost_usd": 0.0,
+    "degraded": true,
+    "cache_hit": false,
+    "requires_clinician_review": true,
+    "disclaimer": "SihhatAI klinik qaror qabul qilishni qo'llab-quvvatlash tizimi. Barcha natijalar taklif sifatida beriladi va litsenziyali tibbiyot xodimi tomonidan tasdiqlanishi, tahrirlanishi yoki rad etilishi shart."
+}
+
+--- Case 2: an ordinary paraphrase of the same clinical picture ---
+== consultation 03f3196f-074b-43e8-b4be-ebe4595e6cbf
+== analyze
+
+HTTP 200
+
+real	0m0.044s
+user	0m0.000s
+sys	0m0.005s
+{
+    "suggestion_id": "611ef8ec-90fb-4aa4-aa2a-686cd54cfe99",
+    "consultation_id": "03f3196f-074b-43e8-b4be-ebe4595e6cbf",
+    "payload": {
+        "differentials": [],
+        "recommended_tests": [],
+        "treatment": {
+            "items": [],
+            "non_pharmacological": [],
+            "notes": null,
+            "blocked_reason": null
+        },
+        "risk": {
+            "score": 0.0,
+            "band": "low",
+            "drivers": []
+        },
+        "referral": {
+            "needed": false,
+            "specialty": null,
+            "urgency": "none",
+            "reason": null
+        },
+        "red_flags": [],
+        "follow_up_questions": [
+            "Shikoyat qachon boshlangan va qanday o'zgargan?",
+            "Harorat o'lchandimi? Necha daraja?",
+            "Boshqa qanday belgilar bor (nafas qisishi, og'riq, qusish)?",
+            "Qanday dorilar qabul qilinmoqda?",
+            "Surunkali kasalliklar yoki allergiya bormi?"
+        ],
+        "insufficient_data": true
+    },
+    "model": "rules-only",
+    "prompt_version": "v1@e478f9f615be",
+    "latency_ms": 22,
+    "cost_usd": 0.0,
+    "degraded": true,
+    "cache_hit": false,
+    "requires_clinician_review": true,
+    "disclaimer": "SihhatAI klinik qaror qabul qilishni qo'llab-quvvatlash tizimi. Barcha natijalar taklif sifatida beriladi va litsenziyali tibbiyot xodimi tomonidan tasdiqlanishi, tahrirlanishi yoki rad etilishi shart."
+}

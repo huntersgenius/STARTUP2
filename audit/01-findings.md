@@ -16,6 +16,22 @@ Two failing tests are left in the tree on purpose:
 in `audit/adversarial/test_audit_probes.py` (AUD-002, AUD-005, AUD-006). Delete
 each only with the fix that makes it pass.
 
+> **A second, independent pass ran this same brief against the same commit and
+> is written up in [`08-addendum-second-pass.md`](08-addendum-second-pass.md).**
+> It re-derived AUD-001 from the source and confirms it, corroborates AUD-003
+> and AUD-004 from a separately authored corpus, and adds five findings this
+> file does not carry: **A2-001** (`make seed` fails, so `docker compose up`
+> never starts the API — P1), **A2-002** (the Russian intensifier `сильно` is
+> read as `tuberculosis` — P1), **A2-003** (`158/158` is 32 distinct assertions
+> and four rules are never exercised — P1), **A2-004** (the only enforced CI
+> safety gate is the one that cannot fail — P1), and **A2-005** (the runbook's
+> first two steps use an admin UI that does not exist — P1). It leaves twelve
+> further failing assertions in
+> `backend/tests/test_audit_p0_red_flag_evasion.py`.
+>
+> Running total across both passes: **1 P0 · 10 P1**. `make test` reports
+> `14 failed, 438 passed`; all 14 failures are deliberate audit artefacts.
+
 ---
 
 ## P0

@@ -1,0 +1,37 @@
+
+> sihhatai-admin@0.1.0 typecheck
+> tsc --noEmit
+
+TYPECHECK_EXIT=0
+
+> sihhatai-admin@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.15
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    3.58 kB        90.7 kB
+├ ○ /_not-found                          873 B            88 kB
+├ ○ /audit                               2.98 kB        90.1 kB
+└ ○ /clinics                             2.69 kB        89.8 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/117-022b78fc13771251.js       31.6 kB
+  ├ chunks/fd9d1056-fdc813d0a7d52d12.js  53.6 kB
+  └ other shared chunks (total)          1.89 kB
+
+
+○  (Static)  prerendered as static content
+
+BUILD_EXIT=0

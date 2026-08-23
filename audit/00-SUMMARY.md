@@ -14,6 +14,13 @@ this whole product turns on: *the safety layer never reads the patient's words.*
 (`backend/tests/test_audit_p0.py`, and the `test_defect_*` cases in
 `audit/adversarial/test_audit_probes.py`). Full detail in `01-findings.md`.
 
+**A second auditor then ran the same brief independently** and wrote up
+`08-addendum-second-pass.md`. It confirms the P0 from the source, corroborates
+the red-flag findings from its own separately written 48-case corpus, and adds
+**five more P1s** — the worst of which is that `make seed` fails, so the
+documented `docker compose up` never starts the API at all. Combined total:
+**1 P0 · 10 P1**. Read that file second.
+
 ---
 
 ## The three things that matter

@@ -1,0 +1,65 @@
+cd backend && PYTHONPATH=.. ENVIRONMENT=test DATABASE_URL="sqlite+pysqlite:///:memory:" \
+	../.venv/bin/python -m app.ai.eval.run --offline --fail-under-top3 0.70 --fail-under-redflag 1.0
+
+========================================================================
+  SihhatAI evaluation — baseline (rules-baseline-v1)
+========================================================================
+  provider        baseline  (rules-baseline-v1)
+  code path       deterministic rules baseline (no model called)
+  vignette set    main — 249 cases, 0 clinician-reviewed
+  prompt version  v1@e478f9f615be
+========================================================================
+  Cases run                                      498
+  Errors                                         0
+
+  Top-1 accuracy (strict)                        94.4%
+  Top-3 accuracy (strict)                        97.6%
+  Top-3 accuracy (with acceptable alternatives)  97.6%
+
+  Red-flag recall  [SAFETY]                      100.0%  (158/158)
+  Red flags that fired wrongly                   0
+  False-referral rate                            0.0%
+
+  Calibration error (ECE, lower is better)       0.288
+  Mean top confidence                            0.672
+
+  p50 latency                                    17 ms
+  p95 latency                                    20 ms
+  Mean cost per case                             $0.0000
+  Total cost                                     $0.00
+  Degraded responses                             0.0%
+  Insufficient-data responses                    2.4%
+
+  Uzbek top-3                                    97.6%
+  Russian top-3                                  97.6%
+  Language gap (uz − ru)                         +0.0 pp
+
+  Declined when it should have  [SAFETY]         100.0%  (0/0)
+  Declined when it should have answered          12
+
+  By presentation
+  ----------------------------------------------------
+    anemia                        100.0%   n=48
+    cardiovascular_risk           100.0%   n=32
+    emergency                     100.0%   n=20
+    gastritis_hpylori             100.0%   n=48
+    hypertension                  100.0%   n=60
+    iodine_deficiency             100.0%   n=30
+    musculoskeletal_pain          100.0%   n=40
+    pediatric_diarrhea            100.0%   n=48
+    respiratory_infection          83.3%   n=72
+    tb_suspicion                  100.0%   n=48
+    type2_diabetes                100.0%   n=52
+
+  Reliability (is a higher confidence actually more reliable?)
+  ----------------------------------------------------
+    0.0-0.2   n=12   mean conf 0.00   observed   0.0%
+    0.4-0.6   n=102  mean conf 0.52   observed  92.2%
+    0.6-0.8   n=320  mean conf 0.71   observed 100.0%
+    0.8-1.0   n=64   mean conf 0.85   observed 100.0%
+    monotone: yes
+
+  results written to /home/user/STARTUP2/backend/app/ai/eval/results/2026-08-22-baseline-main.json
+  NOTE: every vignette is synthetic and unreviewed by a clinician.
+        These numbers describe engineering behaviour, not clinical accuracy.
+
